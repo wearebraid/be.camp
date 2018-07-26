@@ -1,0 +1,6 @@
+// File: global.scss
+// Used as an entry point for variables / mixins that should be available
+// to every component in our application. Should not contain or include
+// any files with actual styles
+@import './partials/variables';
+@import './partials/mixins';

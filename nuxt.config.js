@@ -18,6 +18,15 @@ module.exports = {
   */
   loading: { color: '#3B8070' },
   /*
+  ** Modules
+  */
+  modules: [
+    'nuxt-sass-resources-loader'
+  ],
+  sassResources: [
+    './assets/sass/global.scss'
+  ],
+  /*
   ** Build configuration
   */
   build: {

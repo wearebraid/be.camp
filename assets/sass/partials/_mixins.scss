@@ -1,0 +1,31 @@
+// File: _mixins.scss
+// Used to define useful mixins
+
+// Layout
+// -----------------------------------------------------------------------------
+@mixin row() {
+  max-width: $row;
+  margin: 0 auto;
+}
+
+// Media Queries
+// -----------------------------------------------------------------------------
+@mixin bp($size) {
+  @media (min-width: #{$size}) {
+    @content;
+  }
+}
+
+@mixin between($small, $large) {
+  @media (min-width: #{$small}) and (max-width: #{$large}) {
+    @content;
+  }
+}
+
+// Typography
+// -----------------------------------------------------------------------------
+@mixin font-smoothing() {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+

@@ -1,0 +1,37 @@
+// File: _variables.scss
+// Used to define global variables. Should never contain actual styles.
+
+// Colors
+// -----------------------------------------------------------------------------
+$accent-l: #d2a8f3;
+$accent: #7c558c;
+$accent-d: #59376a;
+$accent-dd: #472858;
+
+$dark: #000;
+
+$body-color: $dark;
+$border-color: $accent;
+$text-ui-color: $dark;
+
+// Global Sizes
+// -----------------------------------------------------------------------------
+$gutter: 1em;
+$row: 1200px;
+
+// Breakpoints
+// -----------------------------------------------------------------------------
+$xs:  400px;
+$s:   450px;
+$ms:  500px;
+$m:   680px;
+$ml:  760px;
+$l:   1000px;
+$xl:  1200px;
+$xxl: 1350px;
+
+// font families
+// -----------------------------------------------------------------------------
+$sans: sans-serif;
+$serif: serif;
+$display: $sans;

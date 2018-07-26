@@ -3,17 +3,18 @@
 
 // Colors
 // -----------------------------------------------------------------------------
-$accent-l: #d2a8f3;
-$accent: #7c558c;
-$accent-d: #59376a;
-$accent-dd: #472858;
+$accent: #EEF0F2;
 
-$dark: #000;
+$button-fill: #FF750F;
+$divider-fill: #FF750F;
 
-$body-color: $dark;
+$dark: #363537;
+$light: #fff;
+
+$body-color: $light;
 $border-color: $accent;
 $text-ui-color: $dark;
-
+$header-color: #21284C;
 // Global Sizes
 // -----------------------------------------------------------------------------
 $gutter: 1em;

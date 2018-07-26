@@ -49,5 +49,11 @@ html {
   color: #fff;
   background-color: #35495e;
 }
+
 </style>
 
+<style lang="scss" scoped>
+  body{
+    background-color: $dark;
+  }
+</style>

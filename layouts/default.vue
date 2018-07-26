@@ -51,9 +51,3 @@ html {
 }
 
 </style>
-
-<style lang="scss" scoped>
-  body{
-    background-color: $dark;
-  }
-</style>

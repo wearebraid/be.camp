@@ -34,6 +34,10 @@ export default {
 
 
 <style lang="scss">
+
+body{
+  background-color: $button-fill;
+}
 .container {
   min-height: 100vh;
   display: flex;

@@ -89,7 +89,6 @@
            <li><img src=""></li>
            <li><img src=""></li>
          </ul>
-
        </div>
        <p>Join one of these amazing sponsors by supporting your local tech community</p>
        <a href="">See How to Help</a>

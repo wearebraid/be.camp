@@ -1,53 +1,48 @@
 <template>
-  <div>
-    <nuxt/>
+  <div class="primarycontainer">
+    <!-- rename classnames so they arent specific to landingpage -->
+    <nav class="primarycontainer--navbar">
+      <div class="navbar--logo"></div>
+      <ul>
+        <li><a href="">Schedule</a> </li>
+        <li><a href="">Attendees</a> </li>
+        <li><a href="">Sponsors</a> </li>
+        <li><a href="">Contact</a> </li>
+      </ul>
+      <div class="navbar--account">
+        <div class="account__register"><a href=""></a></div>
+        <div class="account__signin"><a href=""></a></div>
+      </div>
+    </nav>
+    <div class="contentcontainer">
+      <nuxt/>
+    </div>
+    <footer class="footer-primary">
+      <div class="footer--credits">
+        <a href=""><img src="http://placehold.it/247x55"></a>
+        <p>Text</p>
+      </div>
+      <div class="footer--socialmedia">
+        <ul>
+          <li><a href="">Home</a></li>
+          <li><a href="">FAQ</a></li>
+          <li><a href="">Schedule</a></li>
+          <li><a href="">Attendees</a></li>
+          <li><a href="">Sponsors</a></li>
+          <li><a href="">Contact</a></li>
+        </ul>
+        <div class="footer--imagerow">
+          <ul>
+            <li><a href=""><img src="http://placehold.it/30x30"></a></li>
+            <li><a href=""><img src="http://placehold.it/30x30"></a></li>
+            <li><a href=""><img src="http://placehold.it/30x30"></a></li>
+            <li><a href=""><img src="http://placehold.it/30x30"></a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
   </div>
 </template>
 
 <style>
-html {
-  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  font-size: 16px;
-  word-spacing: 1px;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
-}
-
-*, *:before, *:after {
-  box-sizing: border-box;
-  margin: 0;
-}
-
-.button--green {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #3b8070;
-  color: #3b8070;
-  text-decoration: none;
-  padding: 10px 30px;
-}
-
-.button--green:hover {
-  color: #fff;
-  background-color: #3b8070;
-}
-
-.button--grey {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #35495e;
-  color: #35495e;
-  text-decoration: none;
-  padding: 10px 30px;
-  margin-left: 15px;
-}
-
-.button--grey:hover {
-  color: #fff;
-  background-color: #35495e;
-}
-
 </style>

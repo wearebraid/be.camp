@@ -1,0 +1,55 @@
+body{
+  font-family: $secondary-font;
+  font-size: 1em; //font size 20
+}
+
+nav{
+  font-family: $primary-font;
+  font-weight: bolder;
+  color: #21284C;
+}
+li{
+  font-family: $primary-font;
+}
+
+a{
+  font-family: $primary-font;
+}
+
+h1{
+  font-family: $primary-font;
+  font-weight: bolder;
+  color: #21284C;
+}
+h2 h3 h4 h5 h6{
+  font-family: $primary-font;
+  font-weight: bold;
+  color: #21284C;
+}
+h2{
+  font-size: 1.5em;
+}
+h5{
+  font-size: 1.5em;
+}
+
+h6{
+  font-size: 2em;
+}
+
+.launchdate{
+  color: #DD5D05;
+  font-style: italic;
+}
+
+.schedule--time2{
+   color: #22A3AE;
+}
+.schedule--time2{
+   color: #22A3AE;
+}
+.schedule--time3{
+   color: #22A3AE;
+}
+
+

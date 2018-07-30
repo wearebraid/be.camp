@@ -21,7 +21,7 @@ h1{
   font-weight: bolder;
   color: #21284C;
 }
-h2 h3 h4 h5 h6{
+h2, h3, h4, h5, h6{
   font-family: $primary-font;
   font-weight: bold;
   color: #21284C;
@@ -37,11 +37,18 @@ h6{
   font-size: 2em;
 }
 
+.scheduleheader--header{
+  font-size: 3em;
+}
+
 .launchdate{
   color: #DD5D05;
   font-style: italic;
 }
 
+.schedule--time1{
+   color: #22A3AE;
+}
 .schedule--time2{
    color: #22A3AE;
 }

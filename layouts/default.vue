@@ -31,6 +31,10 @@
           <li><a href="">Sponsors</a></li>
           <li><a href="">Contact</a></li>
         </ul>
+        <div class="slack">
+          <img src="http://placehold.it/25x25">
+          <p class="slack--message">Join the Charlottesville Slack Community</p>
+        </div>
         <div class="footer--imagerow">
           <ul>
             <li><a href=""><img src="http://placehold.it/30x30"></a></li>

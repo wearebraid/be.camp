@@ -5,7 +5,7 @@
     <-->
     <div class="container">
       <div class="container--scheduleheader">
-        <h1>beCamp 2018 Schedule</h1>
+        <h1 class="scheduleheader--header">beCamp 2018 Schedule</h1>
       </div>
 
       <section class="schedulecards">

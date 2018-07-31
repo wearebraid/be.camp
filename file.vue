@@ -4,7 +4,7 @@
   <div class="primary--navbar">
     <nav role="navigation">
       <div id="menuToggle">
-        <input class="hamburger" type="checkbox" />
+        <input type="checkbox" />
         <span></span>
         <span></span>
         <span></span>
@@ -25,15 +25,10 @@
     </div>
     <footer class="footer-primary">
       <div class="footer--credits">
-        <div class="footer__logodiv">
-           <a href=""><img src="http://placehold.it/247x55"></a>
-        </div>
-
-        <p class="madebybraid">@2018 beCamp | All rights reserved.>
-        <div class="madebybraid--msg">
-          <p>Made with <span class="heart">luv</span> by Braid</p>
-
-        </div>
+        <a href=""><img src="http://placehold.it/247x55"></a>
+        <p class="madebybraid">@2018 beCamp | All rights reserved.<br>
+          Made with luv  by Braid
+        </p>
       </div>
       <div class="footer--socialmedia">
         <ul>
@@ -125,15 +120,17 @@
       transform-origin: 4px 0px;
       transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0), background 0.5s cubic-bezier(0.77,0.2,0.05,1.0), opacity 0.55s ease;
     }
-    // #menuToggle span:first-child
-    // {
-    //   transform-origin: 0% 0%;
-    // }
 
-    // #menuToggle span:nth-last-child(2)
-    // {
-    //   transform-origin: 0% 100%;
-    // }
+    #menuToggle span:first-child
+    {
+      transform-origin: 0% 0%;
+    }
+
+    #menuToggle span:nth-last-child(2)
+    {
+      transform-origin: 0% 100%;
+    }
+
     #menu
     {
       position: absolute;
@@ -148,67 +145,33 @@
       position: fixed;
       transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
     }
+
     #menu li
     {
       padding: 10px 0;
       font-size: 1.2em;
       text-align: center;
     }
+
     #menuToggle input:checked ~ ul
     {
       transform: none;
     }
+
     .footer__home, .footer__schedule, .footer__attendees, .footer__sponsors, .footer__contact{
       display: none;
     }
+
     .imagerow__socialmedia{
       display:flex;
       flex-direction: row;
      justify-content: center;
     }
+
     .footer__FAQ{
-      display: none !important;
-    }
-    .slack--message{
       text-align: center;
     }
-    .madebybraid--msg{
-      text-align: center;
-      display: flex;
-      justify-content: center;
-    }
 
-    .madebybraid{
-      text-align: center;
-    }
-    .slack{
-      display: flex;
-      justify-content: center;
-    }
-    .footer__logodiv{
-      display: flex;
-      justify-content: center;
-    }
-
-
-  // First breakpoint
-    .primary--navbar{
-        background-color: $accent;
-
-    }
-
-    #menu{
-      background-color: $accent;
-    }
-
-
-
-  }
-
-  @media screen and (min-width: 501px){
-    .hamburger{
-      display: none !important;
-    }
   }
 </style>
 

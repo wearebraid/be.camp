@@ -1,3 +1,5 @@
+
+
 <template>
   <!-- 100vh is the screen height -->
   <!-- width:100% --
@@ -9,16 +11,20 @@
         <section class="notice--time">
           <p class="launchdate">September 28 - 29, 2018 | Rice Hall @UVa</p>
           <!-- pseudoelements for days, hours -->
-          <span class="time__days">78:</span>
-          <span class="time__hours">08:</span>
-          <span class="time__minutes">05:</span>
-          <span class="time__seconds">51</span>
-          <button class="playbutton">(>)</button>
+          <div class="timecontainer">
+            <span class="time__days">78:</span>
+            <span class="time__hours">08:</span>
+            <span class="time__minutes">05:</span>
+            <span class="time__seconds">51</span>
+          </div>
+          <img class ="playbutton" button="" src="~/static/playbutton.png"/>
         </section>
         <section class="notice--description">
-          <h1>Join the Other 75 attendees for beCamp 2018</h1>
+          <h1>Join the other 75 attendees for beCamp 2018</h1>
           <p>Quam si explicavisset, non tam haesitaret. Sin laboramus, quis est, qui alienae modum statuat industriae?</p>
+         <div class="register__buttonbox">
           <a class="notice--register" href="">register now</a>
+         </div>
         </section>
       </section>
      </section>
@@ -105,8 +111,8 @@ export default {
 </script>
 
 
-<style scoped>
-  @media screen and (max-width: 500px){
+<style scoped lang="scss">
+  @media screen and (min-width: 300px) and (max-width:500px){
     .time__days, .time__hours, .time__minutes, .time__seconds, .playbutton{
       display: none !important;
     }
@@ -177,4 +183,72 @@ export default {
 
   }
 
+  @media screen and (min-width: 501px){
+
+    .container-landingpage{
+            background-image: url("~static/mainpage-background.png")
+    }
+    .landingpage--notice{
+      display:flex;
+      width: 50%;
+      margin: auto;
+      padding-top: 5em;
+    }
+
+    .notice--time{
+      padding-top: 1.5em;
+    }
+
+    .notice--time span{
+      font-size: 3em;
+      font-family: 'Open Sans', sans-serif;
+      font-weight: bold;
+      color: $dark-b;
+    }
+
+    .notice--description{
+      padding-left: 2em;
+    }
+
+    .notice--description h1{
+      font-size: 1.5em;
+    }
+
+    .notice--register{
+      text-decoration: none;
+      text-transform: uppercase;
+
+    }
+
+    .notice--description p{
+      padding-top: 0.5em;
+      padding-bottom: 0.5em;
+    }
+
+    .register__buttonbox{
+      background-color: $accent;
+      width: 60%;
+      padding: 6px;
+      text-align: center;
+    }
+
+  .notice--register{
+    color: $light;
+    font-weight: lighter;
+    letter-spacing: 2.33px;
+    font-size: 0.7em;
+  }
+
+  .playbutton{
+    max-width: 20%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+
+
+
+}
 </style>

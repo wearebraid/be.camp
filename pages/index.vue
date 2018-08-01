@@ -7,6 +7,7 @@
     <-->
     <div class="container">
       <section class="container-landingpage">
+        <div class="innercontainer">
       <section class="landingpage--notice">
         <section class="notice--time">
           <p class="launchdate">September 28 - 29, 2018 | Rice Hall @UVa</p>
@@ -23,14 +24,15 @@
           <h1>Join the other 75 attendees for beCamp 2018</h1>
           <p>Quam si explicavisset, non tam haesitaret. Sin laboramus, quis est, qui alienae modum statuat industriae?</p>
          <div class="register__buttonbox">
-          <a class="notice--register" href="">register now</a>
+            <a class="notice--register" href="">register now</a>
          </div>
         </section>
       </section>
-     </section>
+      </div>
+    </section>
 
     <section class="aboutpage">
-      <h2>What is beCamp</h2>
+      <h2 class="beCamp__question">What is beCamp?</h2>
       <section class="aboutpage--movement">
       <!-- add a wrapper for h2 and p -->
         <div class="showcase">
@@ -39,12 +41,12 @@
         </div>
         <!-- intrinsic ratio boxes for images -->
         <div class="movement__div">
-          <img class="movement__image" src="http://placehold.it/550x367">
+          <img class="movement__image" src="~static/members1.png">
         </div>
       </section>
       <section class="aboutpage--summercamp">
         <div class="summercamp__div">
-          <img class="summercamp__image" src="http://placehold.it/550x367">
+          <img class="summercamp__image" src="~static/members2.png">
         </div>
         <div class="summercamp__section">
           <h4>A Summer Camp For Geeks</h4>
@@ -55,18 +57,40 @@
 
 
      <section class="whyjoin">
+        <h5>Why should I attend beCamp</h5>
         <div class="lightningbackground">
-          <h5>Why Should I attend beCamp</h5>
+          <div class="whyjoin__centerer">
           <p>Maecenas id pulvinar risus, cursus hendrerit nunc. Sed accumsan, turpis non congue volutpat, elit mi vehicula tortor, tincidunt vulputate magna est eu lorem. Aenean tincidunt eros urna, at faucibus quam bibendum sed. Mauris consequat augue nisl, varius luctus nisi blandit.</p>
           <p>...And thanks to our wonderful sponsors</p>
         <div class="imagerow">
           <ul class="imagerow__row">
-            <li><img class="imagerow--img1" src="http://placehold.it/121x121"></li>
-            <li><img class="imagerow--img2" src="http://placehold.it/105x125"></li>
-            <li><img class="imagerow--img3" src="http://placehold.it/155x125"></li>
+            <li>
+              <div class="free1">
+                <img class="imagerow--img1" src="~static/pizza.png">
+                <span>Free Food</span>
+              </div></li>
+
+            <li>
+              <div class="free2">
+                <img class="imagerow--img2" src="~static/beer.png">
+                <span>Free Beverages</span>
+              </div>
+            </li>
+            <li>
+              <div class="free3">
+
+                  <img class="imagerow--img3" src="~static/shirt.png">
+                   <span>Free Shirt</span>
+                </div>
+            </li>
           </ul>
+        </div>
+         <div class="registerButton__box">
+           <div class="registerButton__box_inner">
+           <a href="" class="registerButton">ready to register?</a>
+           </div>
          </div>
-         <a href="" class="registerButton"></a>
+          </div>
        </div>
      </section>
 
@@ -78,11 +102,11 @@
       <p>Maecenas id pulvinar risus, cursus hendrerit nunc. Sed accumsan, turpis non congue volutpat, elit mi vehicula tortor, tincidunt vulputate magna est eu lorem. Aenean tincidunt eros urna, at faucibus quam bibendum sed. Mauris consequat augue nisl, varius luctus nisi blandit.</p>
        <div class="sponsor--imagerow">
          <ul class="imagerow--container">
-           <li><img class="sponsor1" src="http://placehold.it/333x82"></li>
-           <li><img class="sponsor2" src="http://placehold.it/147x147"></li>
-           <li><img class="sponsor3" src="http://placehold.it/257x97"></li>
-           <li><img class="sponsor4" src="http://placehold.it/300x45"></li>
-           <li><img class="sponsor5" src="http://placehold.it/400x78"></li>
+           <li><img class="sponsor1" src="~static/sponsor1.png"></li>
+           <li><img class="sponsor2" src="~static/sponsor2.png"></li>
+           <li><img class="sponsor3" src="~static/sponsor3.png"></li>
+           <li><img class="sponsor4" src="~static/sponsor4.png"></li>
+           <li><img class="sponsor5" src="~static/sponsor5.png"></li>
          </ul>
        </div>
        <h2>Join one of these amazing sponsors by supporting your local tech community</h2>
@@ -126,6 +150,9 @@ export default {
       flex-flow: column;
   }
 
+  .beCamp__question{
+    text-align: center;
+  }
   .movement__image{
     max-width: 80%;
     max-height: auto;
@@ -184,15 +211,31 @@ export default {
   }
 
   @media screen and (min-width: 501px){
+    .container{
+
+    }
 
     .container-landingpage{
-            background-image: url("~static/mainpage-background.png")
+        background-repeat: no-repeat;
+        background-image: url("~static/background.png");
+        // background-image: url("~static/background.png");
+        margin-top: -5em;
+        background-size: cover;
+        padding-bottom: 11em;
+
     }
+
     .landingpage--notice{
       display:flex;
       width: 50%;
       margin: auto;
-      padding-top: 5em;
+      padding-top: 9em;
+      max-width: 900px;
+    }
+
+    h2{
+      text-align: center;
+      padding: 2em;
     }
 
     .notice--time{
@@ -208,6 +251,7 @@ export default {
 
     .notice--description{
       padding-left: 2em;
+      width: 40%;
     }
 
     .notice--description h1{
@@ -246,6 +290,157 @@ export default {
     margin-left: auto;
     margin-right: auto;
     width: 50%;
+    padding-top: 2em;
+  }
+
+  .aboutpage--movement{
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    width: 80%;
+  }
+
+  .aboutpage--summercamp{
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    width: 80%;
+    padding-top: 1.5em;
+  }
+
+  .showcase{
+    width: 24%;
+    padding-right: 2em;
+  }
+
+  .summercamp__section{
+    width: 24%;
+    padding-left: 2em;
+  }
+
+  .lightningbackground{
+      background-repeat: no-repeat;
+      background-image: url("~static/decorator.png");
+      background-size: 100%;
+  }
+
+  h5{
+    padding-top: 4em;
+    padding-bottom: 1em;
+    text-align: center;
+  }
+
+  .lightningbackground p{
+    width: 45%;
+    display: block;
+    margin: auto;
+  }
+
+  .imagerow__row{
+    display: flex;
+    justify-content: center;
+    padding-top: 2em;
+    padding-bottom: 1.5em;
+  }
+
+  .imagerow--img2{
+    // padding-left: 2em;
+  }
+
+  .imagerow--img3{
+    // padding-left: 2em;
+  }
+
+  .free1{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .free2{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .free3{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .imagerow__row li{
+    padding: 1em;
+  }
+
+  .imagerow__row span{
+    padding-top: 1em;
+  }
+
+  .free1 img{
+    max-width: 60%;
+    display:block;
+    margin: auto;
+  }
+
+    .free2 img{
+    max-width: 51%;
+    display:block;
+    margin: auto;
+  }
+
+    .free3 img{
+    max-width: 60%;
+    display:block;
+    margin: auto;
+  }
+
+  .registerButton__box{
+    width: 45%;
+    padding: 6px;
+    display: block;
+    margin: auto;
+    padding-bottom: 15em;
+  }
+  .registerButton{
+    width: 45%;
+    font-size: 0.8em;
+    text-decoration: none;
+    text-transform: uppercase;
+
+  }
+
+  .registerButton__box_inner{
+    background-color: $accent;
+    width: 8.2em;
+    padding: 6px;
+    font-size: 0.9em;
+    text-align: center;
+  }
+
+  h6{
+    text-align: center;
+    padding-bottom: 0.5em;
+  }
+
+  .sponsor p{
+    width: 55%;
+    display: block;
+    margin: auto;
+  }
+
+  .sponsor--imagerow{
+    width: 60%;
+    background-color: gray;
+    /* display: block; */
+    margin: auto;
+    width: 60%;
+  }
+
+
+  .imagerow--container{
+    display: flex;
+    flex-flow: row wrap;
   }
 
 

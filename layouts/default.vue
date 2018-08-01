@@ -247,6 +247,7 @@
     .primary--navbar{
         background-color: $accent;
 
+
     }
     #menu{
       background-color: $accent;
@@ -255,12 +256,12 @@
 
 
 
-
+// -----------------------------------------------------------
 
   @media screen and (min-width: 501px){
     .primary--navbar{
       display: flex;
-      width: 100%;
+      width: 85%;
       padding-top: 3em;
       margin: auto;
       max-width: 1300px;

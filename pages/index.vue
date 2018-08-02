@@ -55,43 +55,42 @@
       </section>
     </section>
 
-
      <section class="whyjoin">
-        <h5>Why should I attend beCamp</h5>
         <div class="lightningbackground">
           <div class="whyjoin__centerer">
-          <p>Maecenas id pulvinar risus, cursus hendrerit nunc. Sed accumsan, turpis non congue volutpat, elit mi vehicula tortor, tincidunt vulputate magna est eu lorem. Aenean tincidunt eros urna, at faucibus quam bibendum sed. Mauris consequat augue nisl, varius luctus nisi blandit.</p>
-          <p>...And thanks to our wonderful sponsors</p>
-        <div class="imagerow">
-          <ul class="imagerow__row">
-            <li>
-              <div class="free1">
-                <img class="imagerow--img1" src="~static/pizza.png">
-                <span>Free Food</span>
-              </div></li>
+              <h5>Why should I attend beCamp?</h5>
+              <p>Maecenas id pulvinar risus, cursus hendrerit nunc. Sed accumsan, turpis non congue volutpat, elit mi vehicula tortor, tincidunt vulputate magna est eu lorem. Aenean tincidunt eros urna, at faucibus quam bibendum sed. Mauris consequat augue nisl, varius luctus nisi blandit.<br><br>
+              <span>...And thanks to our wonderful sponsors</span></p>
+              <div class="imagerow">
+                <ul class="imagerow__row">
+                  <li>
+                    <div class="free1">
+                      <img class="imagerow--img1" src="~static/pizza.png">
+                      <span>Free Food</span>
+                    </div></li>
 
-            <li>
-              <div class="free2">
-                <img class="imagerow--img2" src="~static/beer.png">
-                <span>Free Beverages</span>
+                  <li>
+                    <div class="free2">
+                      <img class="imagerow--img2" src="~static/beer.png">
+                      <span>Free Beverages</span>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="free3">
+
+                        <img class="imagerow--img3" src="~static/shirt.png">
+                        <span>Free Shirt</span>
+                      </div>
+                  </li>
+                </ul>
               </div>
-            </li>
-            <li>
-              <div class="free3">
-
-                  <img class="imagerow--img3" src="~static/shirt.png">
-                   <span>Free Shirt</span>
-                </div>
-            </li>
-          </ul>
-        </div>
-         <div class="registerButton__box">
-           <div class="registerButton__box_inner">
-           <a href="" class="registerButton">ready to register?</a>
-           </div>
-         </div>
+            <div class="registerButton__box">
+              <div class="registerButton__box_inner">
+              <a href="" class="registerButton">ready to register?</a>
+              </div>
+            </div>
           </div>
-       </div>
+        </div>
      </section>
 
      <section class="sponsor">
@@ -168,7 +167,7 @@ export default {
     order: 2;
   }
   .summercamp__image{
-    max-width: 80%;
+    max-width: 90%;
     max-height: auto;
   }
 
@@ -226,16 +225,19 @@ export default {
         // background-image: url("~static/background.png");
         margin-top: -5em;
         background-size: cover;
-        padding-bottom: 11em;
+        padding-bottom: 23em;
 
     }
 
     .landingpage--notice{
-      display:flex;
-      width: 50%;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      /* width: 50%; */
+      justify-content: center;
       margin: auto;
-      padding-top: 9em;
-      max-width: 900px;
+      padding-top: 12em;
+      /* max-width: 900px; */
     }
 
     h2{
@@ -244,7 +246,7 @@ export default {
     }
 
     .beCamp__question{
-      padding-bottom: 2em;
+      padding-bottom: 1em;
     }
 
     .notice--time{
@@ -252,19 +254,21 @@ export default {
     }
 
     .notice--time span{
-      font-size: 3em;
+      font-size: 4em;
       font-family: 'Open Sans', sans-serif;
       font-weight: bold;
       color: $dark-b;
     }
 
     .notice--description{
-      padding-left: 2em;
-      width: 40%;
+      padding-left: 3em;
+      width: 22%;
     }
 
     .notice--description h1{
-      font-size: 1.5em;
+      font-size: 1.9em;
+      letter-spacing: 1.75px;
+      font-weight: bolder;
     }
 
     .notice--register{
@@ -274,8 +278,9 @@ export default {
     }
 
     .notice--description p{
-      padding-top: 0.5em;
-      padding-bottom: 0.5em;
+      font-size: 1em;
+      padding-top: 0.7em;
+      padding-bottom: 0.7em;
     }
 
     .register__buttonbox{
@@ -306,25 +311,60 @@ export default {
     display: flex;
     margin: auto;
     justify-content: center;
-    width: 80%;
   }
 
   .aboutpage--summercamp{
     display: flex;
     margin: auto;
     justify-content: center;
-    width: 80%;
     padding-top: 1.5em;
+  }
+  .aboutpage h2{
+    text-align: center;
+    font-size: 3em;
   }
 
   .showcase{
-    width: 24%;
+    width: 35%;
     padding-right: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .showcase h3{
+    font-size: 1.4em;
+    float: right;
+  }
+
+  .showcase p{
+    letter-spacing: 2.53px;
+    padding-top: 0.5em;
+    color: #363537;
+  }
+
+  .movement__div img{
+    max-width: 90%;
   }
 
   .summercamp__section{
-    width: 24%;
-    padding-left: 2em;
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .summercamp__section h4{
+    font-size: 1.4em;
+    color: #363537;
+    padding-bottom: 0.5em;
+  }
+
+  .summercamp__section p{
+    letter-spacing: 2.53px;
+  }
+
+  .summercamp__image{
+    max-width: 90%;
   }
 
   .lightningbackground{
@@ -335,14 +375,29 @@ export default {
 
   h5{
     padding-top: 4em;
-    padding-bottom: 1em;
+    padding-bottom: 0.5em;
     text-align: center;
+    font-size: 2.9em;
+    letter-spacing: 1.75px;
   }
 
   .lightningbackground p{
-    width: 45%;
     display: block;
     margin: auto;
+  }
+
+  .whyjoin__centerer{
+    width: 50%;
+    display: block;
+    margin: auto;
+  }
+
+  .whyjoin__centerer p{
+    letter-spacing: 2.53px;
+  }
+
+  .whyjoin__center p span{
+    font-weight: bold;
   }
 
   .imagerow__row{
@@ -351,10 +406,9 @@ export default {
     display: flex;
     -webkit-box-pack: center;
     -ms-flex-pack: center;
-    justify-content: center;
+    justify-content: space-around;
     padding-top: 2em;
     padding-bottom: 1.5em;
-    width: 50%;
     margin: auto;
   }
 
@@ -386,25 +440,21 @@ export default {
   }
 
   .free1 img{
-    max-width: 60%;
     display:block;
     margin: auto;
   }
 
     .free2 img{
-    max-width: 51%;
     display:block;
     margin: auto;
   }
 
     .free3 img{
-    max-width: 60%;
     display:block;
     margin: auto;
   }
 
   .registerButton__box{
-    width: 45%;
     padding: 6px;
     display: block;
     margin: auto;
@@ -417,6 +467,9 @@ export default {
     text-transform: uppercase;
 
   }
+  .registerButton__box_inner a{
+    color: white;
+  }
 
   .registerButton__box_inner{
     background-color: $accent;
@@ -428,12 +481,15 @@ export default {
 
   h6{
     padding-bottom: 0.5em;
+    font-size: 2.9em;
+    letter-spacing: 1.75px;
   }
 
   .sponsor p{
     width:64%;
     padding-top: 0.5em;
-    padding-bottom: 2em;
+    padding-bottom: 1em;
+    letter-spacing: 2.53px;
   }
 
   .sponsor--imagerow{
@@ -450,16 +506,13 @@ export default {
     flex-flow: row wrap;
   }
 
+
   .imagerow--container li img{
     width: 65%;
     height: auto;
-
+    padding-top: 1.5em;
   }
 
-  .aboutpage h2{
-    text-align: center;
-    font-size: 2em;
-  }
 
   .howtohelp--box{
     background-color: $accent;

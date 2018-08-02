@@ -102,6 +102,9 @@
       padding-top: 60px;
     }
 
+    .launchdate{
+      color: $accent-l;
+    }
 
     a{
       text-decoration: none;
@@ -307,6 +310,11 @@
         order: -1;
   }
 
+    .launchdate{
+      color: $accent-l;
+      padding-bottom: 0.1em;
+    }
+
   .fillerspace{
     width: 150px;
     background-color:$accent;
@@ -317,6 +325,7 @@
     width:100%;
     background-repeat: no-repeat;
     background-image: url("~static/footerbackground.png");
+    background-size: cover;
   }
 
   .footer-primary{

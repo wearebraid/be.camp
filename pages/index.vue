@@ -458,7 +458,7 @@ export default {
     padding: 6px;
     display: block;
     margin: auto;
-    padding-bottom: 15em;
+    padding-bottom: 13em;
   }
   .registerButton{
     width: 45%;
@@ -536,8 +536,9 @@ export default {
 
   .newsletter h2{
     text-align: center;
-    font-size: 1.5em;
-    padding-top: 6em;
+    font-size: 2.5em;
+    padding-top: 4em;
+    letter-spacing: 1.47px;
   }
 
   .sponsor--imagerow p{
@@ -549,7 +550,11 @@ export default {
   }
 
   .newsletter p{
-    padding: 1em;
+    padding: 0.5em;
+    padding-bottom: 1.3em;
+    color: #C8C8C8;
+    letter-spacing: 1.97px;
+    font-size: 1.6em;
   }
 
   .newsletter--email{
@@ -563,10 +568,14 @@ export default {
 
   .newsletter--email{
     background-color: #EEF0F2;
+    width: 50%;
+    display: block;
+    margin: auto;
+    height: 3.2em;
   }
 
   .newsletter--email input{
-    width: 76%;
+    width: 82%;
     height: 100%;
     float: left;
     display: block;
@@ -587,13 +596,23 @@ export default {
   }
 
   .joinnow__div{
-    width: 24%;
+    width: 18%;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
   }
+input:focus, textarea {
+    outline: none !important;
+}
 
+input::placeholder{
+  padding-left: 2em;
+}
+
+input:active{
+  padding-left:2em;
+}
 
 }
 </style>

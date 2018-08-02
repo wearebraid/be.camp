@@ -25,39 +25,41 @@
     <div class="contentcontainer">
       <nuxt/>
     </div>
-    <footer class="footer-primary">
-      <div class="footer--credits">
-        <div class="footer__logodiv">
-           <a href=""><img src="http://placehold.it/247x55"></a>
+    <section class="footer--container">
+      <footer class="footer-primary">
+        <div class="footer--credits">
+          <div class="footer__logodiv">
+            <a href=""><img src="~static/footerlogo.png"></a>
+          </div>
+          <p class="madebybraid">@2018 beCamp | All rights reserved.
+          <div class="madebybraid--msg">
+            <p>Made with <span class="heart">luv</span> by Braid</p>
+          </div>
         </div>
-        <p class="madebybraid">@2018 beCamp | All rights reserved.>
-        <div class="madebybraid--msg">
-          <p>Made with <span class="heart">luv</span> by Braid</p>
-        </div>
-      </div>
-      <div class="footer--socialmedia">
-        <ul>
-          <li class="footer__home"><a href="">Home</a></li>
-          <li class="footer__FAQ"><a href="">FAQ</a></li>
-          <li class="footer__schedule"><a href="">Schedule</a></li>
-          <li class="footer__attendees"><a href="">Attendees</a></li>
-          <li class="footer__sponsors"><a href="">Sponsors</a></li>
-          <li class="footer__contact"><a href="">Contact</a></li>
-        </ul>
-        <div class="slack">
-          <img src="http://placehold.it/25x25">
-          <p class="slack--message">Join the Charlottesville Slack Community</p>
-        </div>
-        <div class="footer--imagerow">
-          <ul class="imagerow__socialmedia">
-            <li><a href=""><img src="http://placehold.it/30x30"></a></li>
-            <li><a href=""><img src="http://placehold.it/30x30"></a></li>
-            <li><a href=""><img src="http://placehold.it/30x30"></a></li>
-            <li><a href=""><img src="http://placehold.it/30x30"></a></li>
+        <div class="footer--socialmedia">
+          <ul>
+            <li class="footer__home"><a href="">Home</a></li>
+            <li class="footer__FAQ"><a href="">FAQ</a></li>
+            <li class="footer__schedule"><a href="">Schedule</a></li>
+            <li class="footer__attendees"><a href="">Attendees</a></li>
+            <li class="footer__sponsors"><a href="">Sponsors</a></li>
+            <li class="footer__contact"><a href="">Contact</a></li>
           </ul>
+          <div class="slack">
+            <img src="~static/slack.png">
+            <p class="slack--message">Join the Charlottesville Slack Community</p>
+          </div>
+          <div class="footer--imagerow">
+            <ul class="imagerow__socialmedia">
+              <li><a href=""><img src="~static/mail.png"></a></li>
+              <li><a href=""><img src="~static/twitter.png"></a></li>
+              <li><a href=""><img src="~static/instagram.png"></a></li>
+              <li><a href=""><img src="~static/youtube.png"></a></li>
+            </ul>
+          </div>
         </div>
-      </div>
-    </footer>
+      </footer>
+    </section>
   </div>
 </template>
 
@@ -262,7 +264,7 @@
     .primary--navbar{
       display: flex;
       width: 85%;
-      padding-top: 3em;
+      padding-top: 1.5em;
       margin: auto;
       max-width: 1300px;
     }
@@ -307,8 +309,85 @@
 
   .fillerspace{
     width: 150px;
-    background-color:orange;
+    background-color:$accent;
     height: 10%;
+  }
+
+  .footer--container{
+    width:100%;
+    background-repeat: no-repeat;
+    background-image: url("~static/footerbackground.png");
+  }
+
+  .footer-primary{
+    margin: auto;
+    max-width: 1300px;
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 13em;
+    padding-top: 13em;
+  }
+
+  .footer--credits{
+    float: left;
+  }
+
+  .footer--socialmedia{
+    display: flex;
+    flex-direction: column;
+    float: right;
+  }
+
+  .footer--socialmedia a{
+    text-decoration: none;
+  }
+
+  .footer__logodiv img{
+    width: 10em;
+  }
+
+  .madebybraid {
+    font-size: 0.6em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+  }
+
+  .madebybraid--msg{
+    font-size:0.6em;
+  }
+
+  .slack{
+    width: 100%;
+    padding-top: 0.4em;
+    padding-bottom: 0.4em;
+  }
+
+  .slack p{
+    font-size: 0.7em;
+  }
+
+  .slack img{
+    width: 5.5%;
+    margin-left: 2em;
+  }
+  .footer--imagerow{
+    float: right;
+  }
+  .slack--message{
+        float: right;
+  }
+
+  .footer--imagerow  ul li a img{
+    width: 70%;
+  }
+
+  .footer--socialmedia ul{
+    float: right;
+  }
+  .footer--socialmedia ul li{
+    display: inline-block;
+    padding-left: 1em;
+    font-size: 0.6em;
   }
 
 

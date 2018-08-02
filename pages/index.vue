@@ -98,9 +98,10 @@
        <!-- lists of images, single list of sponsors and use flexbox to style them so they have multiple rows
        flex: row, justify-content: space-between, flex-wrap: wrap;
         -->
-      <h6>How can I become a beCamp sponsor?</h6>
-      <p>Maecenas id pulvinar risus, cursus hendrerit nunc. Sed accumsan, turpis non congue volutpat, elit mi vehicula tortor, tincidunt vulputate magna est eu lorem. Aenean tincidunt eros urna, at faucibus quam bibendum sed. Mauris consequat augue nisl, varius luctus nisi blandit.</p>
+
        <div class="sponsor--imagerow">
+         <h6>How can I become a beCamp sponsor?</h6>
+         <p>Maecenas id pulvinar risus, cursus hendrerit nunc. Sed accumsan, turpis non congue volutpat, elit mi vehicula tortor, tincidunt vulputate magna est eu lorem. Aenean tincidunt eros urna, at faucibus quam bibendum sed. Mauris consequat augue nisl, varius luctus nisi blandit.</p>
          <ul class="imagerow--container">
            <li><img class="sponsor1" src="~static/sponsor1.png"></li>
            <li><img class="sponsor2" src="~static/sponsor2.png"></li>
@@ -108,9 +109,12 @@
            <li><img class="sponsor4" src="~static/sponsor4.png"></li>
            <li><img class="sponsor5" src="~static/sponsor5.png"></li>
          </ul>
+         <h2 class="supportstatement">Join one of these amazing sponsors by supporting your local tech community</h2>
+         <div class="howtohelp--box">
+            <a class="howtohelp" href="">See How to Help</a>
+         </div>
        </div>
-       <h2>Join one of these amazing sponsors by supporting your local tech community</h2>
-       <a class="howtohelp" href="">See How to Help</a>
+
      </section>
 
       <section class="newsletter">
@@ -118,7 +122,9 @@
         <p>Get all of the latest beCamp news</p>
         <div class="newsletter--email">
           <input placeholder="Your email address">
-          <button>join now!</button>
+          <div class="joinnow__div">
+            <button>join now!</button>
+          </div>
         </div>
       </section>
 
@@ -210,14 +216,13 @@ export default {
 
   }
 
+
+
+  // -------------------------------------
   @media screen and (min-width: 501px){
-    .container{
-
-    }
-
     .container-landingpage{
         background-repeat: no-repeat;
-        background-image: url("~static/background.png");
+        background-image: url("~static/introbackground.png");
         // background-image: url("~static/background.png");
         margin-top: -5em;
         background-size: cover;
@@ -234,8 +239,12 @@ export default {
     }
 
     h2{
-      text-align: center;
-      padding: 2em;
+      padding-top: 2em;
+      font-size: 1em;
+    }
+
+    .beCamp__question{
+      padding-bottom: 2em;
     }
 
     .notice--time{
@@ -337,19 +346,18 @@ export default {
   }
 
   .imagerow__row{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
     padding-top: 2em;
     padding-bottom: 1.5em;
+    width: 50%;
+    margin: auto;
   }
 
-  .imagerow--img2{
-    // padding-left: 2em;
-  }
-
-  .imagerow--img3{
-    // padding-left: 2em;
-  }
 
   .free1{
     display: flex;
@@ -419,22 +427,21 @@ export default {
   }
 
   h6{
-    text-align: center;
     padding-bottom: 0.5em;
   }
 
   .sponsor p{
-    width: 55%;
-    display: block;
-    margin: auto;
+    width:64%;
+    padding-top: 0.5em;
+    padding-bottom: 2em;
   }
 
   .sponsor--imagerow{
-    width: 60%;
-    background-color: gray;
-    /* display: block; */
-    margin: auto;
-    width: 60%;
+      width: 60%;
+      // background-color: gray;
+      /* display: block; */
+      margin: auto;
+      width: 50%;
   }
 
 
@@ -443,6 +450,96 @@ export default {
     flex-flow: row wrap;
   }
 
+  .imagerow--container li img{
+    width: 65%;
+    height: auto;
+
+  }
+
+  .aboutpage h2{
+    text-align: center;
+    font-size: 2em;
+  }
+
+  .howtohelp--box{
+    background-color: $accent;
+    width: 8.2em;
+    padding: 6px;
+    font-size: 0.9em;
+    text-align: center;
+  }
+
+  .howtohelp{
+    text-decoration: none;
+    color: white;
+    font-size: 0.7em;
+    text-transform: uppercase;
+  }
+
+  .newsletter{
+    text-align: center;
+    padding-bottom: 7em;
+  }
+
+  .newsletter h2{
+    text-align: center;
+    font-size: 1.5em;
+    padding-top: 6em;
+  }
+
+  .sponsor--imagerow p{
+    width: 91%;
+  }
+
+  .supportstatement{
+    padding-bottom: 1em;
+  }
+
+  .newsletter p{
+    padding: 1em;
+  }
+
+  .newsletter--email{
+      background-color: black;
+      width: 29%;
+      /* display: flex; */
+      display: block;
+      margin: auto;
+      height: 41px;
+  }
+
+  .newsletter--email{
+    background-color: #EEF0F2;
+  }
+
+  .newsletter--email input{
+    width: 76%;
+    height: 100%;
+    float: left;
+    display: block;
+    margin: auto;
+    background-color: #EEF0F2;
+    border: none;
+
+  }
+
+  .newsletter--email button{
+    background-color: $accent;
+    color: white;
+    height: 69%;
+    border: none;
+    text-transform: uppercase;
+    font-size: 0.5em;
+
+  }
+
+  .joinnow__div{
+    width: 24%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
 
 }

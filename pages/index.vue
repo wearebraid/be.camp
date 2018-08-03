@@ -9,6 +9,7 @@
       <section class="container-landingpage">
         <div class="innercontainer">
       <section class="landingpage--notice">
+        <!-- <img class="notice__logo" src="~static/beCampLogo1.png"/> -->
         <section class="notice--time">
           <p class="launchdate">September 28 - 29, 2018 | Rice Hall @UVa</p>
           <!-- pseudoelements for days, hours -->
@@ -34,6 +35,7 @@
     <section class="aboutpage">
       <h2 class="beCamp__question">What is beCamp?</h2>
       <div class="aboutpage--container">
+        <div class="aboutpage__decorator"></div>
         <section class="aboutpage--movement">
         <!-- add a wrapper for h2 and p -->
           <div class="showcase">
@@ -220,7 +222,7 @@ export default {
 
 
   // -------------------------------------
-  @media screen and (min-width: 691px){
+  @media screen and (min-width: 0px){
     .container-landingpage{
         background-repeat: no-repeat;
         background-image: url("~static/introbackground.png");
@@ -508,6 +510,12 @@ export default {
     border-radius: 7px;
   }
 
+  .newsletter{
+    background-repeat: no-repeat;
+    background-image: url("~static/decorator.png");
+    background-size: cover;
+  }
+
   h6{
     padding-bottom: 0.5em;
     font-size: 2.9em;
@@ -534,7 +542,6 @@ export default {
 
 
   .imagerow--container li img{
-    width: 65%;
     height: auto;
     padding-top: 1.5em;
   }
@@ -749,9 +756,178 @@ input:active{
       margin: auto;
     }
 
+    .footer-primary{
+       width: 86%;
+    }
+
+    .footer--socialmedia{
+        font-size: 0.7em;
+        padding-top: 1.2em;
+    }
+
+  .aboutpage{
+    background-repeat: no-repeat;
+    background-image: url("~static/decorator.png");
+    background-size: cover;
+
+  }
+
+  .sponsor{
+    background-repeat: no-repeat;
+    background-image: url("~static/decorator.png");
+    background-size: cover;
+  }
 
 
   }
+@media screen and (max-width: 680px){
+    .notice--description h1{
+        font-size: 2.1em;
+    }
+
+    .notice--description p{
+      padding-bottom: 2em;
+      width: 64%;
+      display: block;
+      margin: auto;
+    }
+
+    .register__buttonbox{
+        width: 36%;
+        height: 56px;
+    }
+
+    h2.beCamp__question{
+          font-size: 2em;
+    }
+
+    img.movement__image{
+        display: none;
+    }
+
+    .aboutpage--container{
+        width: 100%;
+        margin: auto;
+    }
+
+    .aboutpage--movement{
+      padding-bottom: 2em;
+    }
+
+    .aboutpage--movement p{
+      font-size: 0.7em;
+    }
+
+    .aboutpage--movement:before{
+        background-image: url("~static/members1.png");
+         -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+        filter: grayscale(100%);
+        width: 100%;
+        content: " ";
+        background-image: url(/_nuxt/img/members1.81155df.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: absolute;
+        opacity: 0.08;
+        height: 32%;
+    }
+
+    img.summercamp__image{
+      display:none !important;
+    }
+
+    .aboutpage--summercamp:before{
+          background-image: url("~static/members2.png");
+         -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+        filter: grayscale(100%);
+        width: 100%;
+        content: "";
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: absolute;
+        opacity: 0.08;
+        height: 32%;
+    }
+
+    .aboutpage--summercamp p{
+      font-size: 0.7em;
+    }
+
+    .whyjoin__centerer h5{
+    font-size: 1.7em;
+    }
+
+    .whyjoin__centerer p{
+      font-size: 0.8em;
+    }
+
+    .summercamp__section{
+      padding-top: 1.6em;
+      width: 90%;
+    }
+
+    .whyjoin__centerer{
+      width: 90%;
+    }
+
+
+    .showcase{
+          width: 90%;
+    padding-top: 1.5em;
+    }
+
+    .sponsor--imagerow{
+          width: 90%;
+    }
+
+    .sponsor--imagerow h6{
+      font-size: 1.9em;
+    }
+
+    .registerButton__box{
+      display: none !important;
+    }
+
+    .whyjoin{
+          padding-top: 4em;
+    }
+
+    a.navbar--register{
+      letter-spacing: 1px;
+    }
+
+    a.navbar--signup{
+      letter-spacing: 1px;
+    }
+
+    .sponsor{
+      padding-top: 6em;
+    }
+
+    .imagerow--container{
+          display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    flex-flow: column;
+    }
+
+    // .imagerow--container li{
+    //   width: 57%;
+    // }
+
+    // .sponsor2{}
+
+  }
+
+  .newsletter h2{
+    font-size: 1.6em;
+  }
+
+  .newsletter p{
+    font-size: 1em;
+  }
+
 
 
 

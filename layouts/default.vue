@@ -9,7 +9,6 @@
         <span></span>
         <span></span>
     </label>
-    <img class="navbar--logo" src="~static/beCampLogo1.png"/>
     <a class="navbar--register" href=""> <span class="orangeback">Register</span></a>
     <a class="navbar--signin" href=""> Sign In</a>
     <nav class="navbar__div">
@@ -29,7 +28,7 @@
       <footer class="footer-primary">
         <div class="footer--credits">
           <div class="footer__logodiv">
-            <a href=""><img src="~static/footerlogo.png"></a>
+            <a href=""><img class ="footerlogo" src="~static/footerlogo.png"></a>
           </div>
           <p class="madebybraid">@2018 beCamp | All rights reserved.
           <div class="madebybraid--msg">
@@ -64,7 +63,7 @@
 </template>
 
 <style lang="scss" scoped>
-  @media screen and (min-width:300px) and (max-width:500px){
+  @media screen and (min-width:300px) and (max-width: 690px){
     .primary--navbar{
       width: 100%;
       height: 60px;
@@ -72,6 +71,12 @@
       position: fixed;
       display: flex;
       padding-left: 20%;
+    }
+
+    .primary--navbar a{
+      font-family: $primary-font;
+      text-transform: uppercase;
+
     }
 
     .navbar--logo{
@@ -86,7 +91,7 @@
     }
 
     .navbar--signin{
-      padding-left: 1em;
+      padding-left: 3em;
       padding-top: 1em;
       z-index: 6;
     }
@@ -172,7 +177,7 @@
       display: none;
     }
     input ~ nav {
-      background: $accent;
+      background: #fbfbfb;
       position: fixed;
       top: 0;
       left: 0;
@@ -245,6 +250,9 @@
     .footer__logodiv{
       display: flex;
       justify-content: center;
+    }
+    .footerlogo{
+      display: none;
     }
 
 
@@ -338,6 +346,7 @@
   .navbar--logo{
         order: -1;
   }
+
 
     .launchdate{
       color: $accent-l;
@@ -447,6 +456,24 @@
     color: $dark;
   }
 
+  }
+
+@media screen and (max-width: 860px){
+    .footer-primary{
+       background-color: #f2f2f2;
+      padding-bottom: 2em;
+      padding-top: 2em;
+
+    }
+
+    .footer--socialmedia{
+        font-size: 0.7em;
+        padding-top: 1.2em;
+    }
+
+    .aboutpage--summercamp{
+      padding-top: 7.5em;
+    }
 
 
   }

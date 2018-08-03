@@ -263,13 +263,18 @@
 
 // -----------------------------------------------------------
 
-  @media screen and (min-width: 501px){
+  @media screen and (min-width: 691px){
     .primary--navbar{
       display: flex;
       width: 85%;
-      padding-top: 1.5em;
+      padding-top: 2.5em;
       margin: auto;
       max-width: 1300px;
+    }
+
+    .orangeback{
+      box-shadow: 0px -33px 0px 47px $accent;
+      background-color: $accent;
     }
 
     .navbar__div{
@@ -284,13 +289,37 @@
 
     .navbar--logo{
       width: auto;
-      height: 2em;
-      margin-top: -0.6em;
+      height: 2.9em;
+      margin-top: -1.1em;
+      padding-right: 1.5em;
     }
 
     .primary--navbar ul li{
       display: inline-block;
       padding-left: 1.2em;
+      color: $navbar-text;
+    }
+
+    .primary--navbar a:active{
+      color: $navbar-text;
+    }
+
+    .primary--navbar a:visited{
+      color: $navbar-text;
+    }
+
+    .orangeback{
+      color:white;
+      font-weight: lighter;
+    }
+    .orangeback:active{
+      color:white;
+      font-weight: lighter;
+    }
+
+    .orangeback:hover{
+      color:white;
+      font-weight: lighter;
     }
 
     .navbar--register, .navbar--signin{
@@ -334,7 +363,7 @@
     display: flex;
     justify-content: space-around;
     padding-bottom: 13em;
-    padding-top: 13em;
+    padding-top: 17em;
   }
 
   .footer--credits{
@@ -352,17 +381,24 @@
   }
 
   .footer__logodiv img{
-    width: 10em;
+      width: 10em;
+      width: 13em;
+      padding-bottom: 0.8em;
   }
 
-  .madebybraid {
-    font-size: 0.6em;
+
+.madebybraid p{
+    font-size: 0.8em;
     padding-top: 0.5em;
     padding-bottom: 0.5em;
+    letter-spacing: 1px;
   }
 
-  .madebybraid--msg{
-    font-size:0.6em;
+  .madebybraid--msg p{
+    font-size: 0.8em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    letter-spacing: 1px;
   }
 
   .slack{
@@ -384,6 +420,7 @@
   }
   .slack--message{
         float: right;
+        font-size: 0.8em;
   }
 
   .footer--imagerow  ul li a img{
@@ -396,8 +433,20 @@
   .footer--socialmedia ul li{
     display: inline-block;
     padding-left: 1em;
-    font-size: 0.6em;
+    font-size: 0.9em;
   }
+
+  .footer--socialmedia a{
+    color: $dark;
+  }
+
+    .footer--socialmedia a:active{
+    color: $dark;
+  }
+  .footer--socialmedia a:visited{
+    color: $dark;
+  }
+
 
 
   }

@@ -33,26 +33,28 @@
 
     <section class="aboutpage">
       <h2 class="beCamp__question">What is beCamp?</h2>
-      <section class="aboutpage--movement">
-      <!-- add a wrapper for h2 and p -->
-        <div class="showcase">
-          <h3>An Unconference Movement</h3>
-          <p>Maecenas id pulvinar risus, cursus hendrerit nunc. Sed accumsan, turpis non congue volutpat, elit mi vehicula tortor, tincidunt vulputate magna est eu lorem. Aenean tincidunt eros urna, at faucibus quam bibendum sed. Mauris consequat augue nisl, varius luctus nisi blandit.</p>
-        </div>
-        <!-- intrinsic ratio boxes for images -->
-        <div class="movement__div">
-          <img class="movement__image" src="~static/members1.png">
-        </div>
-      </section>
-      <section class="aboutpage--summercamp">
-        <div class="summercamp__div">
-          <img class="summercamp__image" src="~static/members2.png">
-        </div>
-        <div class="summercamp__section">
-          <h4>A Summer Camp For Geeks</h4>
-          <p>Maecenas id pulvinar risus, cursus hendrerit nunc. Sed accumsan, turpis non congue volutpat, elit mi vehicula tortor, tincidunt vulputate magna est eu lorem. Aenean tincidunt eros urna, at faucibus quam bibendum sed. Mauris consequat augue nisl, varius luctus nisi blandit.</p>
-        </div>
-      </section>
+      <div class="aboutpage--container">
+        <section class="aboutpage--movement">
+        <!-- add a wrapper for h2 and p -->
+          <div class="showcase">
+            <h3>An Unconference Movement</h3>
+            <p>Maecenas id pulvinar risus, cursus hendrerit nunc. Sed accumsan, turpis non congue volutpat, elit mi vehicula tortor, tincidunt vulputate magna est eu lorem. Aenean tincidunt eros urna, at faucibus quam bibendum sed. Mauris consequat augue nisl, varius luctus nisi blandit.</p>
+          </div>
+          <!-- intrinsic ratio boxes for images -->
+          <div class="movement__div">
+            <img class="movement__image" src="~static/members1.png">
+          </div>
+        </section>
+        <section class="aboutpage--summercamp">
+          <div class="summercamp__div">
+            <img class="summercamp__image" src="~static/members2.png">
+          </div>
+          <div class="summercamp__section">
+            <h4>A Summer Camp For Geeks</h4>
+            <p>Maecenas id pulvinar risus, cursus hendrerit nunc. Sed accumsan, turpis non congue volutpat, elit mi vehicula tortor, tincidunt vulputate magna est eu lorem. Aenean tincidunt eros urna, at faucibus quam bibendum sed. Mauris consequat augue nisl, varius luctus nisi blandit.</p>
+          </div>
+        </section>
+      </div>
     </section>
 
      <section class="whyjoin">
@@ -60,7 +62,7 @@
           <div class="whyjoin__centerer">
               <h5>Why should I attend beCamp?</h5>
               <p>Maecenas id pulvinar risus, cursus hendrerit nunc. Sed accumsan, turpis non congue volutpat, elit mi vehicula tortor, tincidunt vulputate magna est eu lorem. Aenean tincidunt eros urna, at faucibus quam bibendum sed. Mauris consequat augue nisl, varius luctus nisi blandit.<br><br>
-              <span>...And thanks to our wonderful sponsors</span></p>
+              <span class="thankssponsors">...And thanks to our wonderful sponsors</span></p>
               <div class="imagerow">
                 <ul class="imagerow__row">
                   <li>
@@ -141,7 +143,7 @@ export default {
 
 
 <style scoped lang="scss">
-  @media screen and (min-width: 300px) and (max-width:500px){
+  @media screen and (min-width: 300px) and (max-width:690px){
     .time__days, .time__hours, .time__minutes, .time__seconds, .playbutton{
       display: none !important;
     }
@@ -218,7 +220,7 @@ export default {
 
 
   // -------------------------------------
-  @media screen and (min-width: 501px){
+  @media screen and (min-width: 691px){
     .container-landingpage{
         background-repeat: no-repeat;
         background-image: url("~static/introbackground.png");
@@ -226,8 +228,17 @@ export default {
         margin-top: -5em;
         background-size: cover;
         padding-bottom: 23em;
-
     }
+
+    .aboutpage{
+      width:100%;
+    }
+
+    .aboutpage--container{
+        width: 89%;
+        margin: auto;
+    }
+
 
     .landingpage--notice{
       display: -webkit-box;
@@ -274,6 +285,8 @@ export default {
     .notice--register{
       text-decoration: none;
       text-transform: uppercase;
+     box-shadow: 0px 1px 0px 5px #ff8000;
+
 
     }
 
@@ -284,17 +297,19 @@ export default {
     }
 
     .register__buttonbox{
-      background-color: $accent;
-      width: 60%;
-      padding: 6px;
+      background-color: #FF750F;
+      width: 68%;
+      padding: 15px;
       text-align: center;
+      border-radius: 6px;
+      box-shadow: 0px 1px 0px 1px #ff8000;
     }
 
   .notice--register{
     color: $light;
     font-weight: lighter;
     letter-spacing: 2.33px;
-    font-size: 0.7em;
+    font-size: 1em;
   }
 
   .playbutton{
@@ -330,6 +345,7 @@ export default {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    line-height: 34px;
   }
   .showcase h3{
     font-size: 1.4em;
@@ -351,6 +367,7 @@ export default {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    line-height: 34px;
   }
 
   .summercamp__section h4{
@@ -376,7 +393,6 @@ export default {
   h5{
     padding-top: 4em;
     padding-bottom: 0.5em;
-    text-align: center;
     font-size: 2.9em;
     letter-spacing: 1.75px;
   }
@@ -387,17 +403,27 @@ export default {
   }
 
   .whyjoin__centerer{
-    width: 50%;
+    width: 46%;
     display: block;
     margin: auto;
   }
 
   .whyjoin__centerer p{
     letter-spacing: 2.53px;
+    line-height: 34px;
   }
 
-  .whyjoin__center p span{
+  .whyjoin__centerer span{
     font-weight: bold;
+    color: $dark;
+  }
+
+  .thankssponsors{
+    font-size: 1.4em;
+  }
+
+  .imagerow li{
+    font-size: 1.2em;
   }
 
   .imagerow__row{
@@ -465,6 +491,8 @@ export default {
     font-size: 0.8em;
     text-decoration: none;
     text-transform: uppercase;
+    box-shadow: 0px 1px 0px 5px #ff8000;
+
 
   }
   .registerButton__box_inner a{
@@ -472,11 +500,12 @@ export default {
   }
 
   .registerButton__box_inner{
-    background-color: $accent;
-    width: 8.2em;
-    padding: 6px;
-    font-size: 0.9em;
+    background-color: #FF750F;
+    width: 9.9em;
+    padding: 18px;
+    font-size: 1.2em;
     text-align: center;
+    border-radius: 7px;
   }
 
   h6{
@@ -493,11 +522,8 @@ export default {
   }
 
   .sponsor--imagerow{
-      width: 60%;
-      // background-color: gray;
-      /* display: block; */
       margin: auto;
-      width: 50%;
+      width: 46%;
   }
 
 
@@ -515,12 +541,15 @@ export default {
 
 
   .howtohelp--box{
-    background-color: $accent;
+    background-color: #FF750E;
     width: 8.2em;
-    padding: 6px;
-    font-size: 0.9em;
+    padding: 11px;
+    font-size: 1.4em;
     text-align: center;
-  }
+    border-radius: 5px;
+    -webkit-box-shadow: 10px 10px 8px 10px #888888;
+    box-shadow: 0px 1px 0px 5px #ff8000;
+    }
 
   .howtohelp{
     text-decoration: none;
@@ -531,7 +560,7 @@ export default {
 
   .newsletter{
     text-align: center;
-    padding-bottom: 7em;
+    padding-bottom: 10em;
   }
 
   .newsletter h2{
@@ -542,11 +571,12 @@ export default {
   }
 
   .sponsor--imagerow p{
-    width: 91%;
+    width: 100%;
   }
 
   .supportstatement{
-    padding-bottom: 1em;
+    padding-bottom: 2em;
+    font-size: 1.4em;
   }
 
   .newsletter p{
@@ -586,12 +616,14 @@ export default {
   }
 
   .newsletter--email button{
-    background-color: $accent;
+    background-color: #FF750F;
     color: white;
     height: 69%;
     border: none;
     text-transform: uppercase;
     font-size: 0.5em;
+    width: 93%;
+    border-radius: 5px;
 
   }
 
@@ -613,6 +645,116 @@ input::placeholder{
 input:active{
   padding-left:2em;
 }
+}
+
+@media screen and (max-width: 1521px){
+  .notice--description{
+      width: 39%;
+  }
+
+  .whyjoin__centerer{
+    width: 66%;
+  }
+
+  .sponsor--imagerow{
+    width: 68%;
+  }
+
+  .imagerow--container{
+    justify-content: space-between;
+  }
+
+  @media screen and (max-width: 1203px){
+
+  .aboutpage--movement{
+    flex-flow: row wrap;
+  }
+
+  .showcase{
+    width: 78%;
+    padding-right: 0;
+    order: -1;
+  }
+
+  .movement__div{
+    order: -2;
+  }
+
+  .movement__div img{
+    max-width: 100%;
+  }
+
+  .aboutpage--summercamp{
+    flex-flow: row wrap;
+  }
+
+  .summercamp__image{
+    max-width: 100%;
+  }
+
+  .summercamp__section{
+    width: 78%;
+  }
+
+  .summercamp__div img{
+     padding-top: 2em;
+  }
+  }
+
+
+  @media screen and (max-width: 860px){
+
+    .container-landingpage{
+          margin-top: -8em;
+    }
+
+    .landingpage--notice{
+      flex-direction: column;
+    }
+
+    .notice--time{
+      display: block;
+      margin: auto;
+    }
+
+    .notice--description{
+      display: block;
+      margin: auto;
+      padding-top: 3em;
+      width: 88%;
+      padding-left: 0;
+    }
+
+    .notice--description h1{
+      font-size: 1.6em;
+    }
+
+    .notice--description p{
+      padding-bottom: 2em;
+    }
+
+    .register__buttonbox{
+      display: block;
+      margin: auto;
+      width: 52%;
+    }
+
+    .registerButton__box_inner{
+      display: block;
+      margin: auto;
+    }
+
+    .howtohelp--box{
+      display: block;
+      margin: auto;
+    }
+
+
+
+  }
+
+
+
 
 }
 </style>

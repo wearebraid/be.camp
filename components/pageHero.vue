@@ -1,5 +1,8 @@
 <template>
-  <section class="container-landingpage">
+  <section
+    class="container-landingpage"
+    :style="{backgroundImage: heroBackgroundImage}"
+  >
     <div class="innercontainer">
       <section class="landingpage--notice">
         <!-- <img class="notice__logo" src="~static/beCampLogo1.png"/> -->
@@ -28,18 +31,53 @@
 
 <script>
 export default {
-
+  props: {
+    background: {
+      type: String,
+      default: 'hero-1.jpg'
+    }
+  },
+  computed: {
+    heroBackgroundImage () {
+      return `url("/${this.background}")`
+    }
+  }
 }
 </script>
 
 <style lang="scss" scoped>
 .container-landingpage {
   background-repeat: no-repeat;
-  background-image: url("~static/introbackground.png");
   // background-image: url("~static/background.png");
   margin-top: -5em;
   background-size: cover;
   padding-bottom: 23em;
+  position: relative;
+
+  &:before,
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 25%;
+  }
+  &:before {
+    background-color: $accent;
+    clip-path: polygon(
+      0% 28%, 25% 92%, 100% 0%,
+      100% 99.9%, 0% 99.9%
+    )
+  }
+  &:after {
+    background-color: #fff;
+    clip-path: polygon(
+      0% 40%, 25% 100%, 100% 1%,
+      100.1% 100.1%, 0% 100.1%
+    );
+  }
 
   @media screen and (max-width: 860px) {
     margin-top: -8em;

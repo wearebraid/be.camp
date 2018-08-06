@@ -226,7 +226,7 @@
     .imagerow__socialmedia{
       display:flex;
       flex-direction: row;
-     justify-content: center;
+    justify-content: center;
     }
     .footer__FAQ{
       display: none !important;
@@ -271,14 +271,14 @@
 
 // -----------------------------------------------------------
 
-  @media screen and (min-width: 691px){
-    .primary--navbar{
+@media screen and (min-width: 691px){
+  .primary--navbar{
       display: flex;
       width: 85%;
       padding-top: 2.5em;
       margin: auto;
       max-width: 1300px;
-    }
+}
 
     .orangeback{
       box-shadow: 0px -33px 0px 47px $accent;
@@ -346,9 +346,7 @@
   .navbar--logo{
         order: -1;
   }
-
-
-    .launchdate{
+  .launchdate{
       color: $accent-l;
       padding-bottom: 0.1em;
     }
@@ -395,8 +393,7 @@
       padding-bottom: 0.8em;
   }
 
-
-.madebybraid p{
+  .madebybraid p{
     font-size: 0.8em;
     padding-top: 0.5em;
     padding-bottom: 0.5em;
@@ -444,23 +441,22 @@
     padding-left: 1em;
     font-size: 0.9em;
   }
-
   .footer--socialmedia a{
     color: $dark;
   }
-
     .footer--socialmedia a:active{
     color: $dark;
   }
   .footer--socialmedia a:visited{
     color: $dark;
   }
+}
 
-  }
+
 
 @media screen and (max-width: 860px){
     .footer-primary{
-       background-color: #f2f2f2;
+      background-color: #f2f2f2;
       padding-bottom: 2em;
       padding-top: 2em;
 
@@ -474,8 +470,6 @@
     .aboutpage--summercamp{
       padding-top: 7.5em;
     }
-
-
-  }
+}
 </style>
 

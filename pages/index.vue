@@ -98,10 +98,6 @@
      </section>
 
      <section class="sponsor">
-       <!-- lists of images, single list of sponsors and use flexbox to style them so they have multiple rows
-       flex: row, justify-content: space-between, flex-wrap: wrap;
-        -->
-
        <div class="sponsor--imagerow">
          <h6>How can I become a beCamp sponsor?</h6>
          <p>Maecenas id pulvinar risus, cursus hendrerit nunc. Sed accumsan, turpis non congue volutpat, elit mi vehicula tortor, tincidunt vulputate magna est eu lorem. Aenean tincidunt eros urna, at faucibus quam bibendum sed. Mauris consequat augue nisl, varius luctus nisi blandit.</p>
@@ -121,14 +117,17 @@
      </section>
 
       <section class="newsletter">
-        <h2>Join the beCamp newsletter!</h2>
-        <p>Get all of the latest beCamp news</p>
-        <div class="newsletter--email">
-          <input placeholder="Your email address">
-          <div class="joinnow__div">
+          <h2>Join the beCamp newsletter!</h2>
+          <p>Get all of the latest beCamp news</p>
+          <div class="newsletter--email">
+            <input placeholder="Your email address">
+            <div class="joinnow__div">
+              <button>join now!</button>
+            </div>
+          </div>
+          <div class="joinnow__div2">
             <button>join now!</button>
           </div>
-        </div>
       </section>
 
   </div>
@@ -145,7 +144,6 @@ export default {
 
 
 <style scoped lang="scss">
-  @media screen and (min-width: 300px) and (max-width:690px){
     .time__days, .time__hours, .time__minutes, .time__seconds, .playbutton{
       display: none !important;
     }
@@ -216,14 +214,7 @@ export default {
     text-align: center;
   }
 
-
-  }
-
-
-
-  // -------------------------------------
-  @media screen and (min-width: 0px){
-    .container-landingpage{
+  .container-landingpage{
         background-repeat: no-repeat;
         background-image: url("~static/introbackground.png");
         // background-image: url("~static/background.png");
@@ -287,9 +278,7 @@ export default {
     .notice--register{
       text-decoration: none;
       text-transform: uppercase;
-     box-shadow: 0px 1px 0px 5px #ff8000;
-
-
+      box-shadow: 0px 1px 0px 5px #ff8000;
     }
 
     .notice--description p{
@@ -390,6 +379,8 @@ export default {
       background-repeat: no-repeat;
       background-image: url("~static/decorator.png");
       background-size: 100%;
+      padding-top:4em;
+      padding-bottom: 3em;
   }
 
   h5{
@@ -514,8 +505,16 @@ export default {
     background-repeat: no-repeat;
     background-image: url("~static/decorator.png");
     background-size: cover;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
   }
 
+  .newsletter p{
+    font-size: 2em;
+
+  }
   h6{
     padding-bottom: 0.5em;
     font-size: 2.9em;
@@ -567,12 +566,13 @@ export default {
 
   .newsletter{
     text-align: center;
-    padding-bottom: 10em;
+    padding-bottom: 14em;
+    padding-top: 6em;
   }
 
   .newsletter h2{
     text-align: center;
-    font-size: 2.5em;
+    font-size: 2.9em;
     padding-top: 4em;
     letter-spacing: 1.47px;
   }
@@ -596,7 +596,7 @@ export default {
 
   .newsletter--email{
       background-color: black;
-      width: 29%;
+      width: 50%;
       /* display: flex; */
       display: block;
       margin: auto;
@@ -605,7 +605,7 @@ export default {
 
   .newsletter--email{
     background-color: #EEF0F2;
-    width: 50%;
+    // width: 50%;
     display: block;
     margin: auto;
     height: 3.2em;
@@ -619,7 +619,6 @@ export default {
     margin: auto;
     background-color: #EEF0F2;
     border: none;
-
   }
 
   .newsletter--email button{
@@ -631,7 +630,6 @@ export default {
     font-size: 0.5em;
     width: 93%;
     border-radius: 5px;
-
   }
 
   .joinnow__div{
@@ -641,145 +639,52 @@ export default {
     justify-content: center;
     align-items: center;
   }
-input:focus, textarea {
-    outline: none !important;
+
+  input:focus, textarea {
+      outline: none !important;
+  }
+
+  input::placeholder{
+    padding-left: 2em;
+  }
+
+  input:active{
+    padding-left:2em;
+  }
+
+
+
+@media screen and (min-width: 200px) and (max-width: 574px){
+
+  .register__buttonbox{
+    background-color: black;
+  }
+  .joinnow__div{
+    display: none !important;
+    }
+
+  .joinnow__div2{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    display: block;
+    margin: auto;
+    margin-top: 1em;
+  }
+
+  .joinnow__div2 button{
+      height: 3.2em;
+      width: 100%;
+      background-color: #FF750F;
+      color: white;
+      border: none;
+      text-transform: uppercase;
+      font-size: 0.5em;
+      border-radius: 5px;
+  }
 }
 
-input::placeholder{
-  padding-left: 2em;
-}
-
-input:active{
-  padding-left:2em;
-}
-}
-
-@media screen and (max-width: 1521px){
-  .notice--description{
-      width: 39%;
-  }
-
-  .whyjoin__centerer{
-    width: 66%;
-  }
-
-  .sponsor--imagerow{
-    width: 68%;
-  }
-
-  .imagerow--container{
-    justify-content: space-between;
-  }
-
-  @media screen and (max-width: 1203px){
-
-  .aboutpage--movement{
-    flex-flow: row wrap;
-  }
-
-  .showcase{
-    width: 78%;
-    padding-right: 0;
-    order: -1;
-  }
-
-  .movement__div{
-    order: -2;
-  }
-
-  .movement__div img{
-    max-width: 100%;
-  }
-
-  .aboutpage--summercamp{
-    flex-flow: row wrap;
-  }
-
-  .summercamp__image{
-    max-width: 100%;
-  }
-
-  .summercamp__section{
-    width: 78%;
-  }
-
-  .summercamp__div img{
-     padding-top: 2em;
-  }
-  }
-
-
-  @media screen and (max-width: 860px){
-
-    .container-landingpage{
-          margin-top: -8em;
-    }
-
-    .landingpage--notice{
-      flex-direction: column;
-    }
-
-    .notice--time{
-      display: block;
-      margin: auto;
-    }
-
-    .notice--description{
-      display: block;
-      margin: auto;
-      padding-top: 3em;
-      width: 88%;
-      padding-left: 0;
-    }
-
-    .notice--description h1{
-      font-size: 1.6em;
-    }
-
-    .notice--description p{
-      padding-bottom: 2em;
-    }
-
-    .register__buttonbox{
-      display: block;
-      margin: auto;
-      width: 52%;
-    }
-
-    .registerButton__box_inner{
-      display: block;
-      margin: auto;
-    }
-
-    .howtohelp--box{
-      display: block;
-      margin: auto;
-    }
-
-    .footer-primary{
-       width: 86%;
-    }
-
-    .footer--socialmedia{
-        font-size: 0.7em;
-        padding-top: 1.2em;
-    }
-
-  .aboutpage{
-    background-repeat: no-repeat;
-    background-image: url("~static/decorator.png");
-    background-size: cover;
-
-  }
-
-  .sponsor{
-    background-repeat: no-repeat;
-    background-image: url("~static/decorator.png");
-    background-size: cover;
-  }
-
-
-  }
 @media screen and (max-width: 680px){
     .notice--description h1{
         font-size: 2.1em;
@@ -870,7 +775,6 @@ input:active{
       width: 90%;
     }
 
-
     .showcase{
           width: 90%;
     padding-top: 1.5em;
@@ -912,25 +816,158 @@ input:active{
     flex-flow: column;
     }
 
-    // .imagerow--container li{
-    //   width: 57%;
-    // }
-
-    // .sponsor2{}
-
-  }
-
-  .newsletter h2{
-    font-size: 1.6em;
-  }
-
-  .newsletter p{
-    font-size: 1em;
-  }
-
-
-
-
-
+    .newsletter h2{
+      font-size: 2.9em;
+    }
+    .newsletter p{
+      font-size: 2em;
+    }
 }
+@media screen and (max-width: 860px){
+    .container-landingpage{
+          margin-top: -8em;
+    }
+
+    .landingpage--notice{
+      flex-direction: column;
+    }
+
+    .notice--time{
+      display: block;
+      margin: auto;
+    }
+
+    .notice--description{
+      display: block;
+      margin: auto;
+      padding-top: 3em;
+      width: 88%;
+      padding-left: 0;
+    }
+
+    .notice--description h1{
+      font-size: 1.6em;
+    }
+
+    .notice--description p{
+      padding-bottom: 2em;
+    }
+
+    .register__buttonbox{
+      display: block;
+      margin: auto;
+      width: 52%;
+    }
+
+    .registerButton__box_inner{
+      display: block;
+      margin: auto;
+    }
+
+    .howtohelp--box{
+      display: block;
+      margin: auto;
+    }
+
+    .footer-primary{
+       width: 86%;
+    }
+
+    .footer--socialmedia{
+        font-size: 0.7em;
+        padding-top: 1.2em;
+    }
+
+    .aboutpage{
+      background-repeat: no-repeat;
+      background-image: url("~static/decorator.png");
+      background-size: cover;
+
+    }
+
+    .sponsor{
+      background-repeat: no-repeat;
+      background-image: url("~static/decorator.png");
+      background-size: cover;
+    }
+}
+@media screen and (max-width: 1203px){
+  .aboutpage--movement{
+    flex-flow: row wrap;
+  }
+
+  .showcase{
+    width: 78%;
+    padding-right: 0;
+    order: -1;
+  }
+
+  .movement__div{
+    order: -2;
+  }
+
+  .movement__div img{
+    max-width: 100%;
+  }
+
+  .aboutpage--summercamp{
+    flex-flow: row wrap;
+  }
+
+  .summercamp__image{
+    max-width: 100%;
+  }
+
+  .summercamp__section{
+    width: 78%;
+  }
+
+  .summercamp__div img{
+    padding-top: 2em;
+  }
+}
+@media screen and (max-width: 1521px){
+  .notice--description{
+      width: 39%;
+  }
+
+  .whyjoin__centerer{
+    width: 66%;
+  }
+
+  .sponsor--imagerow{
+    width: 68%;
+  }
+
+  .imagerow--container{
+    justify-content: space-between;
+  }
+}
+
+@media screen and (min-width: 803px){
+  .aboutpage--movement{
+    display: flex;
+    flex-direction: row;
+  }
+  .movement__image, .summercamp__image{
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .showcase{
+     order: -1;
+  }
+}
+@media screen and (min-width: 1250px){
+  .newsletter--email{
+    width: 45%;
+    max-width: 660px;
+  }
+  .newsletter{
+    display: flex;
+    justify-content: center;
+  }
+}
+
+
 </style>

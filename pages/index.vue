@@ -4,7 +4,27 @@
   height: 0, padding-bottom: 100%>
     <-->
   <div class="container">
-    <page-hero />
+    <page-hero>
+      <div class="landingpage--notice">
+        <div class="notice--time">
+          <p class="launchdate">September 28 - 29, 2018 | Rice Hall @UVA</p>
+          <div class="timecontainer">
+            <span class="time__days">78:</span>
+            <span class="time__hours">08:</span>
+            <span class="time__minutes">05:</span>
+            <span class="time__seconds">51</span>
+          </div>
+          <img class="playbutton" button="" src="~/static/playbutton.png"/>
+        </div>
+        <div class="notice--description">
+          <h1>Join the other 75 attendees for beCamp 2018</h1>
+          <p>Quam si explicavisset, non tam haesitaret. Sin laboramus, quis est, qui alienae modum statuat industriae?</p>
+          <div class="register__buttonbox">
+            <a class="notice--register" href="">register now</a>
+          </div>
+        </div>
+      </div>
+    </page-hero>
 
     <section class="aboutpage">
       <h2 class="beCamp__question">What is beCamp?</h2>

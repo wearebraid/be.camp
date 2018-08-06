@@ -1,31 +1,9 @@
 <template>
   <section
-    class="container-landingpage"
+    class="page-hero"
     :style="{backgroundImage: heroBackgroundImage}"
   >
-    <div class="innercontainer">
-      <section class="landingpage--notice">
-        <!-- <img class="notice__logo" src="~static/beCampLogo1.png"/> -->
-        <section class="notice--time">
-          <p class="launchdate">September 28 - 29, 2018 | Rice Hall @UVa</p>
-          <!-- pseudoelements for days, hours -->
-          <div class="timecontainer">
-            <span class="time__days">78:</span>
-            <span class="time__hours">08:</span>
-            <span class="time__minutes">05:</span>
-            <span class="time__seconds">51</span>
-          </div>
-          <img class ="playbutton" button="" src="~/static/playbutton.png"/>
-        </section>
-        <section class="notice--description">
-          <h1>Join the other 75 attendees for beCamp 2018</h1>
-          <p>Quam si explicavisset, non tam haesitaret. Sin laboramus, quis est, qui alienae modum statuat industriae?</p>
-          <div class="register__buttonbox">
-            <a class="notice--register" href="">register now</a>
-          </div>
-        </section>
-      </section>
-    </div>
+    <slot />
   </section>
 </template>
 
@@ -46,52 +24,55 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.container-landingpage {
+.page-hero {
   background-repeat: no-repeat;
-  // background-image: url("~static/background.png");
-  margin-top: -5em;
   background-size: cover;
+  background-position: center top;
   padding-bottom: 23em;
   position: relative;
+  border-bottom: 1em solid $accent;
+  z-index: -1;
 
-  &:before,
-  &:after {
-    content: '';
-    display: block;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 25%;
-  }
-  &:before {
-    background-color: $accent;
-    clip-path: polygon(
-      0% 28%, 25% 92%, 100% 0%,
-      100% 99.9%, 0% 99.9%
-    )
-  }
-  &:after {
-    background-color: #fff;
-    clip-path: polygon(
-      0% 40%, 25% 100%, 100% 1%,
-      100.1% 100.1%, 0% 100.1%
-    );
+  @supports (-webkit-clip-path: polygon(0 0, 0 0)) or (clip-path: polygon(0 0, 0 0)) {
+    border-bottom: none;
+
+    &:before,
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 12vw;
+    }
+    &:before {
+      background-color: $accent;
+      clip-path: polygon(
+        0% 28%, 25% 92%, 100% 0%,
+        100% 99.9%, 0% 99.9%
+      )
+    }
+    &:after {
+      background-color: #fff;
+      clip-path: polygon(
+        0% 40%, 25% 100%, 100% 1%,
+        100.5% 100.5%, 0% 100.5%
+      );
+    }
   }
 
-  @media screen and (max-width: 860px) {
-    margin-top: -8em;
+  @include bp($ml) {
+    margin-top: 0;
   }
 }
 .landingpage--notice {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  /* width: 50%; */
   justify-content: center;
   margin: auto;
   padding-top: 12em;
-  /* max-width: 900px; */
 
   @media screen and (max-width: 860px) {
     flex-direction: column;

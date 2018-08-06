@@ -16,6 +16,9 @@ module.exports = {
   css: [
     '@/assets/sass/main.scss'
   ],
+  plugins: [
+    '~/plugins/components'
+  ],
   /*
   ** Customize the progress bar color
   */

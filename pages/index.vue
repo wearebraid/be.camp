@@ -191,7 +191,7 @@ export default {
       margin: 0 auto;
       padding-top: 2%;
   }
-    h3, h4{
+     h4{
       text-align: center;
     }
 
@@ -285,8 +285,8 @@ export default {
 
     .register__buttonbox{
       background-color: #FF750F;
-    width: 41%;
-    padding: 13px;
+      width: 70%;
+      padding: 13px;
       text-align: center;
       border-radius: 6px;
       box-shadow: 0px 1px 0px 1px #ff8000;
@@ -603,10 +603,10 @@ export default {
 
   .newsletter--email{
     background-color: #EEF0F2;
-    // width: 50%;
     display: block;
     margin: auto;
     height: 3.2em;
+    border-radius: 9px;
   }
 
   .newsletter--email input{
@@ -617,7 +617,14 @@ export default {
     margin: auto;
     background-color: #EEF0F2;
     border: none;
+    padding-left: 4em;
   }
+
+  .newsletter--email input::placeholder{
+   color: green;
+   margin-left: 1em;
+  }
+
 
   .newsletter--email button{
     background-color: #FF750F;
@@ -686,7 +693,6 @@ export default {
 
     .notice--description p{
       padding-bottom: 2em;
-      width: 64%;
       display: block;
       margin: auto;
     }
@@ -842,16 +848,18 @@ export default {
 
     .notice--description h1{
       font-size: 1.6em;
+      text-align: center;
     }
 
     .notice--description p{
       padding-bottom: 2em;
+      text-align: center;
     }
 
     .register__buttonbox{
       display: block;
       margin: auto;
-      width: 52%;
+      width: 97%;
     }
 
     .registerButton__box_inner{
@@ -923,7 +931,7 @@ export default {
   }
 }
 
-@media screen and (max-width: 1521px){ //works
+@media screen and (max-width: 1521px){ //works.
   .notice--description{
       width: 39%;
   }
@@ -964,13 +972,6 @@ export default {
   }
 }
 
-
-@media screen and (min-width: 461px){//works
-  .notice--time{
-    display: unset;
-  }
-}
-
 @media screen and (min-width: 543px){ //works
   .joinnow__div2{
     display: none;
@@ -983,4 +984,34 @@ export default {
   }
 }
 
+
+@media screen and (min-width: 0px){
+  .aboutpage--container{
+        width: 100%;
+  }
+}
+
+@media screen and (min-width: 0px) and (max-width: 803px){
+
+  .aboutpage--container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .showcase{
+    // width: 46%;
+  }
+}
+
+@media screen and (min-width: 0px) and (max-width: 810px){
+  .newsletter p {
+    font-size: 1em;
+  }
+}
+
+@media screen and (min-width: 0px) and (max-width: 946px){
+  .landingpage--notice{
+    padding-top: 11em;
+  }
+}
 </style>

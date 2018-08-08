@@ -226,12 +226,14 @@
     .imagerow__socialmedia{
       display:flex;
       flex-direction: row;
-    justify-content: center;
+      justify-content: space-evenly;
     }
     .footer__FAQ{
       display: none !important;
     }
     .slack--message{
+      font-size: 1.4em;
+      padding-bottom: 1em;
       text-align: center;
     }
     .madebybraid--msg{
@@ -420,6 +422,8 @@
   .slack img{
     width: 5.5%;
     margin-left: 2em;
+   height: 50%;
+    padding-right: 1em;
   }
   .footer--imagerow{
     float: right;

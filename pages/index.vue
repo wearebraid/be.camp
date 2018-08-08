@@ -234,7 +234,7 @@ export default {
       /* width: 50%; */
       justify-content: center;
       margin: auto;
-      padding-top: 12em;
+      padding-top: 20em;
       /* max-width: 900px; */
     }
 
@@ -260,11 +260,11 @@ export default {
 
     .notice--description{
       padding-left: 3em;
-      width: 22%;
+      width: 29%;
     }
 
     .notice--description h1{
-      font-size: 1.9em;
+      font-size: 2.9em;
       letter-spacing: 1.75px;
       font-weight: bolder;
     }
@@ -277,14 +277,16 @@ export default {
 
     .notice--description p{
       font-size: 1em;
+      letter-spacing: 1.75px;
       padding-top: 0.7em;
       padding-bottom: 0.7em;
+      line-height: 22px;
     }
 
     .register__buttonbox{
       background-color: #FF750F;
-      width: 68%;
-      padding: 15px;
+    width: 41%;
+    padding: 13px;
       text-align: center;
       border-radius: 6px;
       box-shadow: 0px 1px 0px 1px #ff8000;
@@ -390,7 +392,7 @@ export default {
   }
 
   .whyjoin__centerer{
-    width: 46%;
+    max-width: 1500px;
     display: block;
     margin: auto;
   }
@@ -524,7 +526,7 @@ export default {
 
   .sponsor--imagerow{
       margin: auto;
-      width: 46%;
+      max-width: 1400px;
   }
 
 
@@ -884,7 +886,8 @@ export default {
       background-size: cover;
     }
 }
-@media screen and (max-width: 1203px){
+
+@media screen and (max-width: 1203px){ //works
   .aboutpage--movement{
     flex-flow: row wrap;
   }
@@ -919,7 +922,8 @@ export default {
     padding-top: 2em;
   }
 }
-@media screen and (max-width: 1521px){
+
+@media screen and (max-width: 1521px){ //works
   .notice--description{
       width: 39%;
   }
@@ -937,7 +941,8 @@ export default {
   }
 }
 
-@media screen and (min-width: 803px){
+
+@media screen and (min-width: 803px){ //works
   .aboutpage--movement{
     display: flex;
     flex-direction: row;
@@ -951,24 +956,31 @@ export default {
      order: -1;
   }
 }
-@media screen and (min-width: 1250px){
-  .newsletter--email{
-    width: 50%;
-    max-width: 783px;
-  }
-  .newsletter{
-    display: flex;
-    justify-content: center;
-  }
-}
 
-@media screen and (min-width: 1500px){
+@media screen and (min-width: 1500px){ //works
   .aboutpage--container{
     width: 85%;
     margin: auto;
   }
+}
 
 
+@media screen and (min-width: 461px){//works
+  .notice--time{
+    display: unset;
+  }
+}
+
+@media screen and (min-width: 543px){ //works
+  .joinnow__div2{
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1015px) and (max-width: 1465px){
+  .sponsor--imagerow{
+    max-width: 1300px;
+  }
 }
 
 </style>

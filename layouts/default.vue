@@ -272,13 +272,13 @@
 // -----------------------------------------------------------
 
 @media screen and (min-width: 691px){
-  .primary--navbar{
+.primary--navbar{
       display: flex;
       width: 85%;
       padding-top: 2.5em;
       margin: auto;
       max-width: 1300px;
-}
+  }
 
     .orangeback{
       box-shadow: 0px -33px 0px 47px $accent;
@@ -366,7 +366,7 @@
 
   .footer-primary{
     margin: auto;
-    max-width: 1300px;
+     max-width: 2000px;
     display: flex;
     justify-content: space-around;
     padding-bottom: 13em;
@@ -450,9 +450,9 @@
   .footer--socialmedia a:visited{
     color: $dark;
   }
+
+
 }
-
-
 
 @media screen and (max-width: 860px){
     .footer-primary{

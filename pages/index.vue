@@ -1,5 +1,4 @@
 
-
 <template>
   <!-- 100vh is the screen height -->
   <!-- width:100% --
@@ -130,6 +129,7 @@
           </div>
       </section>
 
+      <beSponsor />
   </div>
 </template>
 <script>

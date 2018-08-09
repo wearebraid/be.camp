@@ -420,9 +420,9 @@
   }
 
   .slack img{
-    width: 5.5%;
+    width: 2.5em;
     margin-left: 2em;
-   height: 50%;
+    height: 50%;
     padding-right: 1em;
   }
   .footer--imagerow{

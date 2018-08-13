@@ -2,6 +2,7 @@
   <section
     class="page-hero"
     :style="{backgroundImage: heroBackgroundImage}"
+    :data-accent-color="accentColor"
   >
     <slot />
   </section>
@@ -12,12 +13,16 @@ export default {
   props: {
     background: {
       type: String,
-      default: 'hero-1.jpg'
+      default: '/hero-1.jpg'
+    },
+    accentColor: {
+      type: String,
+      default: 'orange'
     }
   },
   computed: {
     heroBackgroundImage () {
-      return `url("/${this.background}")`
+      return `url("${this.background}")`
     }
   }
 }
@@ -59,6 +64,13 @@ export default {
         0% 40%, 25% 100%, 100% 1%,
         100.5% 100.5%, 0% 100.5%
       );
+    }
+
+    &[data-accent-color="blue"] {
+      &:before { background-color: $accent4; }
+    }
+    &[data-accent-color="black"] {
+      &:before { background-color: $dark; }
     }
   }
 

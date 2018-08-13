@@ -22,7 +22,7 @@ export const actions = {
 }
 
 export const mutations = {
-  setPage(state, payload) {
-    state.butterPages[payload.key] = payload.data
+  setPage(state, {key, data}) {
+    state.butterPages = Object.assign({}, state.butterPages, {[key]: data})
   }
 }

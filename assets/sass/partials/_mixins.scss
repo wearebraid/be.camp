@@ -8,6 +8,10 @@
   margin: 0 auto;
 }
 
+@function gutter() {
+  @return $gutter;
+}
+
 // Media Queries
 // -----------------------------------------------------------------------------
 @mixin bp($size) {

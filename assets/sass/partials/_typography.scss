@@ -1,64 +1,33 @@
-body{
-  font-family: $secondary-font;
+body {
+  font-family: $body-font;
   font-size: 20px;
 }
 
-nav{
-  font-family: $primary-font;
-  font-weight: bolder;
+h1, h2, h3, h4, h5, h6{
+  font-family: $header-font;
   color: #21284C;
-}
-li{
-  font-family: $primary-font;
+  margin-bottom: .25em;
+  line-height: 1.1;
+
+  strong {
+    font-weight: bold;
+  }
 }
 
-a{
-  font-family: $primary-font;
+p {
+  font-size: 1.15em;
+  line-height: 1.4;
+  margin-bottom: 1em;
+  @include font-smoothing();
 }
 
-h1{
-  font-family: $primary-font;
-  color: #21284C;
-}
-h2, h3, h4, h5, h6{
-  font-family: $primary-font;
-  font-weight: bold;
-  color: #21284C;
-}
-h2{
-  font-size: 1.5em;
-}
-h5{
-  font-size: 1.5em;
-}
-
-h6{
+h1 {
   font-size: 2em;
+
+  @include bp($m) {
+    font-size: 2.5em;
+  }
+  @include bp($l) {
+    font-size: 3em;
+  }
 }
-
-.scheduleheader--header{
-  font-size: 3em;
-}
-
-.launchdate{
-  color: #DD5D05;
-  font-style: italic;
-}
-
-.schedule--time1{
-   color: #22A3AE;
-}
-.schedule--time2{
-   color: #22A3AE;
-}
-.schedule--time2{
-   color: #22A3AE;
-}
-.schedule--time3{
-   color: #22A3AE;
-}
-
-
-
-
-

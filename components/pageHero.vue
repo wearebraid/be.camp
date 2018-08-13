@@ -33,7 +33,7 @@ export default {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center top;
-  padding-bottom: 23em;
+  padding: 5em gutter() 23em gutter();
   position: relative;
   border-bottom: 1em solid $accent;
   z-index: -1;
@@ -54,23 +54,53 @@ export default {
     &:before {
       background-color: $accent;
       clip-path: polygon(
-        0% 28%, 25% 92%, 100% 0%,
+        0% 28%, 25% 75%, 100% 0%,
         100% 99.9%, 0% 99.9%
       )
     }
     &:after {
       background-color: #fff;
       clip-path: polygon(
-        0% 40%, 25% 100%, 100% 1%,
+        0% 50%, 25% 100%, 100% 10%,
         100.5% 100.5%, 0% 100.5%
       );
     }
 
+    @include bp($m) {
+      &:before {
+        clip-path: polygon(
+          0% 20%, 25% 85%, 100% 0%,
+          100% 99.9%, 0% 99.9%
+        )
+      }
+      &:after {
+        clip-path: polygon(
+          0% 40%, 25% 100%, 100% 3%,
+          100.5% 100.5%, 0% 100.5%
+        );
+      }
+    }
+
+    @include bp($l) {
+      &:before {
+        clip-path: polygon(
+          0% 28%, 25% 92%, 100% 0%,
+          100% 99.9%, 0% 99.9%
+        )
+      }
+      &:after {
+        clip-path: polygon(
+          0% 40%, 25% 100%, 100% 3%,
+          100.5% 100.5%, 0% 100.5%
+        );
+      }
+    }
+
     &[data-accent-color="blue"] {
-      &:before { background-color: $accent4; }
+      &:before { background-color: $accent4 !important; }
     }
     &[data-accent-color="black"] {
-      &:before { background-color: $dark; }
+      &:before { background-color: $dark !important; }
     }
   }
 

@@ -1,14 +1,9 @@
 
 <template>
-  <!-- 100vh is the screen height -->
-  <!-- width:100% --
-  height: 0, padding-bottom: 100%>
-    <-->
     <div class="container">
       <section class="container-landingpage">
         <div class="innercontainer">
       <section class="landingpage--notice">
-        <!-- <img class="notice__logo" src="~static/beCampLogo1.png"/> -->
         <section class="notice--time">
           <p class="launchdate">September 28 - 29, 2018 | Rice Hall @UVa</p>
           <!-- pseudoelements for days, hours -->

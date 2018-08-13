@@ -1,4 +1,12 @@
+const dotenv = require('dotenv');
+dotenv.config();
+
+const butterKey = process.env.BUTTERKEY || null
+
 module.exports = {
+  env: {
+    butterKey
+  },
   /*
   ** Headers of the page
   */
@@ -17,7 +25,8 @@ module.exports = {
     '@/assets/sass/main.scss'
   ],
   plugins: [
-    '~/plugins/components'
+    '~/plugins/components',
+    '~/plugins/api'
   ],
   /*
   ** Customize the progress bar color

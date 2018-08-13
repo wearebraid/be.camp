@@ -5,9 +5,17 @@ class Api {
   /**
    * Create our instance of the api class.
    */
-  constructor (context, options) {
+  constructor () {
     this.axios = axios
-    this.context = context
+    this.butter = Butter(process.env.butterKey);
+  }
+
+  /**
+   * Installs this instance as a plugin of Vue.
+   * @param {Vue} Vue
+   * @param {null|Object} options
+   */
+  install (Vue, options) {
     this.options = options
     this.api = this.axios.create({
       timeout: 10000,
@@ -15,10 +23,18 @@ class Api {
         Accept: 'application/json'
       }
     })
-    this.butter = Butter(this.options.butterKey);
+    Vue.prototype.$api = this
+  }
+
+  /**
+   * Bind in the context of our current instance.
+   */
+  addContext (context) {
+    this.context = context
+    return this
   }
 }
 
-export default function (context, options) {
-  return new Api(context, options)
+export default function () {
+  return new Api()
 }

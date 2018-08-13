@@ -8,8 +8,22 @@
 </template>
 
 <script>
-export default {
+import { mapActions } from 'vuex'
 
+export default {
+  data () {
+    return {
+      pageName: 'homepage'
+    }
+  },
+  created () {
+    this.getPage(this.pageName)
+  },
+  methods: {
+    ...mapActions([
+      'getPage'
+    ])
+  }
 }
 </script>
 

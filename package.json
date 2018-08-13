@@ -15,6 +15,7 @@
   "dependencies": {
     "buttercms": "^1.1.1",
     "dotenv": "^6.0.0",
+    "moment": "^2.22.2",
     "node-sass": "^4.9.2",
     "nuxt": "^1.0.0",
     "nuxt-sass-resources-loader": "^2.0.3",

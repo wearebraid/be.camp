@@ -1,6 +1,8 @@
 // File: _variables.scss
 // Used to define global variables. Should never contain actual styles.
 @import url("https://use.typekit.net/bra5dez.css");
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:700');
+
 // Colors
 // -----------------------------------------------------------------------------
 $light: #fff;
@@ -43,3 +45,4 @@ $xxl: 1350px;
 // -----------------------------------------------------------------------------
 $header-font: "jaf-domus", serif;
 $body-font: "mr-eaves-xl-modern", sans-serif;
+$display: 'Open Sans', sans-serif;

@@ -10,11 +10,11 @@ export const getters = {
     let duration = state.timeToEvent
     if (duration) {
       return {
-        months: duration.months(),
-        days: duration.days(),
-        hours: duration.hours(),
-        minutes: duration.minutes(),
-        seconds: duration.seconds()
+        months: duration.months() >= 10 ? duration.months() : '0' + duration.months(),
+        days: duration.days() >= 10 ? duration.days() : '0' + duration.days(),
+        hours: duration.hours() >= 10 ? duration.hours() : '0' + duration.hours(),
+        minutes: duration.minutes() >= 10 ? duration.minutes() : '0' + duration.minutes(),
+        seconds: duration.seconds() >= 10 ? duration.seconds() : '0' + duration.seconds()
       }
     }
   }

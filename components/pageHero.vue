@@ -33,7 +33,7 @@ export default {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center top;
-  padding: 5em gutter() 23em gutter();
+  padding: 5em gutter() 35vw gutter();
   position: relative;
   border-bottom: 1em solid $accent;
   z-index: -1;

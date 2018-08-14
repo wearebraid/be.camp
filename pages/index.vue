@@ -62,5 +62,28 @@ export default {
 
 
 <style scoped lang="scss">
+  .page-hero {
+    display: flex;
+    flex-direction: column;
 
+    .event-headline {
+      margin-bottom: 1em;
+    }
+
+    .countdown-timer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .countdown-label {
+      color: $accent;
+      font-size: 4.5vw;
+      margin-bottom: .25em;
+      font-style: italic;
+
+      @include bp($ms) {
+        font-size: 1.1em;
+      }
+    }
+  }
 </style>

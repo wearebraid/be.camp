@@ -44,20 +44,32 @@ export default {
 
   .time-segment {
     text-align: center;
-    padding-right: 1.25em;
+    padding-right: 4vw;
     position: relative;
+
+    @include bp($ms) {
+      padding-right: 1em;
+    }
 
     &:after {
       display: block;
-      font-size: 3.5em;
+      font-size: 10vw;
       font-family: $display;
       font-weight: 700;
       color: $dark-b;
       position: absolute;
       content: ':';
       top: 0;
-      right: 0;
-      transform: translate(-10%, 0%);
+      right: .333vw;
+
+      @include bp($ms) {
+        font-size: 2.25em;
+        right: .1em;
+      }
+      @include bp($ml) {
+        font-size: 3em;
+        right: .025em;
+      }
     }
 
     &:last-child {
@@ -69,16 +81,27 @@ export default {
     }
 
     .time {
-      font-size: 3.5em;
+      font-size: 10vw;
       font-family: $display;
       font-weight: 700;
       color: $dark-b;
       margin-bottom: .15em;
+
+      @include bp($ms) {
+        font-size: 2.25em;
+      }
+      @include bp($ml) {
+        font-size: 3em;
+      }
     }
 
     .unit {
-      font-size: .75em;
+      font-size: 3vw;
       text-transform: uppercase;
+
+      @include bp($ms) {
+        font-size: .75em;
+      }
     }
   }
 }

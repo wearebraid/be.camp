@@ -21,6 +21,10 @@
             </div>
             <countdown-clock />
           </div>
+          <div class="intro-video">
+            <img src="/play.svg">
+            <p>What is beCamp?</p>
+          </div>
         </div>
       </div>
     </page-hero>
@@ -89,6 +93,12 @@ export default {
       }
     }
 
+    .event-countdown {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
     .countdown-timer {
       display: flex;
       flex-direction: column;
@@ -106,6 +116,28 @@ export default {
 
       @include bp($ms) {
         font-size: 1.1em;
+      }
+    }
+
+    .intro-video {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 1.5em;
+
+      img {
+        max-width: 75px;
+        margin-bottom: .25em;
+        cursor: pointer;
+        transition: transform .33s;
+
+        &:hover {
+          transform: scale(1.05);
+        }
+      }
+
+      p {
+        font-size: 1rem;
       }
     }
   }

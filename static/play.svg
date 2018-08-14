@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="90px" height="90px" viewBox="0 0 90 90" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.1 (57501) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 28</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#FD7736" offset="0%"></stop>
+            <stop stop-color="#DD5D05" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="99.5393786%" id="linearGradient-2">
+            <stop stop-color="#FFAD22" offset="0%"></stop>
+            <stop stop-color="#DD5D05" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Homepage" transform="translate(-684.000000, -399.000000)">
+            <g id="Group-28" transform="translate(689.000000, 404.000000)">
+                <circle id="Oval-2" stroke="url(#linearGradient-1)" stroke-width="5" cx="40" cy="40" r="42.5"></circle>
+                <polygon id="Triangle-3" fill="url(#linearGradient-2)" points="65 40 27 59 27 21"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

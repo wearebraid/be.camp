@@ -9,28 +9,28 @@
     </div>
     <div
       class="time-segment days"
-      :class="{disabled: parseInt(eventTimeObject.days) === 0}"
+      :class="{disabled: parseInt(eventTimeObject.months) === 0 && parseInt(eventTimeObject.days) === 0}"
     >
       <div class="time">{{ eventTimeObject.days }}</div>
       <div class="unit">Days</div>
     </div>
     <div
       class="time-segment hours"
-      :class="{disabled: parseInt(eventTimeObject.hours) === 0}"
+      :class="{disabled: parseInt(eventTimeObject.months) === 0 && parseInt(eventTimeObject.days) === 0 && parseInt(eventTimeObject.hours) === 0}"
     >
       <div class="time">{{ eventTimeObject.hours }}</div>
       <div class="unit">Hours</div>
     </div>
     <div
       class="time-segment minutes"
-      :class="{disabled: parseInt(eventTimeObject.minutes) === 0}"
+      :class="{disabled: parseInt(eventTimeObject.months) === 0 && parseInt(eventTimeObject.days) === 0 && parseInt(eventTimeObject.hours) === 0 && parseInt(eventTimeObject.minutes) === 0}"
     >
       <div class="time">{{ eventTimeObject.minutes }}</div>
       <div class="unit">Minutes</div>
     </div>
     <div
       class="time-segment seconds"
-      :class="{disabled: parseInt(eventTimeObject.seconds) === 0}"
+      :class="{disabled: parseInt(eventTimeObject.months) === 0 && parseInt(eventTimeObject.days) === 0 && parseInt(eventTimeObject.hours) === 0 && parseInt(eventTimeObject.minutes) === 0 && parseInt(eventTimeObject.seconds) === 0}"
     >
       <div class="time">{{ eventTimeObject.seconds }}</div>
       <div class="unit">Seconds</div>

@@ -94,6 +94,10 @@ export default {
       display: flex;
       flex-direction: column;
       align-items: center;
+
+      @include bp($ml) {
+        align-items: flex-start;
+      }
     }
     .countdown-label {
       color: $accent;

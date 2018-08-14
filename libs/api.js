@@ -1,5 +1,6 @@
 import axios from 'axios'
 import Butter from 'buttercms';
+import Airtable from 'airtable'
 
 class Api {
   /**
@@ -22,6 +23,10 @@ class Api {
       headers: {
         Accept: 'application/json'
       }
+    })
+    this.airtable = Airtable.configure({
+      endpointUrl: 'https://api.airtable.com',
+      apiKey: process.env.airtableKey
     })
     Vue.prototype.$api = this
   }

@@ -34,6 +34,20 @@ export const actions = {
         console.log(res)
       })
   },
+  getSponsors({commit, state}) {
+    let base = this.app.api.airtable.base('apptQ2PByq7vFJlxR')
+    base('2018 Needed sponsors').select({
+      maxRecords: 99,
+      view: "Grid view"
+    }).eachPage(function page(records, fetchNextPage) {
+      records.forEach(function(record) {
+        console.log('Retrieved', record.get('Needs for BeCamp'));
+      });
+      fetchNextPage();
+    }, function done(err) {
+        if (err) { console.error(err); return; }
+    });
+  },
   setEventTime({commit, dispatch}, time) {
     let currentTime = moment().unix()
     let ts = moment(time, 'YYYY-M-D H:mm').unix()

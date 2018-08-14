@@ -2,10 +2,12 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 const butterKey = process.env.BUTTERKEY || null
+const airtableKey = process.env.AIRTABLEKEY || null
 
 module.exports = {
   env: {
-    butterKey
+    butterKey,
+    airtableKey
   },
   /*
   ** Headers of the page

@@ -1,0 +1,23 @@
+button {
+  border: none;
+  background: $accent;
+  background: linear-gradient(to bottom, $accent, $accent-d);
+  color: #fff;
+  font-size: .8em;
+  padding: gutter()/1.5 gutter()*1.5;
+  text-transform: uppercase;
+  font-family: $display;
+  letter-spacing: .1em;
+  border-radius: 5px;
+  box-shadow: 0 .25em .5em 0 rgba(#000, .1);
+  cursor: pointer;
+  outline: none;
+
+  &:hover {
+    background: linear-gradient(to bottom, $accent, $accent);
+  }
+
+  @include bp($m) {
+    font-size: 1em;
+  }
+}

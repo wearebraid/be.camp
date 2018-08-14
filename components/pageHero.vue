@@ -36,7 +36,6 @@ export default {
   padding: 5em gutter() 35vw gutter();
   position: relative;
   border-bottom: 1em solid $accent;
-  z-index: -1;
 
   @include bp($ml) {
     padding-top: 10em;

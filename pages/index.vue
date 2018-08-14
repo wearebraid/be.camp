@@ -9,10 +9,9 @@
       :accent-color="page.page_accent_color"
     >
       <div class="inner">
-        <div
-          class="event-headline"
-          v-html="page.homepage_hero_content"
-        >
+        <div class="event-headline">
+          <div v-html="page.homepage_hero_content"></div>
+          <button>Register Now</button>
         </div>
 
         <div class="event-countdown">

@@ -8,18 +8,20 @@
       :background="page.homepage_hero_image"
       :accent-color="page.page_accent_color"
     >
-      <div
-        class="event-headline"
-        v-html="page.homepage_hero_content"
-      >
-      </div>
+      <div class="inner">
+        <div
+          class="event-headline"
+          v-html="page.homepage_hero_content"
+        >
+        </div>
 
-      <div class="event-countdown">
-        <div class="countdown-timer">
-          <div class="countdown-label">
-            {{ page.event_date_label }}
+        <div class="event-countdown">
+          <div class="countdown-timer">
+            <div class="countdown-label">
+              {{ page.event_date_label }}
+            </div>
+            <countdown-clock />
           </div>
-          <countdown-clock />
         </div>
       </div>
     </page-hero>
@@ -63,11 +65,29 @@ export default {
 
 <style scoped lang="scss">
   .page-hero {
-    display: flex;
-    flex-direction: column;
+    .inner {
+      display: flex;
+      flex-direction: column;
+      max-width: 800px;
+
+      @include bp($ml) {
+        flex-direction: row;
+        align-items: center;
+        margin: auto;
+      }
+    }
 
     .event-headline {
-      margin-bottom: 1em;
+      text-align: center;
+      font-size: 1rem;
+      max-width: 350px;
+      margin: auto auto 2em auto;
+
+      @include bp($ml) {
+        text-align: left;
+        padding-left: gutter()*2;
+        order: 2;
+      }
     }
 
     .countdown-timer {

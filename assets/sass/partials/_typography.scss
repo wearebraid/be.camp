@@ -15,19 +15,29 @@ h1, h2, h3, h4, h5, h6{
 }
 
 p {
-  font-size: 1.15em;
+  font-size: 1em;
   line-height: 1.4;
   margin-bottom: 1em;
   @include font-smoothing();
+
+  @include bp($m) {
+    font-size: 1.15em;
+  }
 }
 
 h1 {
-  font-size: 2em;
+  font-size: 1.75rem;
 
+  @include bp($ms) {
+    font-size: 2rem;
+  }
   @include bp($m) {
-    font-size: 2.5em;
+    font-size: 2.25rem;
+  }
+  @include bp($ml) {
+    font-size: 2.5rem;
   }
   @include bp($l) {
-    font-size: 3em;
+    font-size: 3rem;
   }
 }

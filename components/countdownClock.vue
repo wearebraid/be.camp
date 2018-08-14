@@ -67,7 +67,7 @@ export default {
         right: .1em;
       }
       @include bp($ml) {
-        font-size: 3em;
+        font-size: 2.5em;
         right: .025em;
       }
     }
@@ -91,7 +91,7 @@ export default {
         font-size: 2.25em;
       }
       @include bp($ml) {
-        font-size: 3em;
+        font-size: 2.5em;
       }
     }
 

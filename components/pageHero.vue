@@ -38,6 +38,11 @@ export default {
   border-bottom: 1em solid $accent;
   z-index: -1;
 
+  @include bp($ml) {
+    padding-top: 10em;
+    padding-bottom: 15em;
+  }
+
   @supports (-webkit-clip-path: polygon(0 0, 0 0)) or (clip-path: polygon(0 0, 0 0)) {
     border-bottom: none;
 

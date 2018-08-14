@@ -45,18 +45,29 @@ export default {
       type: String
     }
   },
+  data () {
+    return {
+      videoURL: false
+    }
+  },
   computed: {
     ...mapGetters({
       viewportWidth: 'system/getViewportWidth'
     }),
     heroBackgroundImage () {
       return `url("${this.background}")`
-    },
-    videoURL () {
-      if (this.viewportWidth >= 860) {
-        return `https://youtube.com/embed/${this.videoBackground}?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&mute=1`
-      } else {
-        return false
+    }
+  },
+  watch: {
+    viewportWidth: {
+      immediate: true,
+      handler () {
+        console.log('adjust', this.viewportWidth)
+        if (this.viewportWidth >= 860) {
+          this.videoURL = `https://youtube.com/embed/${this.videoBackground}?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&mute=1`
+        } else {
+          this.videoURL = false
+        }
       }
     }
   }

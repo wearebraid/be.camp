@@ -5,6 +5,7 @@ export default ({store, app}) => {
       height: window.innerHeight
     })
   })
+  window.dispatchEvent(new Event('resize'))
 
   // It's going to be faster to operate on our local variable.
   var scrollTop = 0

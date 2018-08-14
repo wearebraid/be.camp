@@ -1,7 +1,7 @@
 <template>
   <section
     class="page-hero"
-    :style="{backgroundImage: videoURL ? 'none' : heroBackgroundImage}"
+    :style="{backgroundImage: showVideo ? 'none' : heroBackgroundImage}"
     :data-accent-color="accentColor"
   >
     <div class="content">
@@ -10,18 +10,11 @@
 
     <div
       class="background-video"
-      v-if="videoURL"
+      v-show="showVideo"
     >
       <div class="video-bg cover">
         <div class="video-fg">
-          <iframe
-            frameborder="0"
-            height="100%"
-            width="100%"
-            :src="videoURL"
-            allow="autoplay"
-          >
-          </iframe>
+          <div id="player"></div>
         </div>
       </div>
     </div>
@@ -47,8 +40,12 @@ export default {
   },
   data () {
     return {
-      videoURL: false
+      showVideo: true,
+      player: null
     }
+  },
+  mounted () {
+    this.bootBackgroundVideo()
   },
   computed: {
     ...mapGetters({
@@ -56,17 +53,41 @@ export default {
     }),
     heroBackgroundImage () {
       return `url("${this.background}")`
+    },
+    shouldBootVideo () {
+      return ((!this.player || !this.player.A) && this.viewportWidth >= 860)
+    }
+  },
+  methods: {
+    bootBackgroundVideo () {
+      if (this.shouldBootVideo) {
+        this.player = new YT.Player('player', {
+          videoId: this.videoBackground,
+          events: {
+            'onReady': this.onPlayerReady,
+            'onStateChange':this. onPlayerStateChange
+          }
+        })
+      }
+    },
+    onPlayerReady(event) {
+      this.player.playVideo();
+    },
+    onPlayerStateChange(event) {
+      if(event.data === 0) {
+        this.player.seekTo(0)
+      }
     }
   },
   watch: {
     viewportWidth: {
       immediate: true,
       handler () {
-        console.log('adjust', this.viewportWidth)
         if (this.viewportWidth >= 860) {
-          this.videoURL = `https://youtube.com/embed/${this.videoBackground}?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&mute=1`
+          this.bootBackgroundVideo()
+          this.showVideo = true
         } else {
-          this.videoURL = false
+          this.showVideo = false
         }
       }
     }
@@ -181,14 +202,23 @@ export default {
     top: 0; right: 0; bottom: 0; left: 0;
     opacity: .15;
   }
-  .video-bg .video-fg,
-  .video-bg iframe,
-  .video-bg video {
+  .video-bg,
+  .video-fg {
+    display: block;
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    right: 0;
+    bottom: 0;
+
+    & /deep/ iframe {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
   }
 
   /*
@@ -241,7 +271,7 @@ export default {
   }
   .video-bg.contain iframe,
   .video-bg.contain video {
-    pointer-events: auto;
+    pointer-events: none;
   }
 
   @media (min-aspect-ratio: 16/9) {

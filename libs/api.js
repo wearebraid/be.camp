@@ -24,10 +24,11 @@ class Api {
         Accept: 'application/json'
       }
     })
-    this.airtable = Airtable.configure({
+    Airtable.configure({
       endpointUrl: 'https://api.airtable.com',
       apiKey: process.env.airtableKey
     })
+    this.airtable = Airtable.base('apptQ2PByq7vFJlxR')
     Vue.prototype.$api = this
   }
 

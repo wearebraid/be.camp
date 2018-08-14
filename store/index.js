@@ -35,13 +35,13 @@ export const actions = {
       })
   },
   getSponsors({commit, state}) {
-    let base = this.app.api.airtable.base('apptQ2PByq7vFJlxR')
-    base('2018 Needed sponsors').select({
+    let base = this.app.api.airtable
+    base('Past & Potential Sponsors').select({
       maxRecords: 99,
       view: "Grid view"
     }).eachPage(function page(records, fetchNextPage) {
       records.forEach(function(record) {
-        console.log('Retrieved', record.get('Needs for BeCamp'));
+        console.log(record);
       });
       fetchNextPage();
     }, function done(err) {

@@ -64,7 +64,7 @@ export default {
   },
   created () {
     this.getPage(this.pageName)
-    // this.getSponsors()
+    this.getSponsors()
   },
   computed: {
     ...mapState([

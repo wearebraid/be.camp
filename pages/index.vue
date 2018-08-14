@@ -7,6 +7,7 @@
     <page-hero
       :background="page.homepage_hero_image"
       :accent-color="page.page_accent_color"
+      :video-background="page.homepage_background_video_youtube_id"
     >
       <div class="inner">
         <div class="event-headline">

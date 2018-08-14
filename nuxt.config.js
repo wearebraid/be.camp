@@ -28,7 +28,8 @@ module.exports = {
   ],
   plugins: [
     '~/plugins/components',
-    '~/plugins/api'
+    '~/plugins/api',
+    {src: '~/plugins/events', ssr: false}
   ],
   /*
   ** Customize the progress bar color

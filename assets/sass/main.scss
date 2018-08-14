@@ -13,6 +13,7 @@
 
 .page-section {
   @include row();
+  background: #fff;
   padding: 2em gutter();
 }
 

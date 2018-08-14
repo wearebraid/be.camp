@@ -3,7 +3,7 @@ button {
   background: $accent;
   background: linear-gradient(to bottom, $accent, $accent-d);
   color: #fff;
-  font-size: .8em;
+  font-size: .8rem;
   padding: gutter()/1.5 gutter()*1.5;
   text-transform: uppercase;
   font-family: $display;
@@ -20,4 +20,12 @@ button {
   @include bp($m) {
     font-size: 1em;
   }
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  color: $accent-d;
 }

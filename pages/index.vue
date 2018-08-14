@@ -21,13 +21,34 @@
             </div>
             <countdown-clock />
           </div>
-          <div class="intro-video">
+          <div
+            class="intro-video"
+            v-if="page.homepage_hero_video_youtube_id"
+           >
             <img src="/play.svg">
             <p>What is beCamp?</p>
           </div>
         </div>
       </div>
     </page-hero>
+
+    <section class="page-section what-is-becamp">
+      <h1 class="section-title">What is beCamp?</h1>
+      <template v-for="(block, index) in page.what_is_becamp">
+        <media-block
+          :content="block"
+          :key="block.copy"
+          :alt-layout="index%2 === 1"
+        />
+      </template>
+      <div
+        class="cta"
+        v-if="page.homepage_hero_video_youtube_id"
+      >
+        <h2>Need a quick overview? </h2>
+        <button>What is beCamp? (Video)</button>
+      </div>
+    </section>
   </div>
 </template>
 
@@ -90,6 +111,7 @@ export default {
         text-align: left;
         padding-left: gutter()*2;
         order: 2;
+        margin: auto 0 2em auto;
       }
     }
 
@@ -129,7 +151,7 @@ export default {
         max-width: 75px;
         margin-bottom: .25em;
         cursor: pointer;
-        transition: transform .33s;
+        transition: transform .25s;
 
         &:hover {
           transform: scale(1.05);
@@ -139,6 +161,13 @@ export default {
       p {
         font-size: 1rem;
       }
+    }
+  }
+  .cta {
+    text-align: center;
+
+    h2 {
+      margin-bottom: .5em;
     }
   }
 </style>

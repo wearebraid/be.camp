@@ -67,7 +67,7 @@ export default {
   methods: {
     bootBackgroundVideo () {
       if (this.shouldBootVideo) {
-        if (typeof YT !== undefined) {
+        if (typeof YT === 'object') {
           this.player = new YT.Player('player', {
             videoId: this.videoBackground,
             events: {

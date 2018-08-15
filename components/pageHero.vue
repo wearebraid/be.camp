@@ -67,7 +67,12 @@ export default {
   methods: {
     bootBackgroundVideo () {
       if (this.shouldBootVideo) {
-        if (typeof YT === 'object') {
+        if ((typeof(YT) === 'undefined' || typeof(YT.Player) === 'undefined')) {
+          // if YT is not ready, try again in 500ms
+          window.setTimeout(() => {
+            this.bootBackgroundVideo()
+          }, 500)
+        } else {
           this.player = new YT.Player('player', {
             videoId: this.videoBackground,
             events: {
@@ -75,10 +80,6 @@ export default {
               'onStateChange':this. onPlayerStateChange
             }
           })
-        } else {
-          window.setTimeout(() => {
-            this.bootBackgroundVideo()
-          }, 500)
         }
       }
     },

@@ -11,7 +11,7 @@
     >
       <div class="inner">
         <div class="event-headline">
-          <div v-html="page.homepage_hero_content"></div>
+          <div v-html="setAttendeeCount(page.homepage_hero_content)"></div>
           <a
             href="https://airtable.com/shr2NPFSOnIHUBvlY"
             target="_blank"
@@ -110,17 +110,25 @@ export default {
   },
   computed: {
     ...mapState([
-      'butterPages'
+      'butterPages',
+      'attendees'
     ]),
     page () {
       return this.butterPages[this.pageName]
+    },
+    attendeeCount () {
+      return this.attendees.length >= 25 ? `${this.attendees.length}&nbsp;` : ''
     }
   },
   methods: {
     ...mapActions([
       'getPage',
       'setEventTime'
-    ])
+    ]),
+    setAttendeeCount(html) {
+      console.log(html)
+      return html.replace("[count]&nbsp;", this.attendeeCount)
+    }
   },
   watch: {
     page () {

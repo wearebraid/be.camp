@@ -84,8 +84,14 @@ export default {
       }
     },
     onPlayerReady(event) {
-      this.player.playVideo();
-      this.unmaskVideo = true
+      if (typeof(this.player.playVideo) === 'undefined') {
+        window.setTimeout(() => {
+          this.onPlayerReady(event)
+        }, 500);
+      } else {
+        this.player.playVideo();
+        this.unmaskVideo = true
+      }
     },
     onPlayerStateChange(event) {
       if(event.data === 0) {

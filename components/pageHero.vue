@@ -107,7 +107,7 @@ export default {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center top;
-  padding: 5em gutter() 35vw gutter();
+  padding: 8em gutter() 35vw gutter();
   position: relative;
   border-bottom: 1em solid $accent;
   position: relative;

@@ -50,6 +50,27 @@
         <button>What is beCamp? (Video)</button>
       </div>
     </section>
+
+    <section class="page-section tac why-attend-becamp">
+      <div class="wysiwyg-block">
+        <h1 class="section-title small-margin">Why should I attend beCamp?</h1>
+        <div v-html="page.why_attend_becamp"></div>
+        <icon-grid :icons="page.sponsorship_perks" />
+      </div>
+
+      <div class="cta">
+        <h2>Let us know you're attending!</h2>
+        <p>It's quick and easy, and guarantees we get your shirt size correct.</p>
+        <button>Register Now</button>
+      </div>
+    </section>
+
+    <section class="page-section becamp-sponsors">
+      <div class="wysiwyg-block">
+        <h1 class="section-title small-margin">beCamp wouldn't be possible without our <span class="accent">awesome</span>&nbsp;sponsors!</h1>
+        <div v-html="page.our_awesome_sponsors"></div>
+      </div>
+    </section>
   </div>
 </template>
 

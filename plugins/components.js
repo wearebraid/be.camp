@@ -6,6 +6,7 @@ import Vue from 'vue'
 import pageHero from '~/components/pageHero'
 import countdownCLock from '~/components/countdownCLock'
 import mediaBlock from '~/components/mediaBlock'
+import iconGrid from '~/components/iconGrid'
 
 /**
  * Register components.
@@ -13,3 +14,4 @@ import mediaBlock from '~/components/mediaBlock'
 Vue.component('page-hero', pageHero)
 Vue.component('countdown-clock', countdownCLock)
 Vue.component('media-block', mediaBlock)
+Vue.component('icon-grid', iconGrid)

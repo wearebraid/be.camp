@@ -59,3 +59,21 @@ h2 {
     font-size: 2rem;
   }
 }
+
+h3 {
+  font-size: 1.1rem;
+  font-weight: bold;
+
+  @include bp($ms) {
+    font-size: 1.2rem;
+  }
+  @include bp($m) {
+    font-size: 1.3rem;
+  }
+  @include bp($ml) {
+    font-size: 1.4rem;
+  }
+  @include bp($l) {
+    font-size: 1.5rem;
+  }
+}

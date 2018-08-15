@@ -14,7 +14,24 @@
 .page-section {
   @include row();
   background: #fff;
-  padding: 2em gutter();
+  padding: 2em gutter() 4em gutter();
+
+  @include bp($m) {
+    padding-bottom: 6em;
+  }
+
+  &.tac {text-align: center;}
+
+  & + .page-section {
+    border-top: 1px solid #f5f5f5;
+    padding-top: 4em;
+  }
+
+  .wysiwyg-block {
+    max-width: 650px;
+    margin: 0 auto;
+    margin-bottom: 2em;
+  }
 }
 
 .section-title {
@@ -22,4 +39,12 @@
   font-weight: bold;
   margin-top: 1em;
   margin-bottom: 2em;
+
+  &.small-margin {
+    margin-bottom: 1em;
+  }
+}
+
+.accent {
+  color: $accent-d;
 }

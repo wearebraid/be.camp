@@ -67,13 +67,19 @@ export default {
   methods: {
     bootBackgroundVideo () {
       if (this.shouldBootVideo) {
-        this.player = new YT.Player('player', {
-          videoId: this.videoBackground,
-          events: {
-            'onReady': this.onPlayerReady,
-            'onStateChange':this. onPlayerStateChange
-          }
-        })
+        if (typeof YT !== undefined) {
+          this.player = new YT.Player('player', {
+            videoId: this.videoBackground,
+            events: {
+              'onReady': this.onPlayerReady,
+              'onStateChange':this. onPlayerStateChange
+            }
+          })
+        } else {
+          window.setTimeout(() => {
+            this.bootBackgroundVideo()
+          }, 500)
+        }
       }
     },
     onPlayerReady(event) {

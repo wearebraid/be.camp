@@ -3,6 +3,8 @@ import Vue from 'vue'
 /**
  * Import components
  */
+import siteHeader from '~/components/siteHeader'
+import siteFooter from '~/components/siteFooter'
 import pageHero from '~/components/pageHero'
 import countdownCLock from '~/components/countdownCLock'
 import mediaBlock from '~/components/mediaBlock'
@@ -14,6 +16,8 @@ import logoGrid from '~/components/logoGrid'
 /**
  * Register components.
  */
+Vue.component('site-header', siteHeader)
+Vue.component('site-footer', siteFooter)
 Vue.component('page-hero', pageHero)
 Vue.component('countdown-clock', countdownCLock)
 Vue.component('media-block', mediaBlock)

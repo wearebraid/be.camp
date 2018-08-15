@@ -66,6 +66,7 @@ export default {
 
 <style lang="scss" scoped>
 .sponsor-cards {
+  text-align: left;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;

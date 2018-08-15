@@ -1,16 +1,22 @@
 <template>
   <div class="sponsors">
-    <div class="sponsor-tier premier">
+    <div
+      class="sponsor-tier premier"
+      v-if="Object.keys(premierSponsors).length > 0"
+    >
       <h2>Premier Sponsors</h2>
       <sponsor-cards :sponsors="premierSponsors" />
     </div>
-    <div class="sponsor-tier sponsors">
+    <div
+      class="sponsor-tier sponsors"
+      v-if="Object.keys(sponsors).length > 0"
+    >
       <h2>Sponsors</h2>
       <logo-grid :sponsors="sponsors" />
     </div>
     <div
       class="sponsor-tier supporters"
-      v-if="supporters.length > 0"
+      v-if="Object.keys(supporters).length > 0"
     >
       <h2>Supporters</h2>
       <div class="supporters-list">

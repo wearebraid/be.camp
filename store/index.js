@@ -4,6 +4,7 @@ import {sortObjKeys} from '../libs/util'
 export const state = () => ({
   butterPages: {},
   sponsors: [],
+  attendees: [],
   timeToEvent: null
 })
 
@@ -42,7 +43,7 @@ export const getters = {
   },
   supporters (state) {
     let supporters = state.sponsors.filter((sponsor) => {
-      return sponsor['2018 Sponsorship Level'] && (sponsor['2018 Sponsorship Level'] === 'Contributor')
+      return sponsor['2018 Sponsorship Level'] && sponsor['2018 Sponsorship Level'] === 'Contributor'
     })
     let supportersObject = {}
     supporters.forEach((sponsor) => {
@@ -53,6 +54,15 @@ export const getters = {
 }
 
 export const actions = {
+  async nuxtServerInit ({dispatch}) {
+    await dispatch('loadData')
+  },
+  loadData ({dispatch}) {
+    return Promise.all([
+      dispatch('getSponsors'),
+      dispatch('getAttendees')
+    ])
+  },
   getPage ({commit, state}, page) {
     this.app.api.butter.page.retrieve('*', page)
       .then((res) => {
@@ -66,21 +76,52 @@ export const actions = {
         console.log(res)
       })
   },
-  getSponsors({commit, state}) {
-    let base = this.app.api.airtable
-    base('Past & Potential Sponsors').select({
-      maxRecords: 99,
-      view: "Grid view"
-    }).eachPage(function page(records, fetchNextPage) {
-      records.forEach(function(record) {
-        if (record.fields['Commitment confirmed'] && record.fields['Commitment confirmed'] === true) {
-          commit('setSponsor', record.fields)
+  getSponsors({commit}) {
+    return new Promise((resolve, reject) => {
+      let base = this.app.api.airtable
+      base('Past & Potential Sponsors').select({
+        maxRecords: 99,
+        view: "Grid view"
+      }).eachPage(function page(records, fetchNextPage) {
+        records.forEach(function(record) {
+          if (record.fields['Commitment confirmed'] && record.fields['Commitment confirmed'] === true) {
+            commit('setSponsor', record.fields)
+          }
+        });
+        fetchNextPage();
+      }, function done(err) {
+        if (err) {
+          console.error(err)
+          reject()
+          return
         }
+        resolve()
       });
-      fetchNextPage();
-    }, function done(err) {
-        if (err) { console.error(err); return; }
-    });
+    })
+  },
+  getAttendees({commit}) {
+    return new Promise((resolve, reject) => {
+      let base = this.app.api.airtable
+      base('Guests').select({
+        maxRecords: 999,
+        view: "Grid view"
+      }).eachPage(function page(records, fetchNextPage) {
+        records.forEach(function(record) {
+          // console.log(record)
+          if (record.fields['Directory Permission'] && record.fields['Directory Permission'] === true) {
+            commit('setAttendee', record.fields)
+          }
+        });
+        fetchNextPage();
+      }, function done(err) {
+        if (err) {
+          console.error(err)
+          reject()
+          return
+        }
+        resolve()
+      })
+    })
   },
   setEventTime({commit, dispatch}, time) {
     let currentTime = moment().unix()
@@ -105,6 +146,9 @@ export const mutations = {
   },
   setSponsor(state, payload) {
     state.sponsors.push(payload)
+  },
+  setAttendee(state, payload) {
+    state.attendees.push(payload)
   },
   setEventCountdown(state, duration) {
     state.timeToEvent = duration

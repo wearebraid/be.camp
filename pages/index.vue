@@ -107,7 +107,6 @@ export default {
   },
   created () {
     this.getPage(this.pageName)
-    this.getSponsors()
   },
   computed: {
     ...mapState([
@@ -120,7 +119,6 @@ export default {
   methods: {
     ...mapActions([
       'getPage',
-      'getSponsors',
       'setEventTime'
     ])
   },

@@ -31,7 +31,6 @@ export default {
     validSponsors () {
       return filter(this.sponsors, (sponsor) => {
         let target = this.sponsors[sponsor]
-        console.log(target)
         return target["Logo"]
       })
     }

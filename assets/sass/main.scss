@@ -16,10 +16,6 @@
   background: #fff;
   padding: 2em gutter() 4em gutter();
 
-  @include bp($m) {
-    padding-bottom: 6em;
-  }
-
   &.tac {text-align: center;}
 
   & + .page-section {

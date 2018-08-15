@@ -12,7 +12,12 @@
       <div class="inner">
         <div class="event-headline">
           <div v-html="page.homepage_hero_content"></div>
-          <button>Register Now</button>
+          <a
+            href="https://airtable.com/shr2NPFSOnIHUBvlY"
+            target="_blank"
+          >
+            <button>Register Now</button>
+          </a>
         </div>
 
         <div class="event-countdown">
@@ -25,9 +30,15 @@
           <div
             class="intro-video"
             v-if="page.homepage_hero_video_youtube_id"
-           >
-            <img src="/play.svg">
-            <p>What is beCamp?</p>
+          >
+            <a
+              :href="`https://www.youtube.com/watch?v=${page.homepage_hero_video_youtube_id}`"
+              target="_blank"
+              class="no-decoration"
+            >
+              <img src="/play.svg">
+              <p>What is beCamp?</p>
+            </a>
           </div>
         </div>
       </div>
@@ -47,7 +58,12 @@
         v-if="page.homepage_hero_video_youtube_id"
       >
         <h2>Need a quick overview? </h2>
-        <button>What is beCamp? (Video)</button>
+        <a
+          :href="`https://www.youtube.com/watch?v=${page.homepage_hero_video_youtube_id}`"
+          target="_blank"
+        >
+          <button>What is beCamp? (Video)</button>
+        </a>
       </div>
     </section>
 
@@ -61,7 +77,12 @@
       <div class="cta">
         <h2>Let us know you're attending!</h2>
         <p>It's quick and easy, and guarantees we get your shirt size correct.</p>
-        <button>Register Now</button>
+        <a
+          href="https://airtable.com/shr2NPFSOnIHUBvlY"
+          target="_blank"
+        >
+          <button>Register Now</button>
+        </a>
       </div>
     </section>
 
@@ -70,7 +91,6 @@
         <h1 class="section-title small-margin">beCamp wouldn't be possible without our <span class="accent">awesome</span>&nbsp;sponsors!</h1>
         <div v-html="page.our_awesome_sponsors"></div>
       </div>
-
       <becamp-sponsors />
     </section>
   </div>
@@ -171,6 +191,7 @@ export default {
       display: flex;
       flex-direction: column;
       align-items: center;
+      text-align: center;
       margin-top: 1.5em;
 
       img {
@@ -190,6 +211,7 @@ export default {
     }
   }
   .cta {
+    font-size: 1rem;
     text-align: center;
 
     h2 {

@@ -28,4 +28,9 @@ img {
 
 a {
   color: $accent-d;
+
+  &.no-decoration {
+    text-decoration: none;
+    color: inherit;
+  }
 }

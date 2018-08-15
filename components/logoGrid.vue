@@ -56,7 +56,7 @@ export default {
 .logo {
   filter: grayscale(1);
   max-width: 50%;
-  padding: gutter()/2;
+  padding: gutter();
   transition: filter .33s;
 
   &:hover {

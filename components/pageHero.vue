@@ -1,7 +1,7 @@
 <template>
   <section
     class="page-hero"
-    :style="{backgroundImage: showVideo ? 'none' : heroBackgroundImage}"
+    :style="{backgroundImage: heroBackgroundImage}"
     :data-accent-color="accentColor"
   >
     <div class="content">
@@ -12,7 +12,10 @@
       class="background-video"
       v-show="showVideo"
     >
-      <div class="video-bg cover">
+      <div
+        class="video-bg cover"
+        :class="{show: unmaskVideo}"
+      >
         <div class="video-fg">
           <div id="player"></div>
         </div>
@@ -41,11 +44,14 @@ export default {
   data () {
     return {
       showVideo: true,
+      unmaskVideo: false,
       player: null
     }
   },
   mounted () {
-    this.bootBackgroundVideo()
+    window.setTimeout(() => {
+      this.bootBackgroundVideo()
+    }, 100)
   },
   computed: {
     ...mapGetters({
@@ -72,6 +78,7 @@ export default {
     },
     onPlayerReady(event) {
       this.player.playVideo();
+      this.unmaskVideo = true
     },
     onPlayerStateChange(event) {
       if(event.data === 0) {
@@ -123,6 +130,7 @@ export default {
       left: 0;
       width: 100%;
       height: 12vw;
+      z-index: 2;
     }
     &:before {
       background-color: $accent;
@@ -192,15 +200,25 @@ export default {
     left: 0;
     width: 100vw;
     height: 100vh;
-    z-index: -1;
+    z-index: 0;
     pointer-events: none;
   }
 
   .video-bg {
-    background: white;
+    background: #fff;
     position: absolute;
     top: 0; right: 0; bottom: 0; left: 0;
-    opacity: .15;
+    opacity: 0;
+    transition: opacity 2s .5s;
+
+    &.show {
+      opacity: 1;
+
+      .video-fg {
+        opacity: .15;
+        transition: opacity 1s;
+      }
+    }
   }
   .video-bg,
   .video-fg {

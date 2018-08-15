@@ -107,7 +107,6 @@ export const actions = {
         view: "Grid view"
       }).eachPage(function page(records, fetchNextPage) {
         records.forEach(function(record) {
-          // console.log(record)
           if (record.fields['Directory Permission'] && record.fields['Directory Permission'] === true) {
             commit('setAttendee', record.fields)
           }

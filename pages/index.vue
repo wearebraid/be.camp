@@ -126,7 +126,6 @@ export default {
       'setEventTime'
     ]),
     setAttendeeCount(html) {
-      console.log(html)
       return html.replace("[count]&nbsp;", this.attendeeCount)
     }
   },

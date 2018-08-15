@@ -1,9 +1,9 @@
 <template>
-  <div class="site-header">
+  <header class="site-header">
     <div class="logo">
       <img src="/beCampLogo1.png" alt="beCamp">
     </div>
-  </div>
+  </header>
 </template>
 
 <script>

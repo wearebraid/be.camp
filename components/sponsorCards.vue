@@ -69,6 +69,7 @@ export default {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  padding: gutter() 0 gutter() 0;
 }
 
 .sponsor-card {

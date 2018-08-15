@@ -30,6 +30,16 @@ export const getters = {
     })
     return sortObjKeys(premierSponsorsObject)
   },
+  sponsors (state) {
+    let sponsors = state.sponsors.filter((sponsor) => {
+      return sponsor['2018 Sponsorship Level'] && (sponsor['2018 Sponsorship Level'] === 'Major Sponsor' || sponsor['2018 Sponsorship Level'] === 'Sponsor')
+    })
+    let sponsorsObject = {}
+    sponsors.forEach((sponsor) => {
+      sponsorsObject[sponsor['Sponsor']] = sponsor
+    })
+    return sortObjKeys(sponsorsObject)
+  }
 }
 
 export const actions = {

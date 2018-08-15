@@ -70,6 +70,8 @@
         <h1 class="section-title small-margin">beCamp wouldn't be possible without our <span class="accent">awesome</span>&nbsp;sponsors!</h1>
         <div v-html="page.our_awesome_sponsors"></div>
       </div>
+
+      <becamp-sponsors />
     </section>
   </div>
 </template>

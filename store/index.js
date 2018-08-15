@@ -1,7 +1,9 @@
 import moment from 'moment'
+import {sortObjKeys} from '../libs/util'
 
 export const state = () => ({
   butterPages: {},
+  sponsors: [],
   timeToEvent: null
 })
 
@@ -17,7 +19,17 @@ export const getters = {
         seconds: duration.seconds() >= 10 ? duration.seconds() : '0' + duration.seconds()
       }
     }
-  }
+  },
+  premierSponsors (state) {
+    let premierSponsors = state.sponsors.filter((sponsor) => {
+      return sponsor['2018 Sponsorship Level'] && sponsor['2018 Sponsorship Level'] === 'Premier Sponsor'
+    })
+    let premierSponsorsObject = {}
+    premierSponsors.forEach((sponsor) => {
+      premierSponsorsObject[sponsor['Sponsor']] = sponsor
+    })
+    return sortObjKeys(premierSponsorsObject)
+  },
 }
 
 export const actions = {
@@ -41,7 +53,9 @@ export const actions = {
       view: "Grid view"
     }).eachPage(function page(records, fetchNextPage) {
       records.forEach(function(record) {
-        console.log(record);
+        if (record.fields['Commitment confirmed'] && record.fields['Commitment confirmed'] === true) {
+          commit('setSponsor', record.fields)
+        }
       });
       fetchNextPage();
     }, function done(err) {
@@ -68,6 +82,9 @@ export const actions = {
 export const mutations = {
   setPage(state, {key, data}) {
     state.butterPages = Object.assign({}, state.butterPages, {[key]: data})
+  },
+  setSponsor(state, payload) {
+    state.sponsors.push(payload)
   },
   setEventCountdown(state, duration) {
     state.timeToEvent = duration

@@ -5,7 +5,8 @@ export const state = () => ({
   butterPages: {},
   sponsors: [],
   attendees: [],
-  timeToEvent: null
+  timeToEvent: null,
+  youtubeAPIReady: false
 })
 
 export const getters = {
@@ -147,5 +148,8 @@ export const mutations = {
   },
   setEventCountdown(state, duration) {
     state.timeToEvent = duration
+  },
+  youtubeLoaded(state, payload) {
+    state.youtubeAPIReady = payload
   }
 }

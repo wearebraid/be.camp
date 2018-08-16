@@ -21,4 +21,8 @@ export default ({store, app}) => {
     window.requestAnimationFrame(observe)
   }
   window.requestAnimationFrame(observe)
+
+  // check YT API status
+  window.addEventListener('youtubeLoaded', () => store.commit('youtubeLoaded', true))
+  if (window.ytReady) { store.commit('youtubeLoaded', true) }
 }

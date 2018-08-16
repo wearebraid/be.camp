@@ -28,6 +28,7 @@ module.exports = {
       { rel: 'mask-icon', href: '/safari-pinned-tab.svg', color: '#e67711' }
     ],
     script: [
+      { src: '/youtube.js' },
       { src: 'https://www.youtube.com/iframe_api' }
     ]
   },

@@ -8,24 +8,26 @@
       <slot />
     </div>
 
-    <div
-      class="background-video"
-      v-show="showVideo"
-    >
+    <no-ssr>
       <div
-        class="video-bg cover"
-        :class="{show: unmaskVideo}"
+        class="background-video"
+        v-show="showVideo"
       >
-        <div class="video-fg">
-          <div id="player"></div>
+        <div
+          class="video-bg cover"
+          :class="{show: unmaskVideo}"
+        >
+          <div class="video-fg">
+            <div id="yt-player"></div>
+          </div>
         </div>
       </div>
-    </div>
+    </no-ssr>
   </section>
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters, mapState } from 'vuex'
 
 export default {
   props: {
@@ -48,12 +50,10 @@ export default {
       player: null
     }
   },
-  mounted () {
-    window.setTimeout(() => {
-      this.bootBackgroundVideo()
-    }, 100)
-  },
   computed: {
+    ...mapState([
+      'youtubeAPIReady'
+    ]),
     ...mapGetters({
       viewportWidth: 'system/getViewportWidth'
     }),
@@ -66,32 +66,23 @@ export default {
   },
   methods: {
     bootBackgroundVideo () {
-      if (this.shouldBootVideo) {
-        if ((typeof(YT) === 'undefined' || typeof(YT.Player) === 'undefined')) {
-          // if YT is not ready, try again in 500ms
-          window.setTimeout(() => {
-            this.bootBackgroundVideo()
-          }, 500)
-        } else {
-          this.player = new YT.Player('player', {
+      if (this.youtubeAPIReady) {
+        if (document.getElementById('yt-player')) {
+          this.player = new YT.Player('yt-player', {
             videoId: this.videoBackground,
             events: {
               'onReady': this.onPlayerReady,
-              'onStateChange':this. onPlayerStateChange
+              'onStateChange': this.onPlayerStateChange
             }
           })
+        } else {
+          window.setTimeout(() => this.bootBackgroundVideo(), 500)
         }
       }
     },
     onPlayerReady(event) {
-      if (typeof(this.player.playVideo) === 'undefined') {
-        window.setTimeout(() => {
-          this.onPlayerReady(event)
-        }, 500);
-      } else {
-        this.player.playVideo();
-        this.unmaskVideo = true
-      }
+      this.player.playVideo();
+      this.unmaskVideo = true
     },
     onPlayerStateChange(event) {
       if(event.data === 0) {
@@ -104,11 +95,16 @@ export default {
       immediate: true,
       handler () {
         if (this.viewportWidth >= 860) {
-          this.bootBackgroundVideo()
           this.showVideo = true
         } else {
           this.showVideo = false
         }
+      }
+    },
+    youtubeAPIReady: {
+      immediate: true,
+      handler () {
+        this.bootBackgroundVideo()
       }
     }
   }

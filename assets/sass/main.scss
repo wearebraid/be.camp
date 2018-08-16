@@ -31,7 +31,11 @@ body {
   &.decorative-bg {
     position: relative;
     perspective: 400px;
-    z-index: -1;
+
+    & > * {
+      position: relative;
+      z-index: 2;
+    }
 
     &:before,
     &:after {

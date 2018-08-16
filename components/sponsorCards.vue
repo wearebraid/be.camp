@@ -76,12 +76,16 @@ export default {
 .sponsor-card {
   width: 100%;
   padding: gutter()/2;
+  display: flex;
 
-  @include bp($m) {
+  @include bp($ms) {
     width: 50%;
   }
-  @include bp($l) {
+  @include bp($ml) {
     width: 33%;
+  }
+  @include bp($l) {
+    width: 25%;
   }
 }
 
@@ -90,15 +94,21 @@ export default {
   border: 1px solid #f5f5f5;
   border-radius: 5px;
   box-shadow: 0 2px 1rem 0 rgba($dark, .1);
+  display: flex;
+  flex-direction: column;
 }
 
 .logo {
+  min-height: 75px;
+  display: flex;
+
   a {
+    margin: auto 0;
     display: block;
   }
 
   img {
-    max-height: 60px;
+    max-height: 55px;
     max-width: 100%;
     margin-bottom: gutter();
   }
@@ -110,7 +120,8 @@ export default {
 }
 
 .website {
-  margin-top: gutter();
+  padding-top: gutter();
+  margin-top: auto;
   font-size: 1rem;
 }
 </style>

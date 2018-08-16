@@ -1,5 +1,6 @@
 <template>
   <div class="site-wrapper">
+    <easter-egg />
     <site-header />
 
     <div class="page-content">

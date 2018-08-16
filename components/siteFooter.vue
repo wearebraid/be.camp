@@ -1,11 +1,23 @@
 <template>
   <footer
-    class="page-hero"
+    class="site-footer"
     :style="{backgroundImage: footerBackgroundImage}"
     :data-accent-color="accentColor"
   >
     <div class="content">
-
+      <div class="credits">
+        <div class="logo">
+          <img src="/beCampLogo1.png" alt="beCamp">
+        </div>
+        <div class="copyright">
+          &copy; {{ year }} beCamp | no rights reserved
+        </div>
+        <div class="braid-credit">
+          <a href="https://www.wearebraid.com" target="_blank">
+            Made with <span class="heart">❤️</span> by Braid
+          </a>
+        </div>
+      </div>
     </div>
   </footer>
 </template>
@@ -22,6 +34,11 @@ export default {
       default: 'orange'
     }
   },
+  data () {
+    return {
+      year: (new Date()).getFullYear()
+    }
+  },
   computed: {
     footerBackgroundImage () {
       return `url("${this.background}")`
@@ -31,7 +48,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.page-hero {
+.site-footer {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center top;
@@ -121,6 +138,12 @@ export default {
   .content {
     position: relative;
     z-index: 1;
+  }
+}
+
+.content {
+  .credits {
+
   }
 }
 </style>

@@ -35,16 +35,17 @@ export default {
   justify-content: center;
 
   .icon {
-    margin-bottom: gutter()*2;
-    margin-right: gutter()*2;
+    margin: gutter()/2;
     max-width: 200px;
 
-    &:last-child {
-      margin-right: 0;
+    @include bp($m) {
+      margin: gutter()/2 gutter();
     }
 
     img {
       margin-bottom: gutter();
+      max-width: 120px;
+      max-height: 120px;
     }
   }
 }

@@ -17,7 +17,11 @@ body {
 
 .page-section {
   @include row();
-  padding: 2em gutter() 4em gutter();
+  padding: 2em gutter() 3em gutter();
+
+  @include bp($m) {
+    padding: 2em gutter() 4em gutter();
+  }
 
   &.tac {text-align: center;}
 
@@ -58,7 +62,11 @@ body {
 
   & + .page-section {
     border-top: 1px solid #f5f5f5;
-    padding-top: 4em;
+    padding-top: 2em;
+
+    @include bp($m) {
+      padding-top: 4em;
+    }
   }
 
   .wysiwyg-block {

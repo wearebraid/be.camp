@@ -63,18 +63,14 @@ export const actions = {
       dispatch('getAttendees')
     ])
   },
-  getPage ({commit, state}, page) {
-    this.app.api.butter.page.retrieve('*', page)
-      .then((res) => {
-        if (!state.butterPages[res.data.data.slug]) {
-          commit('setPage', {
-            key: res.data.data.slug,
-            data: res.data.data.fields
-          })
-        }
-      }).catch((res) => {
-        console.log(res)
+  async getPage ({commit, state}, page) {
+    let res = await this.app.api.butter.page.retrieve('*', page)
+    if (!state.butterPages[res.data.data.slug]) {
+      commit('setPage', {
+        key: res.data.data.slug,
+        data: res.data.data.fields
       })
+    }
   },
   getSponsors({commit}) {
     return new Promise((resolve, reject) => {

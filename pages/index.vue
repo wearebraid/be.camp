@@ -100,13 +100,12 @@
 import { mapActions, mapGetters, mapState } from 'vuex'
 
 export default {
-  data () {
-    return {
-      pageName: 'homepage'
+  async fetch ({store, params}) {
+    try {
+      await store.dispatch('getPage', 'homepage')
+    } catch(err) {
+      console.log(err)
     }
-  },
-  created () {
-    this.getPage(this.pageName)
   },
   computed: {
     ...mapState([
@@ -114,7 +113,7 @@ export default {
       'attendees'
     ]),
     page () {
-      return this.butterPages[this.pageName]
+      return this.butterPages['homepage']
     },
     attendeeCount () {
       return this.attendees.length >= 25 ? `${this.attendees.length}&nbsp;` : ''
@@ -122,7 +121,6 @@ export default {
   },
   methods: {
     ...mapActions([
-      'getPage',
       'setEventTime'
     ]),
     setAttendeeCount(html) {
@@ -130,8 +128,11 @@ export default {
     }
   },
   watch: {
-    page () {
-      this.setEventTime(this.page.event_start_date)
+    page: {
+      immediate: true,
+      handler () {
+        this.setEventTime(this.page.event_start_date)
+      }
     }
   }
 }

@@ -14,7 +14,7 @@
         </div>
         <div class="braid-credit">
           <a href="https://www.wearebraid.com" target="_blank">
-            Made with <span class="heart">❤️</span> by Braid
+            Made with <span class="heart">❤️</span> by Braid in Charlottesville
           </a>
         </div>
       </div>

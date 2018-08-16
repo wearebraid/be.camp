@@ -47,20 +47,20 @@ body {
     &:before {
       width: 120vw;
       height: 40vh;
-      background: linear-gradient(to left, #fff 0%, #f5f5f5 100%);
+      background: linear-gradient(to left, rgba(#fff, 0) 0%, #f5f5f5 100%);
       left: -50vw;
-      top: 10%;
+      top: 33%;
       z-index: -1;
-      transform: rotateZ(15deg) rotateY(-10deg);
+      transform: rotate(10deg);
     }
     &:after {
       width: 120vw;
       height: 40vh;
-      background: linear-gradient(to right, #fff 0%, #f5f5f5 100%);
+      background: linear-gradient(to right, rgba(#fff, 0) 0%, #f5f5f5 100%);
       right: -50vw;
       top: 15%;
       z-index: -1;
-      transform: rotateZ(12deg) rotateY(10deg);
+      transform: rotate(10deg);
     }
   }
 

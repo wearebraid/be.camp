@@ -42,11 +42,13 @@ module.exports = {
   ** Modules
   */
   modules: [
-    'nuxt-sass-resources-loader'
+    'nuxt-sass-resources-loader',
+    'nuxt-spa-store-init'
   ],
   sassResources: [
     './assets/sass/global.scss'
   ],
+  mode: 'spa',
   /*
   ** Build configuration
   */

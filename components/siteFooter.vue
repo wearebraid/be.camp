@@ -18,6 +18,16 @@
           </a>
         </div>
       </div>
+      <div class="slack-promo">
+        <div class="sales-pitch">
+          <h3>Cville Slack</h3>
+          Want that beCamp feeling all year?<br>
+          Join the conversation in the #becamp channel on Cville Slack!
+          <a href="http://bit.ly/slack-cville" target="_blank">
+            <img src="/slack.png"> Join Cville Slack (It's free!)
+          </a>
+        </div>
+      </div>
     </div>
   </footer>
 </template>
@@ -52,15 +62,22 @@ export default {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center top;
-  padding: 8em gutter() 35vw gutter();
+  padding: 4em gutter() 2em gutter();
   position: relative;
   border-bottom: 1em solid $accent;
   position: relative;
   overflow: hidden;
 
+  @include bp($ms) {
+    padding-top: 5em;
+    padding-bottom: 2em;
+  }
   @include bp($ml) {
+    padding-top: 6em;
+    padding-bottom: 3em;
+  }
+  @include bp($l) {
     padding-top: 10em;
-    padding-bottom: 15em;
   }
 
   @supports (-webkit-clip-path: polygon(0 0, 0 0)) or (clip-path: polygon(0 0, 0 0)) {
@@ -142,8 +159,93 @@ export default {
 }
 
 .content {
-  .credits {
+  max-width: 250px;
+  margin: 0 auto;
+  padding: gutter()/2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1rem;
 
+  @include bp($ml) {
+    @include row();
+    padding: gutter();
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .credits {
+    order: 2;
+
+    @include bp($ml) {
+      order: 1;
+    }
+
+    .logo {
+      max-width: 250px;
+      margin-bottom: gutter()/2;
+    }
+
+    .copyright,
+    .braid-credit {
+      line-height: 1.5;
+      color: #666;
+    }
+
+    .braid-credit {
+      a {
+        color: #666;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+      .heart {
+        font-size: .75em;
+      }
+    }
+  }
+
+  .slack-promo {
+    margin-bottom: gutter()*3;
+    color: #666;
+    line-height: 1.4;
+
+    @include bp($ml) {
+      order: 2;
+    }
+
+    a {
+      display: flex;
+      align-items: center;
+      margin-top: gutter();
+      padding: gutter()/2;
+      text-decoration: none;
+      border: 1px solid #ddd;
+      justify-content: center;
+      border-radius: 5px;
+      background: linear-gradient(to bottom, #fff, #f5f5f5);
+      color: #666;
+
+      &:hover {
+        background: #fff;
+      }
+
+      @include bp($ml) {
+        max-width: 220px;
+        margin-right: auto;
+      }
+
+      img {
+        max-width: 25px;
+        max-height: 25px;
+        display: inline-block;
+        margin-right: .5em;
+      }
+    }
   }
 }
 </style>

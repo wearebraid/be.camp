@@ -53,7 +53,6 @@ module.exports = {
   sassResources: [
     './assets/sass/global.scss'
   ],
-  mode: 'spa',
   /*
   ** Build configuration
   */

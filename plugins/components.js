@@ -6,7 +6,7 @@ import Vue from 'vue'
 import siteHeader from '~/components/siteHeader'
 import siteFooter from '~/components/siteFooter'
 import pageHero from '~/components/pageHero'
-import countdownCLock from '~/components/countdownCLock'
+import countdownClock from '~/components/countdownClock'
 import mediaBlock from '~/components/mediaBlock'
 import easterEgg from '~/components/easterEgg'
 import iconGrid from '~/components/iconGrid'
@@ -20,7 +20,7 @@ import logoGrid from '~/components/logoGrid'
 Vue.component('site-header', siteHeader)
 Vue.component('site-footer', siteFooter)
 Vue.component('page-hero', pageHero)
-Vue.component('countdown-clock', countdownCLock)
+Vue.component('countdown-clock', countdownClock)
 Vue.component('media-block', mediaBlock)
 Vue.component('easter-egg', easterEgg)
 Vue.component('icon-grid', iconGrid)

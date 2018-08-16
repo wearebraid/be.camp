@@ -93,7 +93,7 @@ export default {
   padding: gutter();
   border: 1px solid #f5f5f5;
   border-radius: 5px;
-  box-shadow: 0 2px 1rem 0 rgba($dark, .1);
+  box-shadow: 0 .25rem 1rem 0 rgba($dark, .075);
   display: flex;
   flex-direction: column;
 }

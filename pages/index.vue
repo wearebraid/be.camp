@@ -67,7 +67,7 @@
       </div>
     </section>
 
-    <section class="page-section tac why-attend-becamp">
+    <section class="page-section tac why-attend-becamp decorative-bg">
       <div class="wysiwyg-block">
         <h1 class="section-title small-margin">Why should I attend beCamp?</h1>
         <div v-html="page.why_attend_becamp"></div>

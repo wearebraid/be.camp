@@ -8,15 +8,53 @@
   box-sizing: border-box;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 ::-moz-selection { background: $accent; color: #fff }
 ::selection { background: $accent; color: #fff }
 
 .page-section {
   @include row();
-  background: #fff;
   padding: 2em gutter() 4em gutter();
 
   &.tac {text-align: center;}
+
+  &.decorative-bg {
+    position: relative;
+    perspective: 400px;
+
+    &:before,
+    &:after {
+      content: '';
+      display: none;
+      position: absolute;
+
+      @include bp($m) {
+        display: block;
+      }
+    }
+
+    &:before {
+      width: 100vw;
+      height: 33vw;
+      background: linear-gradient(to left, transparent 0%, #f5f5f5 100%);
+      left: -50%;
+      top: 10%;
+      z-index: -1;
+      transform: rotateZ(15deg) rotateY(-10deg);
+    }
+    &:after {
+      width: 100vw;
+      height: 33vw;
+      background: linear-gradient(to right, transparent 0%, #f5f5f5 100%);
+      right: -50%;
+      top: 20%;
+      z-index: -1;
+      transform: rotateZ(12deg) rotateY(10deg);
+    }
+  }
 
   & + .page-section {
     border-top: 1px solid #f5f5f5;

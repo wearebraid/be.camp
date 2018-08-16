@@ -128,7 +128,7 @@ export default {
 
   @include bp($ml) {
     padding-top: 10em;
-    padding-bottom: 15em;
+    padding-bottom: 12em;
   }
 
   @supports (-webkit-clip-path: polygon(0 0, 0 0)) or (clip-path: polygon(0 0, 0 0)) {

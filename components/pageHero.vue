@@ -120,7 +120,7 @@ export default {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center top;
-  padding: 8em gutter() 35vw gutter();
+  padding: 6em gutter() 20vw gutter();
   position: relative;
   border-bottom: 1em solid $accent;
   position: relative;

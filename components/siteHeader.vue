@@ -26,6 +26,11 @@ export default {
   .logo {
     margin: 0 auto;
     max-width: 250px;
+    text-align: center;
+
+    img {
+      max-height: 50px;
+    }
   }
 }
 </style>

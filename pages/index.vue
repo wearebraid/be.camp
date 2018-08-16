@@ -143,6 +143,8 @@ export default {
     .inner {
       display: flex;
       flex-direction: column;
+      width: 85%;
+      margin: auto;
       max-width: 800px;
 
       @include bp($ml) {

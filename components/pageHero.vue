@@ -62,7 +62,7 @@ export default {
     },
     shouldBootVideo () {
       return ((!this.player || !this.player.A) && this.viewportWidth >= 860)
-    }
+    },
   },
   methods: {
     bootBackgroundVideo () {
@@ -81,7 +81,8 @@ export default {
       }
     },
     onPlayerReady(event) {
-      this.player.playVideo();
+      this.player.mute()
+      this.player.playVideo()
       this.unmaskVideo = true
     },
     onPlayerStateChange(event) {

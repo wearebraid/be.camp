@@ -126,6 +126,10 @@ export default {
   position: relative;
   overflow: hidden;
 
+  @include bp($m) {
+    padding-top: 7em;
+    padding-bottom: 6em;
+  }
   @include bp($ml) {
     padding-top: 10em;
     padding-bottom: 12em;

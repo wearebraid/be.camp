@@ -3,6 +3,7 @@
     <div class="logo">
       <img src="/beCampLogo1.png" alt="beCamp">
     </div>
+    <div class="nav">Attendees, FAQs, and more launching soon!</div>
   </header>
 </template>
 
@@ -23,13 +24,35 @@ export default {
   padding: gutter();
   @include row();
 
+  @include bp($m) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
   .logo {
     margin: 0 auto;
     max-width: 250px;
     text-align: center;
 
+    @include bp($m) {
+      margin: 0;
+      text-align: left;
+    }
+
     img {
       max-height: 50px;
+    }
+  }
+
+  .nav {
+    display: none;
+    font-size: 1.1rem;
+
+    @include bp($m) {
+      padding-top: gutter()/4;
+      display: block;
+      color: #444;
     }
   }
 }

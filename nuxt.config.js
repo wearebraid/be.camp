@@ -47,8 +47,7 @@ module.exports = {
   ** Modules
   */
   modules: [
-    'nuxt-sass-resources-loader',
-    'nuxt-spa-store-init'
+    'nuxt-sass-resources-loader'
   ],
   sassResources: [
     './assets/sass/global.scss'

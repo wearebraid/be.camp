@@ -21,7 +21,6 @@
     "node-sass": "^4.9.2",
     "nuxt": "^1.0.0",
     "nuxt-sass-resources-loader": "^2.0.3",
-    "nuxt-spa-store-init": "^1.1.0",
     "reset-css": "^4.0.1",
     "sass-loader": "^7.0.3",
     "vue-style-loader": "^4.1.1"

@@ -48,7 +48,8 @@ module.exports = {
   ** Modules
   */
   modules: [
-    'nuxt-sass-resources-loader'
+    'nuxt-sass-resources-loader',
+    '@nuxtjs/moment'
   ],
   sassResources: [
     './assets/sass/global.scss'

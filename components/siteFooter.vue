@@ -12,6 +12,9 @@
         <div class="copyright">
           &copy; {{ year }} beCamp | no rights reserved
         </div>
+        <div class="project-source">
+          Website source available on <a href="https://github.com/wearebraid/be.camp" target="_blank">github</a>
+        </div>
         <div class="braid-credit">
           <a href="https://www.wearebraid.com" target="_blank">
             Made with <span class="heart">❤️</span> by Braid in Charlottesville
@@ -189,12 +192,14 @@ export default {
     }
 
     .copyright,
-    .braid-credit {
+    .braid-credit,
+    .project-source {
       line-height: 1.5;
       color: #666;
     }
 
     .braid-credit {
+      padding-top: gutter();
       a {
         color: #666;
         text-decoration: none;
@@ -205,6 +210,11 @@ export default {
       }
       .heart {
         font-size: .75em;
+      }
+    }
+    .project-source {
+      a {
+        color: inherit;
       }
     }
   }

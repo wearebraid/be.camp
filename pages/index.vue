@@ -116,7 +116,7 @@ export default {
       return this.butterPages['homepage']
     },
     attendeeCount () {
-      return this.attendees.length >= 25 ? `${this.attendees.length}&nbsp;` : ''
+      return this.attendees.length >= 20 ? `${this.attendees.length}&nbsp;` : ''
     }
   },
   methods: {

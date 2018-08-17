@@ -1,6 +1,5 @@
 {
   "name": "becamp",
   "alias": "be.camp",
-  "dotenv": true,
-  "type": "npm"
+  "dotenv": true
 }

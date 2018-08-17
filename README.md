@@ -2,9 +2,7 @@
 
 Open source website for https://be.camp. Pull requests and issue reports are welcomed.
 
-beCamp is a Charlottesville tech conference planned by the people who show up. On the evening prior to the conference, attendees socialize over food, nominate topics they would like to present on or see discussed during the conference, and then cast their votes. Conference Organizers then tally votes and post the schedule for the following day. 
-
-You don't need to be an expert in a subject to suggest it for discussion! After topics have been voted on, whoever wants to dive in will help arrange Saturday's schedule. We'll post it here so that you'll be able to choose your own path through the day. 
+beCamp is a Charlottesville tech conference planned by the people who show up. On the evening prior to the conference, attendees socialize over food, nominate topics they would like to present on or see discussed during the conference, and then cast their votes. You don't need to be an expert in a subject to suggest it for discussion! After topics have been voted on, whoever wants to dive in will help arrange Saturday's schedule. We'll post it here so that you'll be able to choose your own path through the day. 
 
 [You can learn more about the Unconference movement here](https://en.wikipedia.org/wiki/Unconference).
 

@@ -36,9 +36,7 @@
               target="_blank" rel="noopener"
               class="no-decoration"
             >
-              <div v-lazy-container="{ selector: 'img' }">
-                <img data-src="play.svg">
-              </div>
+              <img src="/play.svg">
               <p>What is beCamp?</p>
             </a>
           </div>

@@ -1,9 +1,7 @@
 <template>
   <header class="site-header">
     <div class="logo">
-      <div v-lazy-container="{ selector: 'img' }">
-        <img data-src="beCampLogo1.png" alt="beCamp">
-      </div>
+      <img src="/beCampLogo1.png" alt="beCamp">
     </div>
     <div class="nav">Attendees, FAQs, and more launching soon!</div>
   </header>

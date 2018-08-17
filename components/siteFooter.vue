@@ -176,7 +176,7 @@ export default {
     width: 100%;
     flex-direction: row;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: flex-end;
   }
 
   .credits {
@@ -226,6 +226,7 @@ export default {
 
     @include bp($ml) {
       order: 2;
+      margin-bottom: 0;
     }
 
     a {

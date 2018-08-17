@@ -25,7 +25,7 @@ $ npm start
 $ npm run generate
 ```
 
-##3rd-Party APIs
+## 3rd-Party APIs
 This iteration of the beCamp website pulls data from [ButterCMS](https://buttercms.com) and [Airtable](https://airtable.com) to populate site content. For API access, you can message `@andrew` in the `#becamp` channel on [Cville Slack](http://bit.ly/slack-cville). 
 
 To connect to the APIs, you will need to create a `.env` file in the project root directory and add the API keys in the following format:

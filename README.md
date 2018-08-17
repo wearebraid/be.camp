@@ -37,6 +37,6 @@ AIRTABLEKEY=your_api_key
 
 **never commit your API keys to the project history. the `.env` is gitignored by default.**
 
-##Docs
+## Docs
 This project is built on Nuxt.js, an opinionated framework for building with Vue.js. For a detailed explanation on how things work, checkout the [Nuxt.js docs](https://github.com/nuxt/nuxt.js).
 

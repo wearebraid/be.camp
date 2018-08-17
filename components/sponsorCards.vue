@@ -12,11 +12,11 @@
               :href="sponsor['Url']"
               target="_blank" rel="noopener"
             >
-              <img :src="getSponsorLogo(sponsor)">
+              <img v-lazy="getSponsorLogo(sponsor)">
             </a>
           </template>
           <template v-else>
-            <img :src="getSponsorLogo(sponsor)">
+            <img v-lazy="getSponsorLogo(sponsor)">
           </template>
         </div>
         <div class="writeup">

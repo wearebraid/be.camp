@@ -7,7 +7,9 @@
     <div class="content">
       <div class="credits">
         <div class="logo">
-          <img src="/beCampLogo1.png" alt="beCamp">
+          <div v-lazy-container="{ selector: 'img' }">
+            <img data-src="beCampLogo1.png" alt="beCamp">
+          </div>
         </div>
         <div class="copyright">
           &copy; {{ year }} beCamp | no rights reserved
@@ -26,9 +28,11 @@
           <h3>Cville Slack</h3>
           Want that beCamp feeling all year?<br>
           Join the conversation in the #becamp channel on Cville Slack!
-          <a href="http://bit.ly/slack-cville" target="_blank" rel="noopener">
-            <img src="/slack.png"> Join Cville Slack (It's free!)
-          </a>
+          <div v-lazy-container="{ selector: 'img' }">
+            <a href="http://bit.ly/slack-cville" target="_blank" rel="noopener">
+              <img data-src="slack.png"> Join Cville Slack (It's free!)
+            </a>
+          </div>
         </div>
       </div>
     </div>

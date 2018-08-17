@@ -9,7 +9,7 @@
     >
     </div>
     <div class="media-image">
-      <img :src="content.image">
+      <img v-lazy="content.image">
     </div>
   </div>
 </template>

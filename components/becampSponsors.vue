@@ -26,7 +26,7 @@
           :key="supporter['Sponsor']"
         >
           <template v-if="supporter['Url']">
-            <a :href="supporter['Url']" target="_blank">
+            <a :href="supporter['Url']" target="_blank" rel="noopener">
               {{supporter['Sponsor']}}<span class="sep">,</span>
             </a>
           </template>

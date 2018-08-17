@@ -10,7 +10,7 @@
           <template v-if="sponsor['Url']">
             <a
               :href="sponsor['Url']"
-              target="_blank"
+              target="_blank" rel="noopener"
             >
               <img :src="getSponsorLogo(sponsor)">
             </a>
@@ -28,7 +28,7 @@
         >
           <a
             :href="sponsor['Url']"
-            target="_blank"
+            target="_blank" rel="noopener"
           >
             {{ sponsor['Url'] }}
           </a>

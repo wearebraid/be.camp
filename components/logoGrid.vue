@@ -6,7 +6,7 @@
       :key="sponsor['Sponsor']"
     >
       <template v-if="sponsor['Url']">
-        <a :href="sponsor['Url']" target="_blank">
+        <a :href="sponsor['Url']" target="_blank" rel="noopener">
           <img :src="getSponsorLogo(sponsor)" />
         </a>
       </template>

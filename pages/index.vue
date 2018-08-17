@@ -14,7 +14,7 @@
           <div v-html="setAttendeeCount(page.homepage_hero_content)"></div>
           <a
             href="https://airtable.com/shr2NPFSOnIHUBvlY"
-            target="_blank"
+            target="_blank" rel="noopener"
           >
             <button>Register Now</button>
           </a>
@@ -33,7 +33,7 @@
           >
             <a
               :href="`https://www.youtube.com/watch?v=${page.homepage_hero_video_youtube_id}`"
-              target="_blank"
+              target="_blank" rel="noopener"
               class="no-decoration"
             >
               <img src="/play.svg">
@@ -60,7 +60,7 @@
         <h2>Need a quick overview? </h2>
         <a
           :href="`https://www.youtube.com/watch?v=${page.homepage_hero_video_youtube_id}`"
-          target="_blank"
+          target="_blank" rel="noopener"
         >
           <button>What is beCamp? (Video)</button>
         </a>
@@ -79,7 +79,7 @@
         <p>It's quick and easy, and guarantees we get your shirt size correct.</p>
         <a
           href="https://airtable.com/shr2NPFSOnIHUBvlY"
-          target="_blank"
+          target="_blank" rel="noopener"
         >
           <button>Register Now</button>
         </a>

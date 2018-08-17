@@ -1,5 +1,4 @@
 {
   "name": "becamp",
-  "alias": "be.camp",
-  "dotenv": true
+  "alias": "be.camp"
 }

@@ -29,7 +29,7 @@ module.exports = {
     ],
     script: [
       { src: '/youtube.js' },
-      { src: 'https://www.youtube.com/iframe_api' }
+      { src: 'https://www.youtube.com/iframe_api', async: true }
     ]
   },
   css: [

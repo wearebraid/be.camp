@@ -104,9 +104,7 @@ export const actions = {
         view: "Grid view"
       }).eachPage(function page(records, fetchNextPage) {
         records.forEach(function(record) {
-          if (record.fields['Directory Permission'] && record.fields['Directory Permission'] === true) {
-            commit('setAttendee', record.fields)
-          }
+          commit('setAttendee', record.fields)
         });
         fetchNextPage();
       }, function done(err) {

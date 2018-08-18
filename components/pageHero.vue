@@ -56,7 +56,7 @@ export default {
       viewportWidth: 'system/getViewportWidth'
     }),
     heroBackgroundImage () {
-      return `url("${this.background}")`
+      return this.background ? `url("${this.background}")` : `url("/hero-1.jpg")`
     },
     shouldBootVideo () {
       return ((!this.player || !this.player.A) && this.viewportWidth >= 860)

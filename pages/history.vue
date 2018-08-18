@@ -19,7 +19,6 @@
       <div class="wysiwyg-block">
         <div v-html="page.page_content"></div>
       </div>
-      <becamp-sponsors />
     </section>
   </div>
 </template>
@@ -30,8 +29,7 @@ import {mapState} from 'vuex'
 export default {
   async fetch ({store, params}) {
     try {
-      await store.dispatch('getPage', 'homepage')
-      await store.dispatch('getPage', 'sponsors')
+      await store.dispatch('getPage', 'history')
     } catch(err) {
       console.log(err)
     }
@@ -41,13 +39,10 @@ export default {
   },
   computed: {
     ...mapState({
-      butterPages: state => state.butterPages
+      butterPages: state => state.butterPages,
     }),
-    homepage () {
-      return this.butterPages['homepage'] ? this.butterPages['homepage'] : {}
-    },
     page () {
-      return this.butterPages['sponsors'] ? this.butterPages['sponsors'] : {}
+      return this.butterPages['history'] ? this.butterPages['history'] : {}
     }
   }
 }

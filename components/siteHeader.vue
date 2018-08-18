@@ -1,7 +1,9 @@
 <template>
   <header class="site-header">
     <div class="logo">
-      <img src="/beCampLogo1.png" alt="beCamp">
+      <nuxt-link to="/">
+        <img src="/beCampLogo1.png" alt="beCamp">
+      </nuxt-link>
     </div>
     <div class="nav">Attendees, FAQs, and more launching soon!</div>
   </header>

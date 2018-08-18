@@ -25,11 +25,13 @@ module.exports = {
       { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32x32.png' },
       { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon-16x16.png' },
       { rel: 'manifest', href: '/site.webmanifest' },
-      { rel: 'mask-icon', href: '/safari-pinned-tab.svg', color: '#e67711' }
+      { rel: 'mask-icon', href: '/safari-pinned-tab.svg', color: '#e67711' },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Open+Sans:700' }
     ],
     script: [
-      { src: '/youtube.js' },
-      { src: 'https://www.youtube.com/iframe_api', async: true }
+      { src: '/youtube.js', async: true, rel: 'preload' },
+      { src: '/typekit.js', async: true, rel: 'preload' },
+      { src: 'https://www.youtube.com/iframe_api', async: true, rel: 'preload' },
     ]
   },
   css: [

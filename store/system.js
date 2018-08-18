@@ -19,7 +19,7 @@ export const state = () => ({
       route: '/faqs'
     },
     {
-      name: 'Attendee Directory',
+      name: 'Attendees',
       route: 'attendees'
     },
   ]
@@ -31,7 +31,7 @@ export const getters = {
   },
   getViewportWidth(state) {
     return state.viewport.width
-  },
+  }
 }
 
 export const actions = {

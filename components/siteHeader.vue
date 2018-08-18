@@ -1,22 +1,42 @@
 <template>
   <header class="site-header">
-    <div class="logo">
-      <nuxt-link to="/">
-        <img src="/beCampLogo1.png" alt="beCamp">
-      </nuxt-link>
+    <div class="inner">
+      <div class="logo">
+        <nuxt-link to="/">
+          <img src="/beCampLogo1.png" alt="beCamp">
+        </nuxt-link>
+      </div>
+
+      <hamburger-menu
+        :word="''"
+        v-show="viewportWidth < 860"
+      />
+
+      <nav
+        class="site-nav"
+        v-show="viewportWidth >= 860"
+      >
+        <ul class="site-nav">
+          <li
+            v-for="item in siteNav"
+            :key="item.route"
+          >
+            <nuxt-link :to="item.route">{{ item.name }}</nuxt-link>
+          </li>
+        </ul>
+      </nav>
     </div>
-    <hamburger-menu
-      :word="''"
-      v-show="viewportWidth < 860"
-    />
   </header>
 </template>
 
 <script>
-import {mapGetters} from 'vuex'
+import {mapGetters, mapState} from 'vuex'
 
 export default {
   computed: {
+    ...mapState({
+      siteNav: state => state.system.navItems
+    }),
     ...mapGetters({
       viewportWidth: 'system/getViewportWidth'
     })
@@ -33,12 +53,17 @@ export default {
   width: 100%;
   z-index: 2;
   padding: gutter();
-  display: flex;
 
-  @include bp($m) {
+  .inner {
+    width: 100%;
+    @include row();
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+
+    @include bp($m) {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
   }
 
   .logo {
@@ -55,13 +80,31 @@ export default {
     }
   }
 
-  .nav {
+  .site-nav {
+    padding: gutter()/2 0 0 0;
+    display: block;
     font-size: 1.1rem;
+    display: flex;
+    list-style-type: none;
 
-    @include bp($m) {
-      padding-top: gutter()/4;
-      display: block;
-      color: #444;
+    li {
+      margin-right: gutter()*2;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      a {
+        color: $dark;
+        text-decoration: none;
+        font-size: 1.5rem;
+
+        &:hover,
+        &.nuxt-link-exact-active {
+          color: $accent;
+          text-decoration: underline;
+        }
+      }
     }
   }
 }

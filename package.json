@@ -16,6 +16,7 @@
   "dependencies": {
     "@nuxtjs/moment": "^1.0.0",
     "airtable": "^0.5.6",
+    "blueimp-md5": "^2.10.0",
     "buttercms": "^1.1.1",
     "clone-deep": "^4.0.0",
     "dotenv": "^6.0.0",

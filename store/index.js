@@ -1,4 +1,5 @@
 import moment from 'moment'
+import md5 from 'blueimp-md5'
 import {sortObjKeys} from '../libs/util'
 
 export const state = () => ({
@@ -24,34 +25,31 @@ export const getters = {
     }
   },
   premierSponsors (state) {
-    let premierSponsors = state.sponsors.filter((sponsor) => {
-      return sponsor['2018 Sponsorship Level'] && sponsor['2018 Sponsorship Level'] === 'Premier Sponsor'
-    })
     let premierSponsorsObject = {}
-    premierSponsors.forEach((sponsor) => {
-      premierSponsorsObject[sponsor['Sponsor']] = sponsor
-    })
+    let premierSponsors = state.sponsors.filter((sponsor) => sponsor['2018 Sponsorship Level'] && sponsor['2018 Sponsorship Level'] === 'Premier Sponsor')
+    premierSponsors.forEach((sponsor) => premierSponsorsObject[sponsor['Sponsor']] = sponsor)
     return sortObjKeys(premierSponsorsObject)
   },
   sponsors (state) {
-    let sponsors = state.sponsors.filter((sponsor) => {
-      return sponsor['2018 Sponsorship Level'] && (sponsor['2018 Sponsorship Level'] === 'Major Sponsor' || sponsor['2018 Sponsorship Level'] === 'Sponsor')
-    })
     let sponsorsObject = {}
-    sponsors.forEach((sponsor) => {
-      sponsorsObject[sponsor['Sponsor']] = sponsor
-    })
+    let sponsors = state.sponsors.filter((sponsor) => sponsor['2018 Sponsorship Level'] && (sponsor['2018 Sponsorship Level'] === 'Major Sponsor' || sponsor['2018 Sponsorship Level'] === 'Sponsor'))
+    sponsors.forEach((sponsor) => sponsorsObject[sponsor['Sponsor']] = sponsor)
     return sortObjKeys(sponsorsObject)
   },
   supporters (state) {
-    let supporters = state.sponsors.filter((sponsor) => {
-      return sponsor['2018 Sponsorship Level'] && sponsor['2018 Sponsorship Level'] === 'Contributor'
-    })
     let supportersObject = {}
-    supporters.forEach((sponsor) => {
-      supportersObject[sponsor['Sponsor']] = sponsor
-    })
+    let supporters = state.sponsors.filter((sponsor) => sponsor['2018 Sponsorship Level'] && sponsor['2018 Sponsorship Level'] === 'Contributor')
+    supporters.forEach((sponsor) => supportersObject[sponsor['Sponsor']] = sponsor)
     return sortObjKeys(supportersObject)
+  },
+  directoryAttendees (state) {
+    let attendeesObject = {}
+    let attendees = state.attendees.filter((attendee) => attendee['Directory Permission'] && attendee['Directory Permission'] === true)
+    attendees.forEach((attendee) => {
+      attendeesObject[attendee['Guest Name']] = attendee
+      attendeesObject[attendee['Guest Name']].key = md5(attendee['Email'].trim().toLowerCase())
+    })
+    return sortObjKeys(attendeesObject)
   }
 }
 

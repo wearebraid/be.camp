@@ -14,6 +14,7 @@ import becampSponsors from '~/components/becampSponsors'
 import sponsorCards from '~/components/sponsorCards'
 import logoGrid from '~/components/logoGrid'
 import htmlLightbox from '~/components/htmlLightbox'
+import attendeesGrid from '~/components/attendeesGrid'
 
 /**
  * Register components.
@@ -29,3 +30,4 @@ Vue.component('becamp-sponsors', becampSponsors)
 Vue.component('sponsor-cards', sponsorCards)
 Vue.component('logo-grid', logoGrid)
 Vue.component('html-lightbox', htmlLightbox)
+Vue.component('attendees-grid', attendeesGrid)

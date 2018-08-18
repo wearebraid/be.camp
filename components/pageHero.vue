@@ -12,6 +12,7 @@
       <div
         class="background-video"
         v-show="showVideo"
+        v-if="videoBackground"
       >
         <div
           class="video-bg cover"

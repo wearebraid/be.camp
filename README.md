@@ -2,6 +2,8 @@
 
 Open source website for https://be.camp. 
 
+<img src="https://raw.githubusercontent.com/wearebraid/be.camp/master/static/beCampLogo1.png" width="250">
+
 ### Pull requests and issue reports are welcomed.
 
 beCamp is a Charlottesville tech conference planned by the people who show up. On the evening prior to the conference, attendees socialize over food and drink, nominate topics they would like to present on or see discussed during the conference, and then cast their votes. You don't need to be an expert in a subject to suggest it for discussion! After topics have been voted on, volunteers (this could be you) dive in and arrange the schedule for the day of the conference.

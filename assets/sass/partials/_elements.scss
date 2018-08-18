@@ -59,3 +59,17 @@ a {
     color: inherit;
   }
 }
+
+ul {
+  list-style-type: disc;
+  padding: gutter()/4 gutter() gutter() gutter();
+
+  li {
+    margin-bottom: gutter()/4;
+    font-size: 1em;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

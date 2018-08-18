@@ -4,6 +4,8 @@
     v-if="page"
     class="page-wrapper"
   >
+    <html-lightbox />
+
     <page-hero
       :background="page.homepage_hero_image"
       :accent-color="page.page_accent_color"
@@ -35,6 +37,7 @@
               :href="`https://www.youtube.com/watch?v=${page.homepage_hero_video_youtube_id}`"
               target="_blank" rel="noopener"
               class="no-decoration"
+              @click.prevent.stop="showLightbox(youtubeVideo)"
             >
               <img src="/play.svg">
               <p>What is beCamp?</p>
@@ -61,8 +64,11 @@
         <a
           :href="`https://www.youtube.com/watch?v=${page.homepage_hero_video_youtube_id}`"
           target="_blank" rel="noopener"
+          @click.prevent="/**/"
         >
-          <button>What is beCamp? (Video)</button>
+          <button @click="showLightbox(youtubeVideo)">
+            What is beCamp? (Video)
+          </button>
         </a>
       </div>
     </section>
@@ -107,11 +113,16 @@ export default {
       console.log(err)
     }
   },
+  data () {
+    return {
+      youtubeVideo: `<div class="embed-container"><iframe src="https://www.youtube.com/embed/aVMBvWumoF8?autoplay=1&rel=0" frameborder="0" allowfullscreen autoplay="1"></iframe></div>`
+    }
+  },
   computed: {
-    ...mapState([
-      'butterPages',
-      'attendees'
-    ]),
+    ...mapState({
+      butterPages: state => state.butterPages,
+      attendees: state => state.attendees
+    }),
     page () {
       return this.butterPages['homepage']
     },
@@ -125,6 +136,10 @@ export default {
     ]),
     setAttendeeCount(html) {
       return html.replace("[count]&nbsp;", this.attendeeCount)
+    },
+    showLightbox (content) {
+      this.$store.commit('lightbox/setVisibility', true)
+      this.$store.commit('lightbox/setContent', content)
     }
   },
   watch: {

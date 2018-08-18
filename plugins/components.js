@@ -15,6 +15,8 @@ import sponsorCards from '~/components/sponsorCards'
 import logoGrid from '~/components/logoGrid'
 import htmlLightbox from '~/components/htmlLightbox'
 import attendeesGrid from '~/components/attendeesGrid'
+import offCanvasNav from '~/components/offCanvasNav'
+import hamburgerMenu from '~/components/hamburgerMenu'
 
 /**
  * Register components.
@@ -31,3 +33,5 @@ Vue.component('sponsor-cards', sponsorCards)
 Vue.component('logo-grid', logoGrid)
 Vue.component('html-lightbox', htmlLightbox)
 Vue.component('attendees-grid', attendeesGrid)
+Vue.component('off-canvas-nav', offCanvasNav)
+Vue.component('hamburger-menu', hamburgerMenu)

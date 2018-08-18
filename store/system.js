@@ -8,7 +8,21 @@ export const state = () => ({
   },
   scroll: {
     top: 0
-  }
+  },
+  navItems: [
+    {
+      name: 'Sponsors',
+      route: 'sponsors'
+    },
+    {
+      name: 'FAQs',
+      route: '/faqs'
+    },
+    {
+      name: 'Attendee Directory',
+      route: 'attendees'
+    },
+  ]
 })
 
 export const getters = {

@@ -59,12 +59,13 @@ export default {
       return this.background ? `url("${this.background}")` : `url("/hero-1.jpg")`
     },
     shouldBootVideo () {
-      return ((!this.player || !this.player.A) && this.viewportWidth >= 860)
+      return (this.videoBackground && this.viewportWidth >= 860)
     },
   },
   methods: {
     bootBackgroundVideo () {
       if (this.youtubeAPIReady && this.shouldBootVideo) {
+        console.log('boot video')
         if (document.getElementById('yt-player')) {
           this.player = new YT.Player('yt-player', {
             videoId: this.videoBackground,
@@ -87,6 +88,11 @@ export default {
       if(event.data === 0) {
         this.player.seekTo(0)
       }
+    }
+  },
+  beforeDestroy () {
+    if (this.player) {
+      this.player.destroy()
     }
   },
   watch: {

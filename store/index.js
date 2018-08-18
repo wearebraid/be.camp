@@ -8,6 +8,7 @@ export const state = () => ({
   attendees: [],
   currentPageAccentColor: 'orange',
   timeToEvent: null,
+  eventCountdownStarted: false,
   youtubeAPIReady: false
 })
 
@@ -116,16 +117,20 @@ export const actions = {
       })
     })
   },
-  setEventTime({commit, dispatch}, time) {
-    let currentTime = moment().unix()
-    let ts = moment(time, 'YYYY-M-D H:mm').unix()
-    let diffTime = ts - currentTime
-    let duration = moment.duration(diffTime * 1000, 'milliseconds')
+  setEventTime({state, commit, dispatch}, time) {
+    if (!state.eventCountdownStarted) {
+      let currentTime = moment().unix()
+      let ts = moment(time, 'YYYY-M-D H:mm').unix()
+      let diffTime = ts - currentTime
+      let duration = moment.duration(diffTime * 1000, 'milliseconds')
 
-    commit('setEventCountdown', duration)
-    setInterval(() => {
-      dispatch('updateEventCountdown', 1000)
-    }, 1000);
+      commit('setEventCountdown', duration)
+
+      setInterval(() => {
+        dispatch('updateEventCountdown', 1000)
+        commit('setEventCountdownFlag', true)
+      }, 1000);
+    }
   },
   updateEventCountdown ({commit, dispatch, state}, interval) {
     let duration = moment.duration(state.timeToEvent.asMilliseconds() - interval, 'milliseconds');
@@ -148,6 +153,9 @@ export const mutations = {
   },
   setEventCountdown(state, duration) {
     state.timeToEvent = duration
+  },
+  setEventCountdownFlag(state, payload) {
+    state.eventCountdownStarted = payload
   },
   youtubeLoaded(state, payload) {
     state.youtubeAPIReady = payload

@@ -5,26 +5,35 @@
         <img src="/beCampLogo1.png" alt="beCamp">
       </nuxt-link>
     </div>
-    <div class="nav">Attendees, FAQs, and more launching soon!</div>
+    <hamburger-menu
+      :word="''"
+      v-show="viewportWidth < 860"
+    />
   </header>
 </template>
 
 <script>
-export default {
+import {mapGetters} from 'vuex'
 
+export default {
+  computed: {
+    ...mapGetters({
+      viewportWidth: 'system/getViewportWidth'
+    })
+  }
 }
+
 </script>
 
 <style lang="scss" scoped>
 .site-header {
   position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0;
+  right: 0;
   width: 100%;
-  max-width: 100%;
   z-index: 2;
   padding: gutter();
-  @include row();
+  display: flex;
 
   @include bp($m) {
     display: flex;
@@ -33,7 +42,6 @@ export default {
   }
 
   .logo {
-    margin: 0 auto;
     max-width: 250px;
     text-align: center;
 
@@ -48,7 +56,6 @@ export default {
   }
 
   .nav {
-    display: none;
     font-size: 1.1rem;
 
     @include bp($m) {

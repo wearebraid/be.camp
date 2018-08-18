@@ -120,6 +120,7 @@ export default {
   },
   created () {
     this.$store.commit('setCurrentPageAccentColor', this.page.page_accent_color)
+    this.setEventTime(this.page.event_start_date)
   },
   computed: {
     ...mapState({
@@ -143,14 +144,6 @@ export default {
     showLightbox (content) {
       this.$store.commit('lightbox/setVisibility', true)
       this.$store.commit('lightbox/setContent', content)
-    }
-  },
-  watch: {
-    page: {
-      immediate: true,
-      handler () {
-        this.setEventTime(this.page.event_start_date)
-      }
     }
   }
 }

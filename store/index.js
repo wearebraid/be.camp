@@ -5,6 +5,7 @@ export const state = () => ({
   butterPages: {},
   sponsors: [],
   attendees: [],
+  currentPageAccentColor: 'orange',
   timeToEvent: null,
   youtubeAPIReady: false
 })
@@ -137,6 +138,9 @@ export const actions = {
 export const mutations = {
   setPage(state, {key, data}) {
     state.butterPages = Object.assign({}, state.butterPages, {[key]: data})
+  },
+  setCurrentPageAccentColor(state, payload) {
+    state.currentPageAccentColor = payload
   },
   setSponsor(state, payload) {
     state.sponsors.push(payload)

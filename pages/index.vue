@@ -118,6 +118,9 @@ export default {
       youtubeVideo: `<div class="embed-container"><iframe src="https://www.youtube.com/embed/aVMBvWumoF8?autoplay=1&rel=0" frameborder="0" allowfullscreen autoplay="1"></iframe></div>`
     }
   },
+  created () {
+    this.$store.commit('setCurrentPageAccentColor', this.page.page_accent_color)
+  },
   computed: {
     ...mapState({
       butterPages: state => state.butterPages,

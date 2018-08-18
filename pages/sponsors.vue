@@ -1,0 +1,59 @@
+<template>
+  <div
+    v-if="page"
+    class="page-wrapper"
+  >
+    <page-hero
+      :background="page.homepage_hero_image"
+      :accent-color="page.page_accent_color"
+    >
+      <h1 class="page-title">
+        {{ page.page_title }}
+      </h1>
+      <div class="page-description">
+        {{ page.page_description }}
+      </div>
+    </page-hero>
+
+    <section class="page-section tac becamp-sponsors">
+      <div class="wysiwyg-block">
+        <div v-html="page.page_content"></div>
+      </div>
+      <becamp-sponsors />
+    </section>
+  </div>
+</template>
+
+<script>
+import {mapState} from 'vuex'
+
+export default {
+  async fetch ({store, params}) {
+    try {
+      await store.dispatch('getPage', 'homepage')
+      await store.dispatch('getPage', 'sponsors')
+    } catch(err) {
+      console.log(err)
+    }
+  },
+  created () {
+    this.$store.commit('setCurrentPageAccentColor', this.page.page_accent_color)
+  },
+  computed: {
+    ...mapState({
+      butterPages: state => state.butterPages,
+      attendees: state => state.attendees
+    }),
+    homepage () {
+      return this.butterPages['homepage'] ? this.butterPages['homepage'] : {}
+    },
+    page () {
+      return this.butterPages['sponsors'] ? this.butterPages['sponsors'] : {}
+    }
+  }
+}
+</script>
+
+<style lang="scss" scoped>
+
+</style>

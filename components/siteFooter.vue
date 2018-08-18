@@ -2,13 +2,15 @@
   <footer
     class="site-footer"
     :style="{backgroundImage: footerBackgroundImage}"
-    :data-accent-color="accentColor"
+    :data-accent-color="currentPageAccentColor"
   >
     <div class="content">
       <div class="credits">
         <div class="logo">
           <div v-lazy-container="{ selector: 'img' }">
-            <img data-src="beCampLogo1.png" alt="beCamp">
+            <nuxt-link to="/">
+              <img data-src="beCampLogo1.png" alt="beCamp">
+            </nuxt-link>
           </div>
         </div>
         <div class="copyright">
@@ -40,15 +42,13 @@
 </template>
 
 <script>
+import {mapState} from 'vuex'
+
 export default {
   props: {
     background: {
       type: String,
       default: '/hero-1.jpg'
-    },
-    accentColor: {
-      type: String,
-      default: 'orange'
     }
   },
   data () {
@@ -57,6 +57,9 @@ export default {
     }
   },
   computed: {
+    ...mapState([
+      'currentPageAccentColor'
+    ]),
     footerBackgroundImage () {
       return `url("${this.background}")`
     },

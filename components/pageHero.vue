@@ -2,7 +2,7 @@
   <section
     class="page-hero"
     :style="{backgroundImage: heroBackgroundImage}"
-    :data-accent-color="accentColor"
+    :data-accent-color="currentPageAccentColor"
   >
     <div class="content">
       <slot />
@@ -12,6 +12,7 @@
       <div
         class="background-video"
         v-show="showVideo"
+        v-if="videoBackground"
       >
         <div
           class="video-bg cover"
@@ -35,10 +36,6 @@ export default {
       type: String,
       default: '/hero-1.jpg'
     },
-    accentColor: {
-      type: String,
-      default: 'orange'
-    },
     videoBackground: {
       type: String
     }
@@ -52,7 +49,8 @@ export default {
   },
   computed: {
     ...mapState([
-      'youtubeAPIReady'
+      'youtubeAPIReady',
+      'currentPageAccentColor'
     ]),
     ...mapGetters({
       viewportWidth: 'system/getViewportWidth'
@@ -315,5 +313,12 @@ export default {
       margin-left: ((30vh) * 16 / 9) / -2;
     }
   }
+}
+.page-title {
+  text-align: center;
+  font-weight: bold;
+}
+.page-description {
+  text-align: center;
 }
 </style>

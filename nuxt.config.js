@@ -4,6 +4,8 @@ dotenv.config();
 const butterKey = process.env.BUTTERKEY || null
 const airtableKey = process.env.AIRTABLEKEY || null
 
+const isProd = process.env.NODE_ENV === 'production'
+
 module.exports = {
   env: {
     butterKey,
@@ -70,7 +72,7 @@ module.exports = {
   'google-analytics': {
     id: 'UA-124258426-1',
     debug: {
-      sendHitTask: process.env.NODE_ENV === 'production'
+      sendHitTask: isProd
     }
   },
   /*

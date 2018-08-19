@@ -53,7 +53,8 @@ module.exports = {
   modules: [
     'nuxt-sass-resources-loader',
     '@nuxtjs/moment',
-    '@nuxtjs/sitemap'
+    '@nuxtjs/sitemap',
+    '@nuxtjs/google-analytics'
   ],
   sassResources: [
     './assets/sass/global.scss'
@@ -65,6 +66,12 @@ module.exports = {
     exclude: [
       '/history'
     ]
+  },
+  'google-analytics': {
+    id: 'UA-124258426-1',
+    debug: {
+      sendHitTask: process.env.NODE_ENV === 'production'
+    }
   },
   /*
   ** Build configuration

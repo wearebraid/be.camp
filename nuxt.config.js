@@ -52,11 +52,17 @@ module.exports = {
   */
   modules: [
     'nuxt-sass-resources-loader',
-    '@nuxtjs/moment'
+    '@nuxtjs/moment',
+    '@nuxtjs/sitemap'
   ],
   sassResources: [
     './assets/sass/global.scss'
   ],
+  sitemap: {
+    hostname: 'https://be.camp',
+    cacheTime: 1000 * 60 * 15,
+    generate: true, // Enable me when using nuxt generate
+  },
   /*
   ** Build configuration
   */

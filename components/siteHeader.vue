@@ -83,7 +83,7 @@ export default {
   .site-nav {
     padding: gutter()/2 0 0 0;
     display: block;
-    font-size: 1.1rem;
+    font-size: 1rem;
     display: flex;
     list-style-type: none;
 
@@ -97,7 +97,7 @@ export default {
       a {
         color: $dark;
         text-decoration: none;
-        font-size: 1.5rem;
+        font-size: 1.25rem;
 
         &:hover,
         &.nuxt-link-exact-active {

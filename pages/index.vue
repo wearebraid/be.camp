@@ -16,10 +16,18 @@
           <div v-html="setAttendeeCount(page.homepage_hero_content)"></div>
           <a
             href="https://airtable.com/shr2NPFSOnIHUBvlY"
-            target="_blank" rel="noopener"
+            target="_blank"
+            rel="noopener"
+            class="action"
           >
             <button>Register Now</button>
           </a>
+          <nuxt-link
+            to="/schedule"
+            class="action"
+          >
+            <button class="alt">View Schedule</button>
+          </nuxt-link>
         </div>
 
         <div class="event-countdown">
@@ -178,6 +186,13 @@ export default {
         order: 2;
         margin: auto 0 2em auto;
       }
+
+      .action {
+        display: block;
+      }
+      .action + .action {
+        margin-top: gutter();
+      }
     }
 
     .event-countdown {
@@ -214,13 +229,17 @@ export default {
       margin-top: 1.5em;
 
       img {
-        max-width: 75px;
+        max-width: 50px;
         margin-bottom: .25em;
         cursor: pointer;
         transition: transform .25s;
 
         &:hover {
           transform: scale(1.05);
+        }
+
+        @include bp($ml) {
+          max-width: 75px;
         }
       }
 

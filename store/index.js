@@ -6,6 +6,7 @@ export const state = () => ({
   butterPages: {},
   sponsors: [],
   attendees: [],
+  schedule: [],
   currentPageAccentColor: 'orange',
   timeToEvent: null,
   eventCountdownStarted: false,
@@ -51,6 +52,16 @@ export const getters = {
       attendeesObject[attendee['Guest Name']].key = md5(attendee['Email'].trim().toLowerCase())
     })
     return sortObjKeys(attendeesObject)
+  },
+  scheduleByTime (state) {
+    let scheduleObject = {}
+    state.schedule.forEach((scheduleItem) => {
+      if (!scheduleObject[scheduleItem['Time']]) {
+        scheduleObject[scheduleItem['Time']] = []
+      }
+      scheduleObject[scheduleItem['Time']].push(scheduleItem)
+    })
+    return scheduleObject
   }
 }
 
@@ -61,7 +72,8 @@ export const actions = {
   loadData ({dispatch}) {
     return Promise.all([
       dispatch('getSponsors'),
-      dispatch('getAttendees')
+      dispatch('getAttendees'),
+      dispatch('getSchedule')
     ])
   },
   async getPage ({commit, state}, page) {
@@ -117,6 +129,27 @@ export const actions = {
       })
     })
   },
+  getSchedule({commit}) {
+    return new Promise((resolve, reject) => {
+      let base = this.app.api.airtable
+      base('2018 Saturday Schedule').select({
+        maxRecords: 999,
+        view: "Grid view"
+      }).eachPage(function page(records, fetchNextPage) {
+        records.forEach(function(record) {
+          commit('setScheduleItem', record.fields)
+        });
+        fetchNextPage();
+      }, function done(err) {
+        if (err) {
+          console.error(err)
+          reject()
+          return
+        }
+        resolve()
+      })
+    })
+  },
   setEventTime({state, commit, dispatch}, time) {
     if (!state.eventCountdownStarted) {
       let currentTime = moment().unix()
@@ -150,6 +183,9 @@ export const mutations = {
   },
   setAttendee(state, payload) {
     state.attendees.push(payload)
+  },
+  setScheduleItem(state, payload) {
+    state.schedule.push(payload)
   },
   setEventCountdown(state, duration) {
     state.timeToEvent = duration

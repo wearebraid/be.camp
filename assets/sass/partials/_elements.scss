@@ -20,6 +20,14 @@ button {
   @include bp($m) {
     font-size: 1em;
   }
+
+  &.alt {
+    background: linear-gradient(to bottom, $accent2, $accent4);
+
+     &:hover {
+      background: linear-gradient(to bottom, $accent4, $accent4);
+    }
+  }
 }
 
 img {

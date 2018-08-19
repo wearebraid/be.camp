@@ -23,8 +23,6 @@ body {
     padding: 2em gutter() 4em gutter();
   }
 
-  &.tac {text-align: center;}
-
   &.decorative-bg {
     position: relative;
     perspective: 400px;
@@ -113,5 +111,25 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
+  }
+}
+
+.page-enter-active, .page-leave-active {
+  transition: all .2s;
+  opacity: 1;
+
+  .page-hero + .page-section {
+    transition: all .15s .05s;
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.page-enter, .page-leave-active {
+  opacity: 0;
+
+  .page-hero + .page-section {
+    transition: none;
+    transform: translateY(30px);
+    opacity: 0;
   }
 }

@@ -65,7 +65,6 @@ export default {
   methods: {
     bootBackgroundVideo () {
       if (this.youtubeAPIReady && this.shouldBootVideo) {
-        console.log('boot video')
         if (document.getElementById('yt-player')) {
           this.player = new YT.Player('yt-player', {
             videoId: this.videoBackground,

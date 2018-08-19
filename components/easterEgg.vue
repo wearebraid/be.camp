@@ -24,10 +24,10 @@ export default {
 ||    ///    ./    //     /       %&&&    &&&&  #&&&  &&&&   &&&   &&&  &&&    &&&     ||
 ||    //    //      /     //      %&&&&&&&&&&   #&&&   &&&&&&&&&&  &&&   &&&&&&&&&     ||
 ||    /    //      //     */                                                           ||
-||    /    /////////      /*                                                           ||
-||    /                  //                                                            ||
-||    /                //.        Enjoy digging into code? We'd love to chat.          ||
-||    ////////////////*           https://www.wearebraid.com/careers                   ||
+||    /    /////////      /*      Enjoy digging into code? We'd love to chat.          ||
+||    /                  //       https://www.wearebraid.com/careers                   ||
+||    /                //.                                                             ||
+||    ////////////////*           Source: https://github.com/wearebraid/be.camp        ||
 ||                                                                                     ||
 ||                                                                                     ||
 *=======================================================================================*

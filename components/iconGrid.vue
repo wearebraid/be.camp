@@ -45,7 +45,11 @@ export default {
     img {
       margin-bottom: gutter();
       max-width: 120px;
-      max-height: 120px;
+      max-height: 90px;
+    }
+
+    .label {
+      margin-top: 0;
     }
   }
 }

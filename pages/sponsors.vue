@@ -28,14 +28,6 @@
 import {mapState} from 'vuex'
 
 export default {
-  async asyncData ({store, params}) {
-    try {
-      await store.dispatch('getPage', 'homepage')
-      await store.dispatch('getPage', 'sponsors')
-    } catch(err) {
-      console.log(err)
-    }
-  },
   created () {
     this.$store.commit('setCurrentPageAccentColor', this.page.page_accent_color)
   },

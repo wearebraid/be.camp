@@ -73,17 +73,30 @@ export const actions = {
     return Promise.all([
       dispatch('getSponsors'),
       dispatch('getAttendees'),
-      dispatch('getSchedule')
+      dispatch('getSchedule'),
+      dispatch('getPage', 'homepage'),
+      dispatch('getPage', 'faqs'),
+      dispatch('getPage', 'schedule'),
+      dispatch('getPage', 'history'),
+      dispatch('getPage', 'attendees'),
+      dispatch('getPage', 'sponsors')
     ])
   },
-  async getPage ({commit, state}, page) {
-    let res = await this.app.api.butter.page.retrieve('*', page)
-    if (!state.butterPages[res.data.data.slug]) {
-      commit('setPage', {
-        key: res.data.data.slug,
-        data: res.data.data.fields
+  getPage ({commit, state}, page) {
+    return new Promise((resolve, reject) => {
+      this.app.api.butter.page.retrieve('*', page).then((res) => {
+        if (!state.butterPages[res.data.data.slug]) {
+          commit('setPage', {
+            key: res.data.data.slug,
+            data: res.data.data.fields
+          })
+        }
+        resolve()
+      }).catch((res) => {
+        console.log(res)
+        reject()
       })
-    }
+    })
   },
   getSponsors({commit}) {
     return new Promise((resolve, reject) => {

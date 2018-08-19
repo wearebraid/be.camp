@@ -114,13 +114,6 @@
 import { mapActions, mapGetters, mapState } from 'vuex'
 
 export default {
-  async asyncData ({store, params}) {
-    try {
-      await store.dispatch('getPage', 'homepage')
-    } catch(err) {
-      console.log(err)
-    }
-  },
   data () {
     return {
       youtubeVideo: `<div class="embed-container"><iframe src="https://www.youtube.com/embed/aVMBvWumoF8?autoplay=1&rel=0" frameborder="0" allowfullscreen autoplay="1"></iframe></div>`

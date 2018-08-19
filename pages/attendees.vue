@@ -40,13 +40,6 @@
 import {mapState, mapGetters} from 'vuex'
 
 export default {
-  async asyncData ({store, params}) {
-    try {
-      await store.dispatch('getPage', 'attendees')
-    } catch(err) {
-      console.log(err)
-    }
-  },
   created () {
     this.$store.commit('setCurrentPageAccentColor', this.page.page_accent_color)
   },

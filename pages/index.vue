@@ -33,7 +33,13 @@
         <div class="event-countdown">
           <div class="countdown-timer">
             <div class="countdown-label">
-              {{ page.event_date_label }}
+              <a
+                href="https://goo.gl/maps/UPNZVdsz1Xr"
+                target="_blank"
+                class="no-decoration hover"
+              >
+                {{ page.event_date_label }}
+              </a>
             </div>
             <countdown-clock />
           </div>

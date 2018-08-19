@@ -66,6 +66,11 @@ a {
     text-decoration: none;
     color: inherit;
   }
+  &.hover {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }
 
 ul {

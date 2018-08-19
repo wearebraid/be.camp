@@ -114,7 +114,7 @@
 import { mapActions, mapGetters, mapState } from 'vuex'
 
 export default {
-  async fetch ({store, params}) {
+  async asyncData ({store, params}) {
     try {
       await store.dispatch('getPage', 'homepage')
     } catch(err) {

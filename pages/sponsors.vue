@@ -28,7 +28,7 @@
 import {mapState} from 'vuex'
 
 export default {
-  async fetch ({store, params}) {
+  async asyncData ({store, params}) {
     try {
       await store.dispatch('getPage', 'homepage')
       await store.dispatch('getPage', 'sponsors')

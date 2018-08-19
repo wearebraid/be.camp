@@ -40,7 +40,7 @@
 import {mapState, mapGetters} from 'vuex'
 
 export default {
-  async fetch ({store, params}) {
+  async asyncData ({store, params}) {
     try {
       await store.dispatch('getPage', 'attendees')
     } catch(err) {

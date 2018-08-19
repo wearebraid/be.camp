@@ -56,7 +56,8 @@ module.exports = {
     'nuxt-sass-resources-loader',
     '@nuxtjs/moment',
     '@nuxtjs/sitemap',
-    '@nuxtjs/google-analytics'
+    '@nuxtjs/google-analytics',
+    '@nuxtjs/pwa',
   ],
   sassResources: [
     './assets/sass/global.scss'

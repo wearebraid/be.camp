@@ -10,3 +10,6 @@ npm-debug.log
 # Nuxt generate
 dist
 /.env
+
+# PWA
+sw.*

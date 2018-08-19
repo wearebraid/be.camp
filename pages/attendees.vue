@@ -40,6 +40,14 @@
 import {mapState, mapGetters} from 'vuex'
 
 export default {
+  head () {
+    return {
+      title: 'Attendee Directory | beCamp',
+      meta: [
+        { hid: 'description', name: 'description', content: 'The who\'s who of beCamp. These are some of the interesting people you\'ll run into.' }
+      ]
+    }
+  },
   created () {
     this.$store.commit('setCurrentPageAccentColor', this.page.page_accent_color)
   },

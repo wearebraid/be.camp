@@ -27,6 +27,14 @@
 import {mapState} from 'vuex'
 
 export default {
+  head () {
+    return {
+      title: 'History | beCamp',
+      meta: [
+        { hid: 'description', name: 'description', content: 'beCamp is an implementation of barCamp, an anttendee planned unconference. Here\'s the story of how it came to be.' }
+      ]
+    }
+  },
   created () {
     this.$store.commit('setCurrentPageAccentColor', this.page.page_accent_color)
   },

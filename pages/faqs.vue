@@ -27,6 +27,14 @@
 import {mapState} from 'vuex'
 
 export default {
+  head () {
+    return {
+      title: 'FAQs | beCamp',
+      meta: [
+        { hid: 'description', name: 'description', content: 'Everything you wanted to know about beCamp, but were maybe too afraid to ask.' }
+      ]
+    }
+  },
   created () {
     this.$store.commit('setCurrentPageAccentColor', this.page.page_accent_color)
   },

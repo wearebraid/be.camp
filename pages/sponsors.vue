@@ -28,6 +28,14 @@
 import {mapState} from 'vuex'
 
 export default {
+  head () {
+    return {
+      title: 'Sponsors | beCamp',
+      meta: [
+        { hid: 'description', name: 'description', content: 'Check out all these wonderful sponsors who help make beCamp a reality.' }
+      ]
+    }
+  },
   created () {
     this.$store.commit('setCurrentPageAccentColor', this.page.page_accent_color)
   },

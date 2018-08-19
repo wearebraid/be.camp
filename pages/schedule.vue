@@ -28,6 +28,14 @@
 import {mapState} from 'vuex'
 
 export default {
+  head () {
+    return {
+      title: 'Schedule | beCamp',
+      meta: [
+        { hid: 'description', name: 'description', content: 'Here\'s the full schedule of everything that\'s happening and when at beCamp. Don\'t miss a thing!' }
+      ]
+    }
+  },
   created () {
     this.$store.commit('setCurrentPageAccentColor', this.page.page_accent_color)
   },

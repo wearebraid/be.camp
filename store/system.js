@@ -10,10 +10,10 @@ export const state = () => ({
     top: 0
   },
   navItems: [
-    // {
-    //   name: 'Schedule',
-    //   route: '/schedule'
-    // },
+    {
+      name: 'Schedule',
+      route: '/schedule'
+    },
     {
       name: 'Sponsors',
       route: '/sponsors'

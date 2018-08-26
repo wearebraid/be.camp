@@ -22,12 +22,12 @@
           >
             <button>Register Now</button>
           </a>
-          <!-- <nuxt-link
+          <nuxt-link
             to="/schedule"
             class="action"
           >
             <button class="alt">View Schedule</button>
-          </nuxt-link> -->
+          </nuxt-link>
         </div>
 
         <div class="event-countdown">

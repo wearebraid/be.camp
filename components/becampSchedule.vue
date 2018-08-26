@@ -12,7 +12,7 @@
           class="event"
           v-for="event in events"
           :key="event['Location']"
-          :data-location="event['Location']"
+          :data-location="getLocationID(event['Location'])"
         >
           <div class="event-data">
             <h4 class="topic">{{ event['Topic'] }}</h4>
@@ -24,7 +24,7 @@
             </span>
           </div>
           <div class="event-location">
-            <span class="location">{{ event['Location'] }}</span>
+            <span class="location">{{ getLocationName(event['Location']) }}</span>
           </div>
         </div>
       </div>
@@ -40,6 +40,15 @@ export default {
     ...mapGetters([
       'scheduleByTime'
     ])
+  },
+  methods: {
+    getLocationName(location) {
+      return location.substring(0, location.indexOf(' ['))
+    },
+    getLocationID(location) {
+      let id = location.match(/\[(.*?)\]/)
+      return id[0].substring(1, 2)
+    }
   }
 }
 </script>
@@ -75,31 +84,37 @@ export default {
       margin-bottom: gutter();
     }
 
-    &[data-location="Conf. Room 1"] {
-      .event-location {
-        color: #fff;
-        background: linear-gradient(to bottom, $accent, darken($accent, 5%));
-      }
-    }
-    &[data-location="Conf. Room 2"] {
+    &[data-location="1"] {
       .event-location {
         color: #fff;
         background: linear-gradient(to bottom, $accent2, darken($accent2, 5%));
       }
     }
-    &[data-location="Conf. Room 3"] {
+    &[data-location="2"] {
       .event-location {
         color: #fff;
         background: linear-gradient(to bottom, $accent4, darken($accent4, 5%));
       }
     }
-    &[data-location="Conf. Room 4"] {
+    &[data-location="3"] {
+      .event-location {
+        color: #fff;
+        background: linear-gradient(to bottom, $accent, darken($accent, 5%));
+      }
+    }
+    &[data-location="4"] {
+      .event-location {
+        color: #fff;
+        background: linear-gradient(to bottom, $accent5, darken($accent5, 5%));
+      }
+    }
+    &[data-location="5"] {
       .event-location {
         color: #fff;
         background: linear-gradient(to bottom, $accent3, darken($accent3, 5%));
       }
     }
-    &[data-location="All Rooms"] {
+    &[data-location="6"] {
       .event-location {
         color: $dark;
         background: linear-gradient(to bottom, $light-d, darken($light-d, 8%));

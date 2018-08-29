@@ -3,6 +3,7 @@
     class="site-prompt"
     :style="styles"
     ref="prompt"
+    v-show="show || shown"
   >
     <div class="inner">
       <div
@@ -56,16 +57,22 @@ export default {
   data () {
     return {
       show: false,
+      shown: false,
       componentHeight: 0
     }
   },
   mounted () {
     this.setComponentHeight()
-    this.show = true
+
+    if (!this.dismissedPrompts.includes(this.promptId)) {
+      this.show = true
+      this.shown = true
+    }
   },
   computed: {
     ...mapGetters({
-      viewportWidth: 'system/getViewportWidth'
+      viewportWidth: 'system/getViewportWidth',
+      dismissedPrompts: 'system/getDismissedPrompts'
     }),
     styles () {
       if (this.show) {
@@ -81,7 +88,9 @@ export default {
   },
   methods: {
     dismiss () {
+      this.setComponentHeight()
       this.show = false
+      this.$store.commit('system/setDismissedPrompt', this.promptId)
     },
     setComponentHeight () {
       this.componentHeight = this.$refs.prompt.clientHeight

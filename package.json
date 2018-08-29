@@ -29,7 +29,8 @@
     "nuxt-sass-resources-loader": "^2.0.3",
     "reset-css": "^4.0.1",
     "sass-loader": "^7.0.3",
-    "vue-style-loader": "^4.1.1"
+    "vue-style-loader": "^4.1.1",
+    "vuex-persistedstate": "^2.5.4"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.1",

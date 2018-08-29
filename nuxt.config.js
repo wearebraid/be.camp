@@ -43,7 +43,8 @@ module.exports = {
     '~/plugins/components',
     '~/plugins/api',
     {src: '~/plugins/lazyload', ssr: false},
-    {src: '~/plugins/events', ssr: false}
+    {src: '~/plugins/events', ssr: false},
+    {src: '~/plugins/localStorage.js', ssr: false}
   ],
   /*
   ** Customize the progress bar color

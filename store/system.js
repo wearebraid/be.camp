@@ -6,7 +6,7 @@ export const state = () => ({
     width: 0,
     height: 0
   },
-  sitePrompts: {},
+  dismissedPrompts: [],
   scroll: {
     top: 0
   },
@@ -36,6 +36,9 @@ export const getters = {
   },
   getViewportWidth(state) {
     return state.viewport.width
+  },
+  getDismissedPrompts(state) {
+    return state.dismissedPrompts
   }
 }
 
@@ -52,7 +55,10 @@ export const mutations = {
   setViewport(state, value) {
     state.viewport = value
   },
-  setScroll: (state, value) => {
+  setScroll(state, value) {
     state.scroll = value
   },
+  setDismissedPrompt(state, value) {
+    state.dismissedPrompts.push(value)
+  }
 }

@@ -23,6 +23,13 @@
           >
             <nuxt-link :to="item.route">{{ item.name }}</nuxt-link>
           </li>
+          <li>
+            <a
+              href="https://www.customink.com/fundraising/becamp-hat"
+              target="_blank"
+              rel="noopener"
+            >Get a beCamp hat!</a>
+          </li>
         </ul>
       </nav>
     </div>

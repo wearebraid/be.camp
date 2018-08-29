@@ -3,7 +3,7 @@
 export const state = () => ({
   mobileNavDisplay: false,
   viewport: {
-    width: 0,
+    width: 960,
     height: 0
   },
   dismissedPrompts: [],

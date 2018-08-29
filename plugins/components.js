@@ -18,6 +18,7 @@ import attendeesGrid from '~/components/attendeesGrid'
 import offCanvasNav from '~/components/offCanvasNav'
 import hamburgerMenu from '~/components/hamburgerMenu'
 import becampSchedule from '~/components/becampSchedule'
+import sitePrompt from '~/components/sitePrompt'
 
 /**
  * Register components.
@@ -37,3 +38,4 @@ Vue.component('attendees-grid', attendeesGrid)
 Vue.component('off-canvas-nav', offCanvasNav)
 Vue.component('hamburger-menu', hamburgerMenu)
 Vue.component('becamp-schedule', becampSchedule)
+Vue.component('site-prompt', sitePrompt)

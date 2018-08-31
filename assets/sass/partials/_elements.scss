@@ -79,11 +79,11 @@ a {
 
 ul {
   list-style-type: disc;
-  padding: gutter()/4 gutter() gutter() gutter();
+  padding: gutter()/4 gutter() gutter()/2 gutter();
 
   li {
-    margin-bottom: gutter()/4;
-    font-size: 1em;
+    margin-bottom: gutter()/2;
+    line-height: 1.4;
 
     &:last-child {
       margin-bottom: 0;

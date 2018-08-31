@@ -103,6 +103,9 @@
         >
           <button>Register Now</button>
         </a>
+        <div class="wysiwyg-block">
+          <div v-html="page.safe_inclusive_accessible"></div>
+        </div>
       </div>
     </section>
 

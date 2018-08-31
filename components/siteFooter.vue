@@ -1,44 +1,49 @@
 <template>
-  <footer
-    class="site-footer"
-    :style="{backgroundImage: footerBackgroundImage}"
-    :data-accent-color="currentPageAccentColor"
-  >
-    <div class="content">
-      <div class="credits">
-        <div class="logo">
-          <div v-lazy-container="{ selector: 'img' }">
-            <nuxt-link to="/">
-              <img data-src="beCampLogo1.png" alt="beCamp">
-            </nuxt-link>
+  <div class="global-site-footer">
+
+    <newsletter-signup />
+
+    <footer
+      class="site-footer"
+      :style="{backgroundImage: footerBackgroundImage}"
+      :data-accent-color="currentPageAccentColor"
+    >
+      <div class="content">
+        <div class="credits">
+          <div class="logo">
+            <div v-lazy-container="{ selector: 'img' }">
+              <nuxt-link to="/">
+                <img data-src="beCampLogo1.png" alt="beCamp">
+              </nuxt-link>
+            </div>
           </div>
-        </div>
-        <div class="copyright">
-          &copy; {{ year }} beCamp | no rights reserved
-        </div>
-        <div class="project-source">
-          Website source available on <a href="https://github.com/wearebraid/be.camp" target="_blank" rel="noopener">github</a>
-        </div>
-        <div class="braid-credit">
-          <a href="https://www.wearebraid.com" target="_blank" rel="noopener">
-            Made with <span class="heart">❤️</span> by Braid in Charlottesville
-          </a>
-        </div>
-      </div>
-      <div class="slack-promo">
-        <div class="sales-pitch">
-          <h3>Cville Slack</h3>
-          Want that beCamp feeling all year?<br>
-          Join the conversation in the #becamp channel on Cville Slack!
-          <div v-lazy-container="{ selector: 'img' }">
-            <a href="http://bit.ly/slack-cville" target="_blank" rel="noopener">
-              <img data-src="slack.png"> Join Cville Slack (It's free!)
+          <div class="copyright">
+            &copy; {{ year }} beCamp | no rights reserved
+          </div>
+          <div class="project-source">
+            Website source available on <a href="https://github.com/wearebraid/be.camp" target="_blank" rel="noopener">github</a>
+          </div>
+          <div class="braid-credit">
+            <a href="https://www.wearebraid.com" target="_blank" rel="noopener">
+              Made with <span class="heart">❤️</span> by Braid in Charlottesville
             </a>
           </div>
         </div>
+        <div class="slack-promo">
+          <div class="sales-pitch">
+            <h3>Cville Slack</h3>
+            Want that beCamp feeling all year?<br>
+            Join the conversation in the #becamp channel on Cville Slack!
+            <div v-lazy-container="{ selector: 'img' }">
+              <a href="http://bit.ly/slack-cville" target="_blank" rel="noopener">
+                <img data-src="slack.png"> Join Cville Slack (It's free!)
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </footer>
+    </footer>
+  </div>
 </template>
 
 <script>

@@ -32,6 +32,12 @@ export default {
 .newsletter-signup-form {
   border-top: 1px solid #eee;
   text-align: center;
+  padding-top: 3em;
+
+  @include bp($m) {
+    padding-top: 5em;
+    padding-bottom: 6em;
+  }
 }
 
 .newsletter-form {

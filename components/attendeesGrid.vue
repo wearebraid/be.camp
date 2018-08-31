@@ -28,7 +28,6 @@ export default {
 <style lang="scss" scoped>
 .attendee-directory {
   @include row();
-  max-width: 800px;
   padding: 0 0 gutter()*3 0;
   display: flex;
   justify-content: center;
@@ -54,6 +53,12 @@ export default {
   }
   @include bp($ml) {
     max-width: 25%;
+  }
+  @include bp($l) {
+    max-width: 20%;
+  }
+  @include bp($xl) {
+    max-width: 16.666%;
   }
 
   .inner {

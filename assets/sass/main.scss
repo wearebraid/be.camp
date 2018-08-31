@@ -23,6 +23,10 @@ body {
     padding: 2em gutter() 4em gutter();
   }
 
+  &.extra-wide {
+    max-width: 1440px;
+  }
+
   &.decorative-bg {
     position: relative;
     perspective: 400px;

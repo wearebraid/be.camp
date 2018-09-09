@@ -8,12 +8,6 @@
       class="page"
       @click.stop="$store.commit('system/setMobileNavDisplay', false)"
     >
-      <site-prompt
-        prompt-id="becamp-hats"
-        message="Embroidered beCamp hats are available for order! Show your support for the local Charlottesville tech community. All proceeds go to support beCamp and beSwarm event expenses."
-        cta-link="https://www.customink.com/fundraising/becamp-hat"
-        cta-message="Order Now"
-      />
       <easter-egg />
       <site-header />
       <div class="page-content">

@@ -66,10 +66,7 @@ module.exports = {
   sitemap: {
     hostname: 'https://be.camp',
     cacheTime: 1000 * 60 * 15,
-    generate: true, // Enable me when using nuxt generate,
-    exclude: [
-      '/history'
-    ]
+    generate: true, // Enable me when using nuxt generate
   },
   'google-analytics': {
     id: 'UA-124258426-1',

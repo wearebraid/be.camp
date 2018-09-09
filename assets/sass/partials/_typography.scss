@@ -17,6 +17,14 @@ h1, h2, h3, h4, h5, h6{
 strong {
   font-weight: bold;
 }
+em {
+  font-style: italic;
+}
+figcaption {
+  color: #999;
+  font-size: .8em;
+  margin-top: .25em;
+}
 
 p, ul, ol, li {
   font-size: 1rem;

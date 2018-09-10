@@ -18,7 +18,7 @@
             </div>
           </div>
           <div class="copyright">
-            &copy; {{ year }} beCamp | no rights reserved
+            &copy; {{ year }} beCamp
           </div>
           <div class="project-source">
             Website source available on <a href="https://github.com/wearebraid/be.camp" target="_blank" rel="noopener">github</a>

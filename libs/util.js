@@ -50,8 +50,20 @@ export function reduce (original, callback, accumulator) {
 
 export function sortObjKeys(obj) {
   var ordered = {};
-  Object.keys(obj).sort().forEach(function(key) {
+  Object.keys(obj).sort(compareCaseInsensitive).forEach(function(key) {
     ordered[key] = obj[key];
   });
   return ordered;
+}
+
+function compareCaseInsensitive(a, b) {
+  let x = a.toLocaleLowerCase(),
+      y = b.toLocaleLowerCase()
+  if (x < y) {
+    return -1;
+  }
+  if (y < x) {
+    return 1;
+  }
+  return 0;
 }

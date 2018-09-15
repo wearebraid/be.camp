@@ -53,17 +53,17 @@ export default {
 }
 
 .logo {
-  filter: grayscale(1);
   max-width: 50%;
   padding: gutter();
-  transition: filter .33s;
-
-  &:hover {
-    filter: grayscale(0);
-  }
 
   @include bp($m) {
     max-width: 33%;
+        filter: grayscale(1);
+    transition: filter .33s;
+
+    &:hover  {
+      filter: grayscale(0);
+    }
   }
   @include bp($l) {
     padding: gutter();

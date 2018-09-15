@@ -31,7 +31,8 @@ export default {
     return {
       title: 'History | beCamp',
       meta: [
-        { hid: 'description', name: 'description', content: 'beCamp is an implementation of barCamp, an anttendee planned unconference. Here\'s the story of how it came to be.' }
+        { hid: 'description', name: 'description', content: 'beCamp is an implementation of barCamp, an anttendee planned unconference. Here\'s the story of how it came to be.' },
+        { hid: 'og:description', name: 'og:description', property: 'og:description', content: 'beCamp is a popular Charlottesville tech conference planned by the people who show up. Come spend the day with your peers and learn something new!' }
       ]
     }
   },

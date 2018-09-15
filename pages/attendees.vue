@@ -44,7 +44,8 @@ export default {
     return {
       title: 'Attendee Directory | beCamp',
       meta: [
-        { hid: 'description', name: 'description', content: 'The who\'s who of beCamp. These are some of the interesting people you\'ll run into.' }
+        { hid: 'description', name: 'description', content: 'The who\'s who of beCamp. These are some of the interesting people you\'ll run into.' },
+        { hid: 'og:description', name: 'og:description', property: 'og:description', content: 'beCamp is a popular Charlottesville tech conference planned by the people who show up. Come spend the day with your peers and learn something new!' }
       ]
     }
   },

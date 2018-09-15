@@ -58,7 +58,7 @@ export default {
 
   @include bp($m) {
     max-width: 33%;
-        filter: grayscale(1);
+    filter: grayscale(1);
     transition: filter .33s;
 
     &:hover  {

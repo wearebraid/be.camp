@@ -69,7 +69,7 @@ export const actions = {
   async nuxtServerInit ({dispatch}) {
     await dispatch('loadData')
   },
-  loadData ({dispatch}) {
+  async loadData ({dispatch}) {
     return Promise.all([
       dispatch('getSponsors'),
       dispatch('getAttendees'),

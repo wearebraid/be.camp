@@ -77,6 +77,7 @@ export default {
     span {
       font-size: 1rem;
       margin-top: gutter()/2;
+      text-transform: capitalize;
     }
   }
 }

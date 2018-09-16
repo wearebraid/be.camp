@@ -15,7 +15,7 @@
       </div>
     </page-hero>
 
-    <section class="page-section">
+    <section class="page-section wide decorative-bg">
       <div class="wysiwyg-block">
         <div v-html="page.page_content"></div>
       </div>

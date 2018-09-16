@@ -87,11 +87,14 @@ export default {
   @include bp($l) {
     width: 25%;
   }
+  @include bp($xxl) {
+    width: 20%;
+  }
 }
 
 .card-content {
   padding: gutter();
-  border: 1px solid #f5f5f5;
+  border: 1px solid #efefef;
   border-radius: 5px;
   box-shadow: 0 .25rem 1rem 0 rgba($dark, .075);
   display: flex;

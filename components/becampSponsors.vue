@@ -66,6 +66,7 @@ export default {
 <style lang="scss" scoped>
 .sponsors {
   @include row();
+  max-width: 1440px;
 }
 .sponsor-tier {
   margin-bottom: gutter();

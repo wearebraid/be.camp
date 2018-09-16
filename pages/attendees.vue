@@ -29,7 +29,7 @@
       </div>
     </section>
 
-    <section class="page-section decorative-bg extra-wide">
+    <section class="page-section wide decorative-bg">
       <attendees-grid />
     </section>
 

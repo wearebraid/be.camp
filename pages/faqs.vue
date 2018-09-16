@@ -31,8 +31,7 @@ export default {
     return {
       title: 'FAQs | beCamp',
       meta: [
-        { hid: 'description', name: 'description', content: 'Everything you wanted to know about beCamp, but were maybe too afraid to ask.' },
-        { hid: 'og:description', name: 'og:description', property: 'og:description', content: 'beCamp is a popular Charlottesville tech conference planned by the people who show up. Come spend the day with your peers and learn something new!' }
+        { hid: 'description', name: 'description', content: 'Everything you wanted to know about beCamp, but were maybe too afraid to ask.' }
       ]
     }
   },

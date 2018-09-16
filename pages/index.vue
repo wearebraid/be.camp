@@ -123,13 +123,6 @@
 import { mapActions, mapGetters, mapState } from 'vuex'
 
 export default {
-  head() {
-    return {
-      meta: [
-        { hid: 'og:description', name: 'og:description', property: 'og:description', content: 'beCamp is a popular Charlottesville tech conference planned by the people who show up. Come spend the day with your peers and learn something new!' }
-      ]
-    }
-  },
   data () {
     return {
       youtubeVideo: `<div class="embed-container"><iframe src="https://www.youtube.com/embed/aVMBvWumoF8?autoplay=1&rel=0" frameborder="0" allowfullscreen autoplay="1"></iframe></div>`

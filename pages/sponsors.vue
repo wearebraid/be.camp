@@ -32,8 +32,7 @@ export default {
     return {
       title: 'Sponsors | beCamp',
       meta: [
-        { hid: 'description', name: 'description', content: 'Check out all these wonderful sponsors who help make beCamp a reality.' },
-        { hid: 'og:description', name: 'og:description', property: 'og:description', content: 'beCamp is a popular Charlottesville tech conference planned by the people who show up. Come spend the day with your peers and learn something new!' }
+        { hid: 'description', name: 'description', content: 'Check out all these wonderful sponsors who help make beCamp a reality.' }
       ]
     }
   },

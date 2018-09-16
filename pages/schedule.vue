@@ -32,8 +32,7 @@ export default {
     return {
       title: 'Schedule | beCamp',
       meta: [
-        { hid: 'description', name: 'description', content: 'Here\'s the full schedule of everything that\'s happening and when at beCamp. Don\'t miss a thing!' },
-        { hid: 'og:description', name: 'og:description', property: 'og:description', content: 'beCamp is a popular Charlottesville tech conference planned by the people who show up. Come spend the day with your peers and learn something new!' }
+        { hid: 'description', name: 'description', content: 'Here\'s the full schedule of everything that\'s happening and when at beCamp. Don\'t miss a thing!' }
       ]
     }
   },

@@ -95,6 +95,7 @@ export default {
 .card-content {
   padding: gutter();
   border: 1px solid #efefef;
+  background: $light;
   border-radius: 5px;
   box-shadow: 0 .25rem 1rem 0 rgba($dark, .075);
   display: flex;

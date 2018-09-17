@@ -179,7 +179,7 @@ export default {
     .event-headline {
       text-align: center;
       font-size: 1rem;
-      max-width: 350px;
+      max-width: 360px;
       margin: auto auto 2em auto;
 
       @include bp($ml) {

@@ -6,7 +6,10 @@
     <ul class="site-nav">
       <li @click.stop="$store.commit('system/setMobileNavDisplay', false)">
         <nuxt-link to="/">
-          <img src="/beCampLogo1.png" alt="beCamp">
+          <img
+            src="/beCampLogo1.png"
+            alt="beCamp"
+          />
         </nuxt-link>
       </li>
       <li

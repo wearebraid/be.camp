@@ -5,7 +5,11 @@
       v-for="icon in icons"
       :key="icon.label"
     >
-      <img v-lazy="icon.icon" :alt="icon.label" class="no-border">
+      <img
+        v-lazy="icon.icon"
+        :alt="icon.label"
+        class="no-border"
+      />
       <h3 class="label" v-html="icon.label"></h3>
     </div>
   </div>

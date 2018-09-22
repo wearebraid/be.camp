@@ -36,6 +36,7 @@
               <a
                 href="https://goo.gl/maps/UPNZVdsz1Xr"
                 target="_blank"
+                rel="noopener"
                 class="no-decoration hover"
               >
                 {{ page.event_date_label }}
@@ -53,7 +54,10 @@
               class="no-decoration"
               @click.prevent.stop="showLightbox(youtubeVideo)"
             >
-              <img src="/play.svg">
+              <img
+                src="/play.svg"
+                alt="play icon"
+              />
               <p>What is beCamp?</p>
             </a>
           </div>

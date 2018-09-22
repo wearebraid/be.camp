@@ -6,7 +6,10 @@
       :key="attendee.key"
     >
       <div class="inner">
-        <img v-lazy="`https://secure.gravatar.com/avatar/${attendee.key}?s=200&rating=pg&d=retro`" :alt="attendee['Guest Name']">
+        <img
+          v-lazy="`https://secure.gravatar.com/avatar/${attendee.key}?s=200&rating=pg&d=retro`"
+          :alt="attendee['Guest Name']"
+        />
         <span>{{ attendee['Guest Name'] }}</span>
       </div>
     </div>

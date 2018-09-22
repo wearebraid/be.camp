@@ -13,7 +13,10 @@
           <div class="logo">
             <div v-lazy-container="{ selector: 'img' }">
               <nuxt-link to="/">
-                <img data-src="beCampLogo1.png" alt="beCamp">
+                <img
+                  data-src="beCampLogo1.png"
+                  alt="beCamp"
+                />
               </nuxt-link>
             </div>
           </div>
@@ -36,7 +39,11 @@
             Join the conversation in the #becamp channel on Cville Slack!
             <div v-lazy-container="{ selector: 'img' }">
               <a href="http://bit.ly/slack-cville" target="_blank" rel="noopener">
-                <img data-src="slack.png"> Join Cville Slack (It's free!)
+                <img
+                  data-src="slack.png"
+                  alt="Slack"
+                />
+                Join Cville Slack (It's free!)
               </a>
             </div>
           </div>

@@ -3,7 +3,10 @@
     <div class="inner">
       <div class="logo">
         <nuxt-link to="/">
-          <img src="/beCampLogo1.png" alt="beCamp">
+          <img
+            src="/beCampLogo1.png"
+            alt="beCamp"
+          />
         </nuxt-link>
       </div>
 

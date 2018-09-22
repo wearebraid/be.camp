@@ -10,7 +10,7 @@
           :href="sponsor['Url']"
           target="_blank"
           rel="noopener"
-          :name="`${supporter['Sponsor']} website link`"
+          :name="`${sponsor['Sponsor']} website link`"
         >
           <img
             v-lazy="getSponsorLogo(sponsor)"

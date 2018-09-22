@@ -24,10 +24,10 @@
             &copy; {{ year }} beCamp
           </div>
           <div class="project-source">
-            Website source available on <a href="https://github.com/wearebraid/be.camp" target="_blank" rel="noopener">github</a>
+            Website source available on <a href="https://github.com/wearebraid/be.camp" target="_blank" rel="noopener" name="Github link">github</a>
           </div>
           <div class="braid-credit">
-            <a href="https://www.wearebraid.com" target="_blank" rel="noopener">
+            <a href="https://www.wearebraid.com" target="_blank" rel="noopener" name="Braid credit">
               Made with <span class="heart">❤️</span> by Braid in Charlottesville
             </a>
           </div>
@@ -38,7 +38,12 @@
             Want that beCamp feeling all year?<br>
             Join the conversation in the #becamp channel on Cville Slack!
             <div v-lazy-container="{ selector: 'img' }">
-              <a href="http://bit.ly/slack-cville" target="_blank" rel="noopener">
+              <a
+                href="http://bit.ly/slack-cville"
+                target="_blank"
+                rel="noopener"
+                name="Cville Slack link"
+              >
                 <img
                   data-src="slack.png"
                   alt="Slack"

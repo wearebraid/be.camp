@@ -24,6 +24,7 @@
             rel="noopener"
             class="small"
             @click="dismiss"
+            name="beCamp Hats promotion link"
           >
             <button>{{ ctaMessage }}</button>
           </a>

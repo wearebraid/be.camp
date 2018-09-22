@@ -16,7 +16,9 @@
       <div class="tac register">
         <a
           href="https://airtable.com/shr2NPFSOnIHUBvlY"
-          target="_blank" rel="noopener"
+          target="_blank"
+          rel="noopener"
+          name="beCamp registration link"
         >
           <button>Register Now</button>
         </a>

@@ -26,7 +26,12 @@
           :key="supporter['Sponsor']"
         >
           <template v-if="supporter['Url']">
-            <a :href="supporter['Url']" target="_blank" rel="noopener">
+            <a
+              :href="supporter['Url']"
+              target="_blank"
+              rel="noopener"
+              :name="`${supporter['Sponsor']} website link`"
+            >
               {{supporter['Sponsor']}}<span class="sep">,</span>
             </a>
           </template>
@@ -40,7 +45,10 @@
       <div class="cta">
         <h2>Want to become a beCamp sponsor?</h2>
         <p>We're always in need of an extra helping hand.</p>
-        <a href="mailto:todd.gerdy@gmail.com?subject=beCamp Sponsorship&body=Hello! I'd like to learn more about becoming a sponsor for beCamp!">
+        <a
+          href="mailto:todd.gerdy@gmail.com?subject=beCamp Sponsorship&body=Hello! I'd like to learn more about becoming a sponsor for beCamp!"
+          name="Email beCamp organizer"
+        >
           <button>Become a Sponsor</button>
         </a>
       </div>

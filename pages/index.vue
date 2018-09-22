@@ -19,6 +19,7 @@
             target="_blank"
             rel="noopener"
             class="action"
+            name="Airtable registraiton link"
           >
             <button>Register Now</button>
           </a>
@@ -38,6 +39,7 @@
                 target="_blank"
                 rel="noopener"
                 class="no-decoration hover"
+                name="Venue directions link"
               >
                 {{ page.event_date_label }}
               </a>
@@ -53,6 +55,7 @@
               target="_blank" rel="noopener"
               class="no-decoration"
               @click.prevent.stop="showLightbox(youtubeVideo)"
+              name="beCamp promo video link"
             >
               <img
                 src="/play.svg"
@@ -81,8 +84,10 @@
         <h2>Need a quick overview? </h2>
         <a
           :href="`https://www.youtube.com/watch?v=${page.homepage_hero_video_youtube_id}`"
-          target="_blank" rel="noopener"
+          target="_blank"
+          rel="noopener"
           @click.prevent="/**/"
+          name="beCamp promo video link"
         >
           <button @click="showLightbox(youtubeVideo)">
             What is beCamp? (Video)
@@ -103,7 +108,9 @@
         <p>It's quick and easy, and guarantees we get your shirt size correct.</p>
         <a
           href="https://airtable.com/shr2NPFSOnIHUBvlY"
-          target="_blank" rel="noopener"
+          target="_blank"
+          rel="noopener"
+          name="beCamp registration link"
         >
           <button>Register Now</button>
         </a>

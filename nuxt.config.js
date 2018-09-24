@@ -98,6 +98,9 @@ module.exports = {
       maxAge: 1000 * 60 * 60 * 24 * 7
     }
   },
+  workbox: {
+    offlinePage: '/index.html'
+  },
   /*
   ** Build configuration
   */

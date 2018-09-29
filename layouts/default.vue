@@ -1,14 +1,19 @@
 <template>
   <div
     class="site-wrapper"
-    :class="{'nav-open': mobileNavDisplay}"
+    :class="{
+      'nav-open': mobileNavDisplay,
+      'tv-mode': layout === 'tv'
+    }"
   >
     <off-canvas-nav />
     <div
       class="page"
       @click.stop="$store.commit('system/setMobileNavDisplay', false)"
     >
-      <easter-egg />
+      <no-ssr>
+        <easter-egg />
+      </no-ssr>
       <site-header />
       <div class="page-content">
         <nuxt />
@@ -24,7 +29,8 @@ import {mapState} from 'vuex'
 export default {
   computed: {
     ...mapState({
-      mobileNavDisplay: state => state.system.mobileNavDisplay
+      mobileNavDisplay: state => state.system.mobileNavDisplay,
+      layout: state => state.viewMode
     })
   }
 }

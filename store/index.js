@@ -10,7 +10,8 @@ export const state = () => ({
   currentPageAccentColor: 'orange',
   timeToEvent: null,
   eventCountdownStarted: false,
-  youtubeAPIReady: false
+  youtubeAPIReady: false,
+  viewMode: ''
 })
 
 export const getters = {
@@ -66,7 +67,7 @@ export const getters = {
 }
 
 export const actions = {
-  async nuxtServerInit ({dispatch}) {
+  async nuxtServerInit ({dispatch}, {query}) {
     await dispatch('loadData')
   },
   async loadData ({dispatch}) {
@@ -185,6 +186,9 @@ export const actions = {
 }
 
 export const mutations = {
+  setViewMode(state, mode) {
+    state.viewMode = mode
+  },
   setPage(state, {key, data}) {
     state.butterPages = Object.assign({}, state.butterPages, {[key]: data})
   },

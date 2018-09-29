@@ -2,6 +2,7 @@
   <div class="becamp-schedule">
     <div
       class="time-block"
+      :data-time="[time]"
       v-for="(events, time) in scheduleByTime"
       :key="time[0]['Time']"
     >

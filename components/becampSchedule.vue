@@ -24,8 +24,16 @@
               {{ event['Speaker'] }}
             </span>
           </div>
-          <div class="event-location">
-            <span class="location">{{ getLocationName(event['Location']) }}</span>
+          <div class="event-location-wrapper">
+            <span
+              class="type"
+              v-if="event['Type']"
+            >
+              {{ event['Type'] }}
+            </span>
+            <div class="event-location">
+              <span class="location">{{ getLocationName(event['Location']) }}</span>
+            </div>
           </div>
         </div>
       </div>
@@ -88,37 +96,37 @@ export default {
     &[data-location="1"] {
       .event-location {
         color: #fff;
-        background: linear-gradient(to bottom, $accent2, darken($accent2, 5%));
+        background: linear-gradient(to bottom, $accent2, darken($accent2, 5%)) !important;
       }
     }
     &[data-location="2"] {
       .event-location {
         color: #fff;
-        background: linear-gradient(to bottom, $accent4, darken($accent4, 5%));
+        background: linear-gradient(to bottom, $accent4, darken($accent4, 5%)) !important;
       }
     }
     &[data-location="3"] {
       .event-location {
         color: #fff;
-        background: linear-gradient(to bottom, $accent, darken($accent, 5%));
+        background: linear-gradient(to bottom, $accent, darken($accent, 5%)) !important;
       }
     }
     &[data-location="4"] {
       .event-location {
         color: #fff;
-        background: linear-gradient(to bottom, $accent5, darken($accent5, 5%));
+        background: linear-gradient(to bottom, $accent5, darken($accent5, 5%)) !important;
       }
     }
     &[data-location="5"] {
       .event-location {
         color: #fff;
-        background: linear-gradient(to bottom, $accent3, darken($accent3, 5%));
+        background: linear-gradient(to bottom, $accent3, darken($accent3, 5%)) !important;
       }
     }
     &[data-location="6"] {
       .event-location {
         color: $dark;
-        background: linear-gradient(to bottom, $light-d, darken($light-d, 8%));
+        background: linear-gradient(to bottom, $light-d, darken($light-d, 8%)) !important;
       }
     }
 
@@ -137,12 +145,26 @@ export default {
         font-size: 1rem;
       }
     }
-    .event-location {
+    .event-location-wrapper {
       width: 35%;
       font-size: .9rem;
-      padding: gutter()/2;
-      background: #eee;
-      border-radius: 5px;
+      text-align: center;
+
+      .type {
+        background-color: #f5f5f5;
+        border: 1px solid #aaa;
+        border-radius: 3px;
+        padding: .25em .5em;
+        display: inline-block;
+        margin: 0 auto .5em auto;
+      }
+
+      .event-location {
+        text-align: left;
+        padding: gutter()/2;
+        background: #eee;
+        border-radius: 5px;
+      }
     }
   }
 }

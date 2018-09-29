@@ -96,15 +96,21 @@ export default {
 
   .event {
     width: 19% !important;
+    border: 1px solid rgba($dark, .5) !important;
+    padding: .5em !important;
   }
   .event-time {
-    font-size: 1.2rem;
-    margin: 0 0 .25em 0 !important;
+    font-size: 1.33rem;
+    margin: 0 0 .5em 0 !important;
   }
   .event-data {
     .topic {
-      font-size: 1rem;
+      font-size: 1.2rem;
     }
+  }
+  .event-location {
+    border: 1px solid rgba($dark, .5);
+    font-size: 1.1rem !important;
   }
 }
 </style>

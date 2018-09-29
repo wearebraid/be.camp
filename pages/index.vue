@@ -14,56 +14,12 @@
       <div class="inner">
         <div class="event-headline">
           <div v-html="setAttendeeCount(page.homepage_hero_content)"></div>
-          <a
-            href="https://airtable.com/shr2NPFSOnIHUBvlY"
-            target="_blank"
-            rel="noopener"
-            class="action"
-            name="Airtable registraiton link"
-          >
-            <button>Register Now</button>
-          </a>
           <nuxt-link
             to="/schedule"
             class="action"
           >
-            <button class="alt">View Schedule</button>
+            <button>View the 2018 Schedule</button>
           </nuxt-link>
-        </div>
-
-        <div class="event-countdown">
-          <div class="countdown-timer">
-            <div class="countdown-label">
-              <a
-                href="https://goo.gl/maps/UPNZVdsz1Xr"
-                target="_blank"
-                rel="noopener"
-                class="no-decoration hover"
-                name="Venue directions link"
-              >
-                {{ page.event_date_label }}
-              </a>
-            </div>
-            <countdown-clock />
-          </div>
-          <div
-            class="intro-video"
-            v-if="page.homepage_hero_video_youtube_id"
-          >
-            <a
-              :href="`https://www.youtube.com/watch?v=${page.homepage_hero_video_youtube_id}`"
-              target="_blank" rel="noopener"
-              class="no-decoration"
-              @click.prevent.stop="showLightbox(youtubeVideo)"
-              name="beCamp promo video link"
-            >
-              <img
-                src="/play.svg"
-                alt="play icon"
-              />
-              <p>What is beCamp?</p>
-            </a>
-          </div>
         </div>
       </div>
     </page-hero>
@@ -190,15 +146,8 @@ export default {
     .event-headline {
       text-align: center;
       font-size: 1rem;
-      max-width: 360px;
+      max-width: 900px;
       margin: auto auto 2em auto;
-
-      @include bp($ml) {
-        text-align: left;
-        padding-left: gutter()*2;
-        order: 2;
-        margin: auto 0 2em auto;
-      }
 
       .action {
         display: block;

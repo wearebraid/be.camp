@@ -73,7 +73,6 @@ export default {
     width: 1920px;
     height: 1080px;
     overflow: hidden;
-    border: 1px solid red;
     padding: gutter();
 
     .wysiwyg-block {

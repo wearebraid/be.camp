@@ -63,12 +63,13 @@
         <h2>Let us know you're attending!</h2>
         <p>It's quick and easy, and guarantees we get your shirt size correct.</p>
         <a
-          href="https://airtable.com/shr2NPFSOnIHUBvlY"
+          href="#"
+          @click.prevent=""
           target="_blank"
           rel="noopener"
           name="beCamp registration link"
         >
-          <button>Register Now</button>
+          <button data-disabled>Registration Closed</button>
         </a>
         <div class="wysiwyg-block">
           <div v-html="page.safe_inclusive_accessible"></div>
@@ -147,7 +148,7 @@ export default {
       text-align: center;
       font-size: 1rem;
       max-width: 900px;
-      margin: auto auto 2em auto;
+      font-weight: normal;nt-weight: normal;nt-weight: normal;rgin: auto auto 2em auto;
 
       .action {
         display: block;

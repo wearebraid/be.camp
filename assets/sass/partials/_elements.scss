@@ -30,6 +30,11 @@ button,
       background: linear-gradient(to bottom, $accent4, $accent4);
     }
   }
+
+  &[data-disabled] {
+    color: #444;
+    background: #eee;
+  }
 }
 
 img {

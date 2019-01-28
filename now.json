@@ -1,8 +1,5 @@
 {
-  "version": 2,
   "name": "becamp",
   "alias": "be.camp",
-  "builds": [
-    { "src": "package.json", "use": "@now/static-build" }
-  ]
+  "dotenv": true
 }

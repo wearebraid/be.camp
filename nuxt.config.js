@@ -69,7 +69,8 @@ module.exports = {
   },
   sitemap: {
     hostname: 'https://be.camp',
-    cacheTime: 1000 * 60 * 15
+    cacheTime: 1000 * 60 * 15,
+    generate: true
   },
   'google-analytics': {
     id: 'UA-124258426-1',

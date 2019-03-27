@@ -1,5 +1,7 @@
 
 const isProd = process.env.NODE_ENV === 'production'
+const download = require('image-downloader')
+const fs = require('fs')
 
 if (!isProd || process.env.LOCAL_ENV) {
   require('now-env')
@@ -116,6 +118,38 @@ module.exports = {
           loader: 'eslint-loader',
           exclude: /(node_modules)/
         })
+      }
+    }
+  },
+
+  hooks: {
+    generate: {
+      async page (payload) {
+        // create the remote images directory if it does not exist
+        if (!fs.existsSync('./dist/remote_img')) {
+          fs.mkdirSync('./dist/remote_img')
+        }
+
+        // find all remote image paths
+        let matches = payload.html.match(/(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|gif|png)/g)
+
+        if (matches) {
+          // download all remote images to our local build folder
+          let localUrls = await Promise.all(
+            matches.map(async url => {
+              const {filename} = await download.image({
+                url: url,
+                dest: './dist/remote_img'
+              })
+              return filename.replace('dist/', '/')
+            })
+          )
+
+          // loop over each image result nad swap the remote path with the local one
+          for (let index = 0; index < matches.length; index++) {
+            payload.html = payload.html.replace(matches[index], localUrls[index])
+          }
+        }
       }
     }
   }

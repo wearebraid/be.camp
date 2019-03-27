@@ -9,7 +9,7 @@
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "cross-env NODE_ENV=production nuxt generate",
-    "generate:local": "cross-env LOCAL_ENV=true nuxt generate",
+    "generate:local": "cross-env LOCAL_ENV=true nuxt generate --no-lock",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "analyze": "nuxt build --analyze",
     "precommit": "npm run lint",

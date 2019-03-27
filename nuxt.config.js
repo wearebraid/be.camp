@@ -44,10 +44,10 @@ module.exports = {
   plugins: [
     '~/plugins/components',
     '~/plugins/api',
-    {src: '~/plugins/webFontLoader', ssr: false},
-    {src: '~/plugins/lazyload', ssr: false},
-    {src: '~/plugins/events', ssr: false},
-    {src: '~/plugins/localStorage.js', ssr: false}
+    {src: '~/plugins/webFontLoader', mode: 'client'},
+    {src: '~/plugins/lazyload', mode: 'client'},
+    {src: '~/plugins/events', mode: 'client'},
+    {src: '~/plugins/localStorage.js', mode: 'client'}
   ],
   /*
   ** Customize the progress bar color
@@ -57,15 +57,17 @@ module.exports = {
   ** Modules
   */
   modules: [
-    'nuxt-sass-resources-loader',
+    '@nuxtjs/style-resources',
     '@nuxtjs/moment',
     '@nuxtjs/sitemap',
     '@nuxtjs/google-analytics',
     '@nuxtjs/pwa',
   ],
-  sassResources: [
-    './assets/sass/global.scss'
-  ],
+  styleResources: {
+    scss: [
+      './assets/sass/global.scss'
+    ],
+  },
   sitemap: {
     hostname: 'https://be.camp',
     cacheTime: 1000 * 60 * 15,

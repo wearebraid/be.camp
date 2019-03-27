@@ -3,6 +3,7 @@ const isProd = process.env.NODE_ENV === 'production'
 const download = require('image-downloader')
 const fs = require('fs')
 const { getRemoteImgContentType } = require('./libs/build')
+const md5 = require('blueimp-md5')
 
 if (!isProd || process.env.LOCAL_ENV) {
   require('now-env')
@@ -132,17 +133,18 @@ module.exports = {
         }
 
         // find all remote image paths
-        let matches = payload.html.match(/(http(s?):)([/|.|\w|\s|\%|-])*\.(?:jpg|jpeg|gif|png)/g)
+        let matches = payload.html.match(/(http(s?):)([/|.|\w|\s|\%20|%25|-])*\.(?:jpg|jpeg|gif|png)/g)
 
         if (matches) {
           // download all remote images to our local build folder
           let localUrls = await Promise.all(
             matches.map(async url => {
+              let fileExtension = url.split('.').pop();
               const {filename} = await download.image({
                 url: url,
-                dest: './dist/remote_img'
+                dest: `./dist/remote_img/${md5(url)}.${fileExtension}` // calc the md5 to avoid issues with really weird file names
               })
-              return filename.replace('dist/', '/')
+              return filename.replace('/dist/', '/')
             })
           )
 
@@ -183,7 +185,7 @@ module.exports = {
             })
           )
 
-          // loop over each image result nad swap the remote path with the local one
+          // loop over each image result and swap the remote path with the local one
           for (let index = 0; index < butterMatches.length; index++) {
             payload.html = payload.html.replace(butterMatches[index], localButterUrls[index])
           }

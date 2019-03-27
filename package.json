@@ -17,14 +17,13 @@
     "@nuxtjs/google-analytics": "^2.0.2",
     "@nuxtjs/moment": "^1.0.0",
     "@nuxtjs/now-builder": "^0.13.1",
-    "@nuxtjs/pwa": "^2.6.0",
-    "@nuxtjs/sitemap": "^0.1.1",
+    "@nuxtjs/pwa": "^3.0.0-beta.14",
+    "@nuxtjs/sitemap": "^0.2.2",
     "@nuxtjs/style-resources": "^0.1.2",
     "airtable": "^0.5.6",
     "blueimp-md5": "^2.10.0",
     "buttercms": "^1.1.1",
     "clone-deep": "^4.0.0",
-    "dotenv": "^6.0.0",
     "moment": "^2.22.2",
     "node-sass": "^4.9.3",
     "nuxt": "^2.5.1",
@@ -35,12 +34,12 @@
     "webfontloader": "^1.6.28"
   },
   "devDependencies": {
-    "babel-eslint": "^9.0.0",
+    "babel-eslint": "^10.0.1",
     "cross-env": "^5.2.0",
     "eslint": "^5.6.0",
     "eslint-friendly-formatter": "^4.0.1",
     "eslint-loader": "^2.1.1",
-    "eslint-plugin-vue": "^4.0.0",
+    "eslint-plugin-vue": "^5.2.2",
     "vue-lazyload": "^1.2.6",
     "now-env": "^3.1.0"
   }

@@ -28,16 +28,18 @@ $ npm run generate
 ```
 
 ## 3rd-Party APIs
-This iteration of the beCamp website pulls data from [ButterCMS](https://buttercms.com) and [Airtable](https://airtable.com) to populate site content. For API access, you can message `@andrew` in the `#becamp` channel on [Cville Slack](http://bit.ly/slack-cville). 
+This iteration of the beCamp website pulls data from [ButterCMS](https://buttercms.com) and [Airtable](https://airtable.com) to populate site content. For API access, you can message `@andrew` in the `#becamp` channel on [Cville Slack](http://bit.ly/slack-cville).
 
-To connect to the APIs, you will need to create a `.env` file in the project root directory and add the API keys in the following format:
+To connect to the APIs, you will need to create a `now-secrets.json` file in the project root directory and add the API keys in the following format:
 
 ```
-BUTTERKEY=your_api_key
-AIRTABLEKEY=your_api_key
+{
+  "@becamp-butter-cms-key": "your_api_key",
+  "@becamp-airtable-key": "your_api_key"
+}
 ```
 
-**never commit your API keys to the project history. the `.env` is gitignored by default.**
+**never commit your API keys to the project history. the `now-secrets.json` file is gitignored by default.**
 
 ## Docs
 This project is built on Nuxt.js, an opinionated framework for building with Vue.js. For a detailed explanation on how things work, checkout the [Nuxt.js docs](https://github.com/nuxt/nuxt.js).

@@ -1,10 +1,12 @@
-const dotenv = require('dotenv');
-dotenv.config();
+
+const isProd = process.env.NODE_ENV === 'production'
+
+if (!isProd) {
+  require('now-env')
+}
 
 const butterKey = process.env.BUTTERKEY || null
 const airtableKey = process.env.AIRTABLEKEY || null
-
-const isProd = process.env.NODE_ENV === 'production'
 
 module.exports = {
   env: {

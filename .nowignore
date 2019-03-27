@@ -1,0 +1,8 @@
+node_modules
+dist
+.nuxt
+.github
+.editorconfig
+.env
+.eslint.rc
+now-secrets.json

@@ -1,5 +1,27 @@
 {
+  "version": 2,
   "name": "becamp",
   "alias": "be.camp",
-  "dotenv": true
+  "scope": "braid",
+  "env": {
+    "BUTTERKEY": "@becamp-butter-cms-key",
+    "AIRTABLEKEY": "@becamp-airtable-key"
+  },
+  "build": {
+    "env": {
+      "BUTTERKEY": "@becamp-butter-cms-key",
+      "AIRTABLEKEY": "@becamp-airtable-key"
+    }
+  },
+  "builds": [
+    {
+      "src": "nuxt.config.js",
+      "use": "@nuxtjs/now-builder",
+      "config": {}
+    }
+  ],
+  "routes": [
+    { "src": "/_nuxt/.+", "headers": { "cache-control": "s-maxage=31536000" } },
+    { "src": "/(.*)", "dest": "/" }
+  ]
 }

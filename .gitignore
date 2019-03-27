@@ -13,3 +13,6 @@ dist
 
 # PWA
 sw.*
+
+#now.sh config
+/now-secrets.json

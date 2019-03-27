@@ -131,7 +131,7 @@ module.exports = {
         }
 
         // find all remote image paths
-        let matches = payload.html.match(/(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|gif|png)/g)
+        let matches = payload.html.match(/(http(s?):)([/|.|\w|\s|\%|-])*\.(?:jpg|jpeg|gif|png)/g)
 
         if (matches) {
           // download all remote images to our local build folder

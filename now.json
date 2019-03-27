@@ -15,13 +15,9 @@
   },
   "builds": [
     {
-      "src": "nuxt.config.js",
-      "use": "@nuxtjs/now-builder",
+      "src": "package.json",
+      "use": "@now/static-build",
       "config": {}
     }
-  ],
-  "routes": [
-    { "src": "/_nuxt/.+", "headers": { "cache-control": "s-maxage=31536000" } },
-    { "src": "/(.*)", "dest": "/" }
   ]
 }

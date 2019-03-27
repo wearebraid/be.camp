@@ -12,7 +12,8 @@
     "generate:local": "cross-env LOCAL_ENV=true nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "analyze": "nuxt build --analyze",
-    "precommit": "npm run lint"
+    "precommit": "npm run lint",
+    "now-build": "npm run generate:local"
   },
   "dependencies": {
     "@nuxtjs/google-analytics": "^2.0.2",

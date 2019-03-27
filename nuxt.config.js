@@ -2,6 +2,7 @@
 const isProd = process.env.NODE_ENV === 'production'
 const download = require('image-downloader')
 const fs = require('fs')
+const { getRemoteImgContentType } = require('./libs/build')
 
 if (!isProd || process.env.LOCAL_ENV) {
   require('now-env')
@@ -148,6 +149,43 @@ module.exports = {
           // loop over each image result nad swap the remote path with the local one
           for (let index = 0; index < matches.length; index++) {
             payload.html = payload.html.replace(matches[index], localUrls[index])
+          }
+        }
+
+        // special second pass for butterCMS images
+        // which have no ending file extension suffix
+        // and would probably work if I just copied them
+        // but not having the file extension feels wrong
+        // so here we are...
+        butterMatches = payload.html.match(/(https:\/\/cdn.buttercms.com)([/|a-zA-Z0-9_])*/g)
+
+        if (butterMatches) {
+          let localButterUrls = await Promise.all(
+
+            butterMatches.map(async url => {
+              let fileFormat = await getRemoteImgContentType(url)
+              switch (fileFormat) {
+                case 'image/svg+xml':
+                  fileFormat = '.svg'
+                  break;
+                case 'image/jpeg':
+                  fileFormat = '.jpg'
+                  break;
+                case 'image/png':
+                  fileFormat = '.png'
+                  break;
+              }
+              const {filename} = await download.image({
+                url: url,
+                dest: `./dist/remote_img/${url.replace('https://cdn.buttercms.com/', '')}${fileFormat}`
+              })
+              return filename.replace('/dist/', '/')
+            })
+          )
+
+          // loop over each image result nad swap the remote path with the local one
+          for (let index = 0; index < butterMatches.length; index++) {
+            payload.html = payload.html.replace(butterMatches[index], localButterUrls[index])
           }
         }
       }

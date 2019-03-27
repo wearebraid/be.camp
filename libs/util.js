@@ -56,7 +56,7 @@ export function sortObjKeys(obj) {
   return ordered;
 }
 
-function compareCaseInsensitive(a, b) {
+export function compareCaseInsensitive(a, b) {
   let x = a.toLocaleLowerCase(),
       y = b.toLocaleLowerCase()
   if (x < y) {

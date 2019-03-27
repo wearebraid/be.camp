@@ -3,6 +3,9 @@
   "name": "becamp",
   "alias": "be.camp",
   "scope": "braid",
+  "github": {
+    "enabled": false
+  },
   "env": {
     "BUTTERKEY": "@becamp-butter-cms-key",
     "AIRTABLEKEY": "@becamp-airtable-key"

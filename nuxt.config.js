@@ -1,7 +1,7 @@
 
 const isProd = process.env.NODE_ENV === 'production'
 
-if (!isProd) {
+if (!isProd || process.env.LOCAL_ENV) {
   require('now-env')
 }
 

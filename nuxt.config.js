@@ -58,7 +58,6 @@ module.exports = {
   */
   modules: [
     '@nuxtjs/style-resources',
-    '@nuxtjs/moment',
     '@nuxtjs/sitemap',
     '@nuxtjs/google-analytics',
     '@nuxtjs/pwa',

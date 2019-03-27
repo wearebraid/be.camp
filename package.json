@@ -16,7 +16,6 @@
   },
   "dependencies": {
     "@nuxtjs/google-analytics": "^2.0.2",
-    "@nuxtjs/moment": "^1.0.0",
     "@nuxtjs/now-builder": "^0.13.1",
     "@nuxtjs/pwa": "^3.0.0-beta.14",
     "@nuxtjs/sitemap": "^0.2.2",
@@ -25,7 +24,7 @@
     "blueimp-md5": "^2.10.0",
     "buttercms": "^1.1.1",
     "clone-deep": "^4.0.0",
-    "moment": "^2.22.2",
+    "moment": "^2.24.0",
     "node-sass": "^4.9.3",
     "nuxt": "^2.5.1",
     "reset-css": "^4.0.1",
@@ -41,7 +40,8 @@
     "eslint-friendly-formatter": "^4.0.1",
     "eslint-loader": "^2.1.1",
     "eslint-plugin-vue": "^5.2.2",
+    "now-env": "^3.1.0",
     "vue-lazyload": "^1.2.6",
-    "now-env": "^3.1.0"
+    "webpack": "^4.29.6"
   }
 }

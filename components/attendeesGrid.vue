@@ -5,7 +5,10 @@
       v-for="attendee in directoryAttendees"
       :key="attendee.key"
     >
-      <div class="inner">
+      <div
+        v-if="attendee.key"
+        class="inner"
+      >
         <img
           v-lazy="`https://secure.gravatar.com/avatar/${attendee.key}?s=200&rating=pg&d=retro`"
           :alt="attendee.name"

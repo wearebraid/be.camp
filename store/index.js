@@ -29,40 +29,26 @@ export const getters = {
   },
   premierSponsors (state) {
     let premierSponsorsObject = {}
-    let premierSponsors = state.sponsors.filter((sponsor) => sponsor['2018 Sponsorship Level'] && sponsor['2018 Sponsorship Level'] === 'Premier Sponsor')
-    premierSponsors.forEach((sponsor) => premierSponsorsObject[sponsor['Sponsor']] = {
-      sponsor: sponsor['Sponsor'],
-      logo: sponsor['Logo'],
-      url: sponsor['Url'],
-      write_up: sponsor['Write up']
-    })
+    let premierSponsors = state.sponsors.filter((sponsor) => sponsor.level && sponsor.level === 'Premier Sponsor')
+    premierSponsors.forEach((sponsor) => premierSponsorsObject[sponsor.sponsor] = sponsor)
     return sortObjKeys(premierSponsorsObject)
   },
   sponsors (state) {
     let sponsorsObject = {}
-    let sponsors = state.sponsors.filter((sponsor) => sponsor['2018 Sponsorship Level'] && (sponsor['2018 Sponsorship Level'] === 'Major Sponsor' || sponsor['2018 Sponsorship Level'] === 'Sponsor'))
-    sponsors.forEach((sponsor) => sponsorsObject[sponsor['Sponsor']] = {
-      sponsor: sponsor['Sponsor'],
-      logo: sponsor['Logo'],
-      url: sponsor['Url']
-    })
+    let sponsors = state.sponsors.filter((sponsor) => sponsor.level && (sponsor.level === 'Major Sponsor' || sponsor.level === 'Sponsor'))
+    sponsors.forEach((sponsor) => sponsorsObject[sponsor.sponsor] = sponsor)
     return sortObjKeys(sponsorsObject)
   },
   supporters (state) {
     let supportersObject = {}
-    let supporters = state.sponsors.filter((sponsor) => sponsor['2018 Sponsorship Level'] && sponsor['2018 Sponsorship Level'] === 'Contributor')
-    supporters.forEach((sponsor) => supportersObject[sponsor['Sponsor']] = sponsor)
+    let supporters = state.sponsors.filter((sponsor) => sponsor.level && sponsor.level === 'Contributor')
+    supporters.forEach((sponsor) => supportersObject[sponsor.sponsor] = sponsor)
     return sortObjKeys(supportersObject)
   },
   directoryAttendees (state) {
     let attendeesObject = {}
-    let attendees = state.attendees.filter((attendee) => attendee['Directory Permission'] && attendee['Directory Permission'] === true)
-    attendees.forEach((attendee) => {
-      attendeesObject[attendee['Guest Name']] = {
-        name: attendee['Guest Name'],
-        key: md5(attendee['Email'].trim().toLowerCase())
-      }
-    })
+    let attendees = state.attendees.filter((attendee) => attendee.directory_permission && attendee.directory_permission === true)
+    attendees.forEach((attendee) => attendeesObject[attendee.name] = attendee)
     return sortObjKeys(attendeesObject)
   },
   attendeeCount (state) {
@@ -210,10 +196,20 @@ export const mutations = {
     state.currentPageAccentColor = payload
   },
   setSponsor(state, payload) {
-    state.sponsors.push(payload)
+    state.sponsors.push({
+      sponsor: payload['Sponsor'],
+      logo: payload['Logo'],
+      url: payload['Url'],
+      write_up: payload['Write up'],
+      level: payload['2018 Sponsorship Level']
+    })
   },
   setAttendee(state, payload) {
-    state.attendees.push(payload)
+    state.attendees.push({
+      name: payload['Guest Name'],
+      directory_permission: payload['Directory Permission'],
+      key: (payload['Directory Permission'] && payload['Email']) ? md5(payload['Email'].trim().toLowerCase()) : ''
+    })
   },
   setScheduleItem(state, payload) {
     state.schedule.push(payload)

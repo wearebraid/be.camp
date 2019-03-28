@@ -102,14 +102,16 @@ export default {
   },
   computed: {
     ...mapState({
-      butterPages: state => state.butterPages,
-      attendees: state => state.attendees
+      butterPages: state => state.butterPages
+    }),
+    ...mapGetters({
+      attendeeCount: 'attendeeCount'
     }),
     page () {
       return this.butterPages['homepage']
     },
-    attendeeCount () {
-      return this.attendees.length >= 20 ? `<strong>${this.attendees.length}</strong>&nbsp;` : ''
+    attendeeCountText () {
+      return this.attendeeCount >= 20 ? `<strong>${this.attendeeCount}</strong>&nbsp;` : ''
     }
   },
   methods: {
@@ -117,7 +119,7 @@ export default {
       'setEventTime'
     ]),
     setAttendeeCount(html) {
-      return html.replace("[count]&nbsp;", this.attendeeCount)
+      return html.replace("[count]&nbsp;", this.attendeeCountText)
     },
     showLightbox (content) {
       this.$store.commit('lightbox/setVisibility', true)

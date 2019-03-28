@@ -3,18 +3,18 @@
     <div
       class="logo"
       v-for="sponsor in validSponsors"
-      :key="sponsor['Sponsor']"
+      :key="sponsor.sponsor"
     >
-      <template v-if="sponsor['Url']">
+      <template v-if="sponsor.url">
         <a
-          :href="sponsor['Url']"
+          :href="sponsor.url"
           target="_blank"
           rel="noopener"
-          :name="`${sponsor['Sponsor']} website link`"
+          :name="`${sponsor.sponsor} website link`"
         >
           <img
             v-lazy="getSponsorLogo(sponsor)"
-            :alt="`sponsor ${sponsor['Sponsor']}`"
+            :alt="`sponsor ${sponsor.sponsor}`"
           />
         </a>
       </template>
@@ -39,13 +39,13 @@ export default {
     validSponsors () {
       return filter(this.sponsors, (sponsor) => {
         let target = this.sponsors[sponsor]
-        return target["Logo"]
+        return target.logo
       })
     }
   },
   methods: {
     getSponsorLogo(sponsor) {
-      return sponsor['Logo'][0].thumbnails.large.url
+      return sponsor.logo[0].thumbnails.large.url
     }
   }
 }

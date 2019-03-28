@@ -30,13 +30,22 @@ export const getters = {
   premierSponsors (state) {
     let premierSponsorsObject = {}
     let premierSponsors = state.sponsors.filter((sponsor) => sponsor['2018 Sponsorship Level'] && sponsor['2018 Sponsorship Level'] === 'Premier Sponsor')
-    premierSponsors.forEach((sponsor) => premierSponsorsObject[sponsor['Sponsor']] = sponsor)
+    premierSponsors.forEach((sponsor) => premierSponsorsObject[sponsor['Sponsor']] = {
+      sponsor: sponsor['Sponsor'],
+      logo: sponsor['Logo'],
+      url: sponsor['Url'],
+      write_up: sponsor['Write up']
+    })
     return sortObjKeys(premierSponsorsObject)
   },
   sponsors (state) {
     let sponsorsObject = {}
     let sponsors = state.sponsors.filter((sponsor) => sponsor['2018 Sponsorship Level'] && (sponsor['2018 Sponsorship Level'] === 'Major Sponsor' || sponsor['2018 Sponsorship Level'] === 'Sponsor'))
-    sponsors.forEach((sponsor) => sponsorsObject[sponsor['Sponsor']] = sponsor)
+    sponsors.forEach((sponsor) => sponsorsObject[sponsor['Sponsor']] = {
+      sponsor: sponsor['Sponsor'],
+      logo: sponsor['Logo'],
+      url: sponsor['Url']
+    })
     return sortObjKeys(sponsorsObject)
   },
   supporters (state) {
@@ -49,10 +58,15 @@ export const getters = {
     let attendeesObject = {}
     let attendees = state.attendees.filter((attendee) => attendee['Directory Permission'] && attendee['Directory Permission'] === true)
     attendees.forEach((attendee) => {
-      attendeesObject[attendee['Guest Name']] = attendee
-      attendeesObject[attendee['Guest Name']].key = md5(attendee['Email'].trim().toLowerCase())
+      attendeesObject[attendee['Guest Name']] = {
+        name: attendee['Guest Name'],
+        key: md5(attendee['Email'].trim().toLowerCase())
+      }
     })
     return sortObjKeys(attendeesObject)
+  },
+  attendeeCount (state) {
+    return state.attendees.length
   },
   scheduleByTime (state) {
     let scheduleObject = {}

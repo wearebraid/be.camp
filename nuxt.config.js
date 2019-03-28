@@ -12,6 +12,8 @@ if (!isProd || process.env.LOCAL_ENV) {
 const butterKey = process.env.BUTTERKEY || null
 const airtableKey = process.env.AIRTABLEKEY || null
 
+console.log(butterKey, airtableKey)
+
 module.exports = {
   env: {
     butterKey,

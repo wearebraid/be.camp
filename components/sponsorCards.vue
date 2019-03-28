@@ -3,43 +3,43 @@
     <div
       class="sponsor-card"
       v-for="sponsor in validSponsors"
-      :key="sponsor['Sponsor']"
+      :key="sponsor.sponsor"
     >
       <div class="card-content">
         <div class="logo">
-          <template v-if="sponsor['Url']">
+          <template v-if="sponsor.url">
             <a
-              :href="sponsor['Url']"
+              :href="sponsor.url"
               target="_blank"
               rel="noopener"
-              :name="`${sponsor['Sponsor']} logo website link`"
+              :name="`${sponsor.sponsor} logo website link`"
             >
               <img
                 v-lazy="getSponsorLogo(sponsor)"
-                :alt="`sponsor ${sponsor['Sponsor']}`"
+                :alt="`sponsor ${sponsor.sponsor}`"
               />
             </a>
           </template>
           <template v-else>
             <img
               v-lazy="getSponsorLogo(sponsor)"
-              :alt="`sponsor ${sponsor['Sponsor']}`"
+              :alt="`sponsor ${sponsor.sponsor}`"
             />
           </template>
         </div>
         <div class="writeup">
-          {{ sponsor['Write up'] }}
+          {{ sponsor.write_up }}
         </div>
         <div
-          v-if="sponsor['Url']"
+          v-if="sponsor.url"
           class="website"
         >
           <a
-            :href="sponsor['Url']"
+            :href="sponsor.url"
             target="_blank" rel="noopener"
-            :name="`${sponsor['Sponsor']} website link`"
+            :name="`${sponsor.sponsor} website link`"
           >
-            {{ sponsor['Url'] }}
+            {{ sponsor.url }}
           </a>
         </div>
       </div>
@@ -61,13 +61,13 @@ export default {
     validSponsors () {
       return filter(this.sponsors, (sponsor) => {
         let target = this.sponsors[sponsor]
-        return (target["Logo"] && target["Write up"])
+        return (target.logo && target.write_up)
       })
     }
   },
   methods: {
     getSponsorLogo(sponsor) {
-      return sponsor['Logo'][0].thumbnails.large.url
+      return sponsor.logo[0].thumbnails.large.url
     }
   }
 }

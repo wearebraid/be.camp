@@ -150,6 +150,7 @@ export default {
       if (this.butterPages) {
         return this.butterPages['swarm-homepage']
       }
+      return false
     },
     attendeeCountText () {
       return this.attendeeCount >= 20 ? `<strong>${this.attendeeCount}</strong>&nbsp;` : ''

@@ -1,5 +1,8 @@
 <template>
-  <div class="countdown-clock">
+  <div
+    v-if="eventTimeObject"
+    class="countdown-clock"
+  >
     <div
       class="time-segment months"
       :class="{disabled: parseInt(eventTimeObject.months) === 0}"

@@ -104,7 +104,7 @@ export default {
     }
   },
   created () {
-    this.$store.commit('setCurrentPageAccentColor', 'blue')
+    this.$store.commit('setCurrentPageAccentColor', this.page.page_accent_color)
     this.setEventTime(this.page.event_start_date)
   },
   computed: {
@@ -115,7 +115,7 @@ export default {
       attendeeCount: 'attendeeCount'
     }),
     page () {
-      return this.butterPages['homepage']
+      return this.butterPages['swarm-homepage']
     },
     attendeeCountText () {
       return this.attendeeCount >= 20 ? `<strong>${this.attendeeCount}</strong>&nbsp;` : ''

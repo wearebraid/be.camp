@@ -12,6 +12,10 @@ export const state = () => ({
   },
   navItems: [
     {
+      name: 'beSwarm FAQs',
+      route: '/swarm/faqs'
+    },
+    {
       name: 'View beCamp 2018 Site',
       route: 'https://2018.be.camp'
     },

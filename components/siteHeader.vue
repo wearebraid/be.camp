@@ -2,7 +2,7 @@
   <header class="site-header">
     <div class="inner">
       <div class="logo">
-        <braid-link to="/">
+        <braid-link to="/swarm">
           <img
             src="/beCampLogo1.png"
             alt="beCamp"

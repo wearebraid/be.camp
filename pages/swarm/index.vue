@@ -97,7 +97,7 @@
     </section>
 
     <section
-      v-if="Object.keys(directoryAttendees).length > 18"
+      v-if="Object.keys(directoryAttendees).length > 10"
       class="page-section full decorative-bg"
     >
       <div class="wysiwyg-block">

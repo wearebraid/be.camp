@@ -67,7 +67,7 @@
           :href="`https://www.youtube.com/watch?v=${page.homepage_hero_video_youtube_id}`"
           target="_blank" rel="noopener"
         >
-          <button>What is beSwarm? (Video)</button>
+          <button>What is beCamp? (Video)</button>
         </a>
       </div>
     </section>
@@ -83,7 +83,7 @@
         <h2>Let us know you're attending!</h2>
         <p>It's quick and easy, and helps us order the correct amout of food.</p>
         <a
-          href="#"
+          href="https://airtable.com/shr9e89GaGsECwTyO"
           target="_blank"
           rel="noopener"
           name="beCamp registration link"

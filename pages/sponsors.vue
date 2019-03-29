@@ -28,6 +28,7 @@
 import {mapState} from 'vuex'
 
 export default {
+  middleware: 'beswarm',
   head () {
     return {
       title: 'Sponsors | beCamp',

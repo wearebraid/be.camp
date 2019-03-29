@@ -26,6 +26,9 @@ body {
   &.wide {
     max-width: 1440px;
   }
+  &.full {
+    max-width: 100%;
+  }
 
   &.decorative-bg {
     position: relative;

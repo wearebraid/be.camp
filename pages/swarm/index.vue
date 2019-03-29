@@ -50,18 +50,14 @@
     </page-hero>
 
     <section class="page-section what-is-becamp">
-      <h1 class="section-title">What is <strike>beCamp</strike> beSwarm?</h1>
-      <div class="wysiwyg-block">
-        <p>First, there was beCamp. It's a unique and "very Charlottesville" annual experience. But a year is a long time for a vibrant tech community. beSwarm spunoff in 2010 as a complement to beCamp.</p>
-
-        <ul>
-          <li>beCamp happens in the fall; <strong>beSwarm happens in the spring.</strong></li>
-          <li>beCamp is a Friday/Saturday event; <strong>beSwarm is a Saturday-only event.</strong></li>
-          <li>beCamp puts together a schedule with attendee-organized topics; <strong>beSwarm has no topic schedule.</strong></li>
-          <li>beCamp and beSwarm are <strong>un-conferences.</strong></li>
-        </ul>
-      </div>
-
+      <h1 class="section-title">What is beSwarm?</h1>
+      <template v-for="(block, index) in page.what_is_becamp">
+        <media-block
+          :content="block"
+          :key="block.copy"
+          :alt-layout="index%2 === 1"
+        />
+      </template>
       <div
         class="cta"
         v-if="page.homepage_hero_video_youtube_id"
@@ -69,14 +65,9 @@
         <h2>Need a quick overview? </h2>
         <a
           :href="`https://www.youtube.com/watch?v=${page.homepage_hero_video_youtube_id}`"
-          target="_blank"
-          rel="noopener"
-          @click.prevent="/**/"
-          name="beCamp promo video link"
+          target="_blank" rel="noopener"
         >
-          <button @click="showLightbox(youtubeVideo)">
-            What is beSwarm? (Video)
-          </button>
+          <button>What is beSwarm? (Video)</button>
         </a>
       </div>
     </section>
@@ -103,6 +94,16 @@
           <div v-html="page.safe_inclusive_accessible"></div>
         </div>
       </div>
+    </section>
+
+    <section
+      v-if="Object.keys(directoryAttendees).length > 18"
+      class="page-section full decorative-bg"
+    >
+      <div class="wysiwyg-block">
+        <h1 class="section-title small-margin">Plus, you'll get to meet these other awesome attendees.</h1>
+      </div>
+      <attendees-grid />
     </section>
 
     <section class="page-section wide tac becamp-sponsors">
@@ -133,7 +134,8 @@ export default {
       butterPages: state => state.butterPages
     }),
     ...mapGetters({
-      attendeeCount: 'attendeeCount'
+      attendeeCount: 'attendeeCount',
+      directoryAttendees: 'directoryAttendees'
     }),
     page () {
       return this.butterPages['swarm-homepage']
@@ -147,7 +149,7 @@ export default {
       'setEventTime'
     ]),
     setAttendeeCount(html) {
-      return html.replace("[count]&nbsp;", this.attendeeCountText)
+      return html.replace("[count] ", this.attendeeCountText)
     },
     showLightbox (content) {
       this.$store.commit('lightbox/setVisibility', true)
@@ -181,7 +183,7 @@ export default {
     font-weight: normal;
     order: 2;
 
-    @include bp($m) {
+    @include bp($l) {
       margin-top: -3em;
     }
 
@@ -266,12 +268,6 @@ export default {
 
   h2 {
     margin-bottom: .5em;
-  }
-}
-
-.icon-grid {
-  & /deep/ .icon:nth-child(3) {
-    display: none;
   }
 }
 </style>

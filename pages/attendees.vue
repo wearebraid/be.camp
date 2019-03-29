@@ -43,6 +43,7 @@
 import {mapState, mapGetters} from 'vuex'
 
 export default {
+  middleware: 'beswarm',
   head () {
     return {
       title: 'Attendee Directory | beCamp',

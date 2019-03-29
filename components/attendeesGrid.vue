@@ -33,7 +33,8 @@ export default {
 
 <style lang="scss" scoped>
 .attendee-directory {
-  @include row();
+  max-width: 2000px;
+  margin: 0 auto;
   padding: 0 0 gutter()*3 0;
   display: flex;
   justify-content: center;
@@ -43,7 +44,7 @@ export default {
     padding: 0 gutter() gutter()*6 gutter();
   }
   @include bp($ml) {
-    justify-content: flex-start;
+    justify-content: space-evenly;
   }
 }
 .attendee {
@@ -52,19 +53,22 @@ export default {
   align-items: center;
   justify-content: space-between;
   padding: gutter()/4;
-  max-width: 50%;
+  max-width: 33.333%;
 
   @include bp($m) {
-    max-width: 33%;
-  }
-  @include bp($ml) {
     max-width: 25%;
   }
-  @include bp($l) {
+  @include bp($ml) {
     max-width: 20%;
   }
+  @include bp($l) {
+    max-width: 16.66%;
+  }
   @include bp($xl) {
-    max-width: 16.666%;
+    max-width: 12.5%;
+  }
+  @include bp(1600px) {
+    max-width: 10%;
   }
 
   .inner {

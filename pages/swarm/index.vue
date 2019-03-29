@@ -134,9 +134,16 @@ export default {
       youtubeVideo: `<div class="embed-container"><iframe src="https://www.youtube.com/embed/aVMBvWumoF8?autoplay=1&rel=0" frameborder="0" allowfullscreen autoplay="1"></iframe></div>`
     }
   },
-  mounted () {
-    this.$store.commit('setCurrentPageAccentColor', this.page.page_accent_color)
-    this.setEventTime(this.page.event_start_date)
+  watch: {
+    'page': {
+      immediate: true,
+      handler () {
+        if (this.page) {
+          this.$store.commit('setCurrentPageAccentColor', this.page.page_accent_color)
+          this.setEventTime(this.page.event_start_date)
+        }
+      }
+    }
   },
   computed: {
     ...mapState({

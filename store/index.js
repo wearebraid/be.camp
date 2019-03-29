@@ -146,7 +146,7 @@ export const actions = {
   getSchedule({commit}) {
     return new Promise((resolve, reject) => {
       let base = this.app.api.airtable
-      base('2018 Saturday Schedule').select({
+      base('Dummy Schedule').select({
         maxRecords: 999,
         view: "Grid view"
       }).eachPage(function page(records, fetchNextPage) {
@@ -201,7 +201,7 @@ export const mutations = {
       logo: payload['Logo'],
       url: payload['Url'],
       write_up: payload['Write up'],
-      level: payload['2018 Sponsorship Level']
+      level: payload['2019 Swarm Sponsorship Level']
     })
   },
   setAttendee(state, payload) {

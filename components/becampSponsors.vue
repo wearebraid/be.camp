@@ -43,7 +43,7 @@
     </div>
     <div class="sponsor-tier become-a-sponsor">
       <div class="cta">
-        <h2>Want to become a beCamp sponsor?</h2>
+        <h2>Want to become a beSwarm sponsor?</h2>
         <p>We're always in need of an extra helping hand.</p>
         <a
           href="mailto:todd.gerdy@gmail.com?subject=beCamp Sponsorship&body=Hello! I'd like to learn more about becoming a sponsor for beCamp!"

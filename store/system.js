@@ -12,24 +12,8 @@ export const state = () => ({
   },
   navItems: [
     {
-      name: 'Schedule',
-      route: '/schedule'
-    },
-    {
-      name: 'Sponsors',
-      route: '/sponsors'
-    },
-    {
-      name: 'FAQs',
-      route: '/faqs'
-    },
-    {
-      name: 'History',
-      route: '/history'
-    },
-    {
-      name: 'Attendees',
-      route: '/attendees'
+      name: 'View beCamp 2018 Site',
+      route: 'https://2018.be.camp'
     },
   ]
 })

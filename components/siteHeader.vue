@@ -2,12 +2,12 @@
   <header class="site-header">
     <div class="inner">
       <div class="logo">
-        <nuxt-link to="/">
+        <braid-link to="/">
           <img
             src="/beCampLogo1.png"
             alt="beCamp"
           />
-        </nuxt-link>
+        </braid-link>
       </div>
 
       <hamburger-menu
@@ -24,7 +24,7 @@
             v-for="item in siteNav"
             :key="item.route"
           >
-            <nuxt-link :to="item.route">{{ item.name }}</nuxt-link>
+            <braid-link :to="item.route">{{ item.name }}</braid-link>
           </li>
         </ul>
       </nav>

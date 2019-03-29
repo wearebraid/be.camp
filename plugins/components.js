@@ -3,6 +3,7 @@ import Vue from 'vue'
 /**
  * Import components
  */
+import braidLink from '~/components/BraidLink'
 import siteHeader from '~/components/siteHeader'
 import siteFooter from '~/components/siteFooter'
 import pageHero from '~/components/pageHero'
@@ -24,6 +25,7 @@ import newsletterSignup from '~/components/newsletterSignup'
 /**
  * Register components.
  */
+Vue.component('braid-link', braidLink)
 Vue.component('site-header', siteHeader)
 Vue.component('site-footer', siteFooter)
 Vue.component('page-hero', pageHero)

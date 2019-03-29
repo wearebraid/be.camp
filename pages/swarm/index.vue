@@ -147,7 +147,9 @@ export default {
       directoryAttendees: 'directoryAttendees'
     }),
     page () {
-      return this.butterPages['swarm-homepage']
+      if (this.butterPages) {
+        return this.butterPages['swarm-homepage']
+      }
     },
     attendeeCountText () {
       return this.attendeeCount >= 20 ? `<strong>${this.attendeeCount}</strong>&nbsp;` : ''

@@ -13,17 +13,38 @@
     >
       <div class="inner">
         <div class="event-headline">
-          <div>
-            <h1><strong>beSwarm 2019</strong></h1>
-            <h2 style="font-weight: 100;">Saturday Apr 27, 9:30am-4pm</h2>
-            <p><braid-link to="https://www.google.com/maps/place/OpenSource+Connections/@38.03502,-78.4864848,15z/data=!4m2!3m1!1s0x0:0xb179d719d7c40a6e?sa=X&ved=2ahUKEwigjf7TqKbhAhUFn-AKHYS7C8YQ_BIwDXoECAgQCA">OpenSource Connections (608 Preston Ave)</braid-link></p>
-          </div>
-          <braid-link
-            to="#"
-            class="action"
+          <div v-html="setAttendeeCount(page.homepage_hero_content)"></div>
+          <a
+            href="https://airtable.com/shr9e89GaGsECwTyO"
+            target="_blank" rel="noopener"
           >
-            <button>Register Now!</button>
-          </braid-link>
+            <button>Register Now</button>
+          </a>
+        </div>
+
+        <div class="event-countdown">
+          <div class="countdown-timer">
+            <div
+              class="countdown-label"
+              v-html="page.event_date_label"
+            />
+            <countdown-clock />
+          </div>
+          <div
+            class="intro-video"
+            v-if="page.homepage_hero_video_youtube_id"
+          >
+            <a
+              :href="`https://www.youtube.com/watch?v=${page.homepage_hero_video_youtube_id}`"
+              target="_blank"
+              rel="noopener"
+              @click.prevent="showLightbox(youtubeVideo)"
+              name="no-decoration"
+            >
+              <img src="/play.svg">
+              <p>What is beCamp?</p>
+            </a>
+          </div>
         </div>
       </div>
     </page-hero>
@@ -54,7 +75,7 @@
           name="beCamp promo video link"
         >
           <button @click="showLightbox(youtubeVideo)">
-            What is beCamp? (Video)
+            What is beSwarm? (Video)
           </button>
         </a>
       </div>
@@ -142,9 +163,9 @@ export default {
   .inner {
     display: flex;
     flex-direction: column;
-    width: 85%;
+    width: 95%;
     margin: auto;
-    max-width: 800px;
+    max-width: 1200px;
 
     @include bp($ml) {
       flex-direction: row;
@@ -154,11 +175,15 @@ export default {
   }
 
   .event-headline {
-    margin: 0 auto;
     text-align: center;
     font-size: 1rem;
     max-width: 900px;
-    font-weight: normal;nt-weight: normal;nt-weight: normal;rgin: auto auto 2em auto;
+    font-weight: normal;
+    order: 2;
+
+    @include bp($m) {
+      margin-top: -3em;
+    }
 
     .action {
       display: block;
@@ -172,6 +197,14 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: center;
+    order: 1;
+
+    @include bp($m) {
+      margin-right: 2em;
+    }
+    @include bp($l) {
+      margin-right: 5em;
+    }
   }
 
   .countdown-timer {
@@ -186,7 +219,8 @@ export default {
   .countdown-label {
     color: $accent;
     font-size: 4.5vw;
-    margin-bottom: .25em;
+    margin-bottom: .75em;
+    line-height: 1.2;
     font-style: italic;
 
     @include bp($ms) {

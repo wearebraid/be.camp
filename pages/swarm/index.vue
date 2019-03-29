@@ -96,6 +96,13 @@
       </div>
     </section>
 
+    <section class="page-section tac save-the-date">
+      <div class="wysiwyg-block">
+        <h1 class="section-title small-margin">Save the Date!</h1>
+        <div v-html="page.save_the_date"></div>
+      </div>
+    </section>
+
     <section
       v-if="Object.keys(directoryAttendees).length > 10"
       class="page-section full decorative-bg"

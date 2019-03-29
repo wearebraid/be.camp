@@ -14,6 +14,7 @@
       <div class="inner">
         <div class="event-headline">
           <div v-html="setAttendeeCount(page.homepage_hero_content)"></div>
+          <!-- Wondering where this is? Go to "Guests" in the forked Airtable Base and change the "Grid view" to the form's view. -->
           <a
             href="https://airtable.com/shr9e89GaGsECwTyO"
             target="_blank" rel="noopener"
@@ -82,6 +83,7 @@
       <div class="cta">
         <h2>Let us know you're attending!</h2>
         <p>It's quick and easy, and helps us order the correct amout of food.</p>
+        <!-- See comment above on Airtable. -->
         <a
           href="https://airtable.com/shr9e89GaGsECwTyO"
           target="_blank"

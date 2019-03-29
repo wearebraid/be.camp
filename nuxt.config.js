@@ -130,10 +130,12 @@ module.exports = {
         // create the remote images directory if it does not exist
         if (!fs.existsSync('./dist/remote_img')) {
           fs.mkdirSync('./dist/remote_img')
+          fs.mkdirSync('./dist/remote_img/airtable')
+          fs.mkdirSync('./dist/remote_img/buttercms')
         }
 
         // find all remote image paths
-        let matches = payload.html.match(/(http(s?):)([/|.|\w|\s|\%20|%25|-])*\.(?:jpg|jpeg|gif|png)/g)
+        let matches = payload.html.match(/(http(s?):)([/|.|\w|\s|\%20|%25|-])*\.(?:jpg|jpeg|gif|png|svg)/g)
 
         if (matches) {
           // download all remote images to our local build folder
@@ -142,7 +144,7 @@ module.exports = {
               let fileExtension = url.split('.').pop();
               const {filename} = await download.image({
                 url: url,
-                dest: `./dist/remote_img/${md5(url)}.${fileExtension}` // calc the md5 to avoid issues with really weird file names
+                dest: `./dist/remote_img/airtable/${md5(url)}.${fileExtension}` // calc the md5 to avoid issues with really weird file names
               })
               return filename.replace('/dist/', '/')
             })
@@ -159,11 +161,10 @@ module.exports = {
         // and would probably work if I just copied them
         // but not having the file extension feels wrong
         // so here we are...
-        butterMatches = payload.html.match(/(https:\/\/cdn.buttercms.com)([/|a-zA-Z0-9_])*/g)
+        let butterMatches = payload.html.match(/(https:\/\/cdn.buttercms.com)([/|a-zA-Z0-9_])*/g)
 
         if (butterMatches) {
           let localButterUrls = await Promise.all(
-
             butterMatches.map(async url => {
               let fileFormat = await getRemoteImgContentType(url)
               switch (fileFormat) {
@@ -179,7 +180,7 @@ module.exports = {
               }
               const {filename} = await download.image({
                 url: url,
-                dest: `./dist/remote_img/${url.replace('https://cdn.buttercms.com/', '')}${fileFormat}`
+                dest: `./dist/remote_img/buttercms/${url.replace('https://cdn.buttercms.com/', '')}${fileFormat}`
               })
               return filename.replace('/dist/', '/')
             })

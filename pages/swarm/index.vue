@@ -14,6 +14,7 @@
       <div class="inner">
         <div class="event-headline">
           <div v-html="setAttendeeCount(page.homepage_hero_content)"></div>
+          <!-- Wondering where this is? Go to "Guests" in the forked Airtable Base and change the "Grid view" to the form's view. -->
           <a
             href="https://airtable.com/shr9e89GaGsECwTyO"
             target="_blank" rel="noopener"
@@ -67,7 +68,7 @@
           :href="`https://www.youtube.com/watch?v=${page.homepage_hero_video_youtube_id}`"
           target="_blank" rel="noopener"
         >
-          <button>What is beSwarm? (Video)</button>
+          <button>What is beCamp? (Video)</button>
         </a>
       </div>
     </section>
@@ -82,8 +83,9 @@
       <div class="cta">
         <h2>Let us know you're attending!</h2>
         <p>It's quick and easy, and helps us order the correct amout of food.</p>
+        <!-- See comment above on Airtable. -->
         <a
-          href="#"
+          href="https://airtable.com/shr9e89GaGsECwTyO"
           target="_blank"
           rel="noopener"
           name="beCamp registration link"
@@ -96,8 +98,15 @@
       </div>
     </section>
 
+    <section class="page-section tac save-the-date">
+      <div class="wysiwyg-block">
+        <h1 class="section-title small-margin">Save the Date!</h1>
+        <div v-html="page.save_the_date"></div>
+      </div>
+    </section>
+
     <section
-      v-if="Object.keys(directoryAttendees).length > 18"
+      v-if="Object.keys(directoryAttendees).length > 10"
       class="page-section full decorative-bg"
     >
       <div class="wysiwyg-block">

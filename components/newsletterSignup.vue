@@ -1,7 +1,7 @@
 <template>
   <div class="page-section newsletter-signup-form">
     <h2>Join the beCamp newsletter!</h2>
-    <h4 class="light">Get the latest news and notifications about beCamp</h4>
+    <h4 class="light">Get the latest news and notifications about beCamp/beSwarm.</h4>
     <div id="mc_embed_signup">
       <form action="https://becamp.us15.list-manage.com/subscribe/post?u=f75f5915da9ca3ce7be9baad3&amp;id=91e20a1da0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="newsletter-form" target="_blank">
         <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>

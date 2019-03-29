@@ -28,7 +28,11 @@ class Api {
       endpointUrl: 'https://api.airtable.com',
       apiKey: process.env.airtableKey
     })
-    this.airtable = Airtable.base('apptQ2PByq7vFJlxR')
+    // Access the generated Airtable API docs for the base, and note the URL:
+    // https://airtable.com/<key>/api/docs
+    //
+    // Use this <key> as the string argument to Airtable.base('...').
+    this.airtable = Airtable.base('applj3FozCmao4YiE') // beSwarm 2019
     Vue.prototype.$api = this
   }
 

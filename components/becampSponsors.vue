@@ -43,11 +43,11 @@
     </div>
     <div class="sponsor-tier become-a-sponsor">
       <div class="cta">
-        <h2>Want to become a beSwarm sponsor?</h2>
-        <p>We're always in need of an extra helping hand.</p>
+        <h2>Want to become a beCamp/beSwarm sponsor?</h2>
+        <p>Our conferences happen because of you.</p>
         <a
-          href="mailto:todd.gerdy@gmail.com?subject=beCamp Sponsorship&body=Hello! I'd like to learn more about becoming a sponsor for beCamp!"
-          name="Email beCamp organizer"
+          href="mailto:ron.duplain@gmail.com?subject=beCamp/beSwarm Sponsorship&body=Hello! I'd like to learn more about becoming a sponsor for beCamp/beSwarm!"
+          name="Email beCamp/beSwarm organizer"
         >
           <button>Become a Sponsor</button>
         </a>

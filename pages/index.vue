@@ -5,6 +5,11 @@
 
 <script>
 export default {
-  middleware: 'beswarm'
+  created () {
+    if (typeof window !== 'undefined') {
+      window.location = `${window.location.protocol}//${window.location.hostname}${(window.location.port ? window.location.port : '')}/swarm`
+    }
+  }
 }
 </script>
+

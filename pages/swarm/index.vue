@@ -134,15 +134,6 @@ export default {
       youtubeVideo: `<div class="embed-container"><iframe src="https://www.youtube.com/embed/aVMBvWumoF8?autoplay=1&rel=0" frameborder="0" allowfullscreen autoplay="1"></iframe></div>`
     }
   },
-  async fetch ({store}) {
-    if (
-      Object.keys(store.state.butterPages).length === 0 ||
-      store.state.attendees.length === 0 ||
-      store.state.sponsors.length === 0
-    ) {
-      await store.dispatch('loadData')
-    }
-  },
   watch: {
     'page': {
       immediate: true,

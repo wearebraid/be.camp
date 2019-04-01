@@ -134,11 +134,20 @@ export default {
       youtubeVideo: `<div class="embed-container"><iframe src="https://www.youtube.com/embed/aVMBvWumoF8?autoplay=1&rel=0" frameborder="0" allowfullscreen autoplay="1"></iframe></div>`
     }
   },
+  async fetch ({store}) {
+    if (
+      Object.keys(store.state.butterPages).length === 0 ||
+      store.state.attendees.length === 0 ||
+      store.state.sponsors.length === 0
+    ) {
+      await store.dispatch('loadData')
+    }
+  },
   watch: {
     'page': {
       immediate: true,
       handler () {
-        if (this.page) {
+        if (this.page && this.setEventTime) {
           this.$store.commit('setCurrentPageAccentColor', this.page.page_accent_color)
           this.setEventTime(this.page.event_start_date)
         }
@@ -154,13 +163,16 @@ export default {
       directoryAttendees: 'directoryAttendees'
     }),
     page () {
-      if (this.butterPages) {
+      if (Object.keys(this.butterPages).length > 0) {
         return this.butterPages['swarm-homepage']
       }
       return false
     },
     attendeeCountText () {
-      return this.attendeeCount >= 20 ? `<strong>${this.attendeeCount}</strong>&nbsp;` : ''
+      if (this.attendeeCount) {
+        return this.attendeeCount >= 20 ? `<strong>${this.attendeeCount}</strong>&nbsp;` : ''
+      }
+      return false
     }
   },
   methods: {

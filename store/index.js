@@ -190,7 +190,7 @@ export const mutations = {
     state.viewMode = mode
   },
   setPage(state, {key, data}) {
-    state.butterPages = Object.assign({}, state.butterPages, {[key]: data})
+    state.butterPages = Object.assign({}, state.butterPages ? state.butterPages : {}, {[key]: data})
   },
   setCurrentPageAccentColor(state, payload) {
     state.currentPageAccentColor = payload

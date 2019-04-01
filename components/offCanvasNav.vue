@@ -5,7 +5,7 @@
   >
     <ul class="site-nav">
       <li @click.stop="$store.commit('system/setMobileNavDisplay', false)">
-        <nuxt-link to="/">
+        <nuxt-link to="/swarm">
           <img
             src="/beCampLogo1.png"
             alt="beCamp"

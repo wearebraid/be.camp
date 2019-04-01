@@ -12,7 +12,7 @@
         <div class="credits">
           <div class="logo">
             <div v-lazy-container="{ selector: 'img' }">
-              <nuxt-link to="/">
+              <nuxt-link to="/swarm">
                 <img
                   data-src="beCampLogo1.png"
                   alt="beCamp"

@@ -4,7 +4,7 @@ button,
   background: $accent;
   background: linear-gradient(to bottom, $accent, $accent-d);
   color: #fff;
-  font-size: .8rem;
+  font-size: 1.5rem;
   padding: gutter()/1.5 gutter()*1.5;
   text-transform: uppercase;
   font-family: $display;
@@ -20,7 +20,7 @@ button,
   }
 
   @include bp($m) {
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
 
   &.alt {

@@ -13,6 +13,7 @@
         class="background-video"
         v-show="showVideo"
         v-if="videoBackground"
+        aria-hidden="true"
       >
         <div
           class="video-bg cover"

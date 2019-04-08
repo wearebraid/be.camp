@@ -4,6 +4,7 @@
     :to="route"
     :href="route"
     :target="external"
+    :rel="external ? 'noopener' : ''"
     class="braid-link">
     <slot />
   </component>

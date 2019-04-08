@@ -1,10 +1,10 @@
 button,
 .button {
-  border: none;
-  background: $accent;
-  background: linear-gradient(to bottom, $accent, $accent-d);
+  border: 1px solid $accent-d;
+  background: $accent-d;
+  background: linear-gradient(to bottom, $accent-d, darken($accent-d, 5%));
   color: #fff;
-  font-size: 1.5rem;
+  font-size: 1rem;
   padding: gutter()/1.5 gutter()*1.5;
   text-transform: uppercase;
   font-family: $display;
@@ -16,11 +16,11 @@ button,
   outline: none;
 
   &:hover {
-    background: linear-gradient(to bottom, $accent, $accent);
+    background: linear-gradient(to bottom, $accent, $accent-d);
   }
 
   @include bp($m) {
-    font-size: 1.5rem;
+    font-size: 1.15rem;
   }
 
   &.alt {

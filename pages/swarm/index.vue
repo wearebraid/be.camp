@@ -1,6 +1,6 @@
 
 <template>
-  <div
+  <main
     v-if="page"
     class="page-wrapper"
   >
@@ -42,8 +42,8 @@
               @click.prevent="showLightbox(youtubeVideo)"
               name="no-decoration"
             >
-              <img src="/play.svg">
-              <p>What is beCamp?</p>
+              <img src="/play.svg" aria-hidden="true" alt="play button">
+              <p id="beCamp-video">What is beCamp?</p>
             </a>
           </div>
         </div>
@@ -122,7 +122,7 @@
       </div>
       <becamp-sponsors />
     </section>
-  </div>
+  </main>
 </template>
 
 <script>
@@ -134,9 +134,16 @@ export default {
       youtubeVideo: `<div class="embed-container"><iframe src="https://www.youtube.com/embed/aVMBvWumoF8?autoplay=1&rel=0" frameborder="0" allowfullscreen autoplay="1"></iframe></div>`
     }
   },
-  created () {
-    this.$store.commit('setCurrentPageAccentColor', this.page.page_accent_color)
-    this.setEventTime(this.page.event_start_date)
+  watch: {
+    'page': {
+      immediate: true,
+      handler () {
+        if (this.page) {
+          this.$store.commit('setCurrentPageAccentColor', this.page.page_accent_color)
+          this.setEventTime(this.page.event_start_date)
+        }
+      }
+    }
   },
   computed: {
     ...mapState({
@@ -147,7 +154,10 @@ export default {
       directoryAttendees: 'directoryAttendees'
     }),
     page () {
-      return this.butterPages['swarm-homepage']
+      if (this.butterPages) {
+        return this.butterPages['swarm-homepage']
+      }
+      return false
     },
     attendeeCountText () {
       return this.attendeeCount >= 20 ? `<strong>${this.attendeeCount}</strong>&nbsp;` : ''
@@ -235,7 +245,7 @@ export default {
     font-style: italic;
 
     @include bp($ms) {
-      font-size: 1.1em;
+      font-size: 1.5em;
     }
   }
 

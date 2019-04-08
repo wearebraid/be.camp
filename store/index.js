@@ -108,7 +108,8 @@ export const actions = {
           'Logo',
           'Url',
           'Write up',
-          '2019 Swarm Sponsorship Level'
+          '2019 Swarm Sponsorship Level',
+          'Commitment confirmed'
         ],
         maxRecords: 99,
         view: "Grid view"

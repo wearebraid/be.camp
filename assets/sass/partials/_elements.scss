@@ -75,7 +75,7 @@ img {
 }
 
 a {
-  color: $accent-d;
+  color: darken($accent-d, 10%);
 
   &.no-decoration {
     text-decoration: none;

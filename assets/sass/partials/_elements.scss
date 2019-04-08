@@ -31,6 +31,10 @@ button,
     }
   }
 
+  &.narrow {
+    padding: gutter()/2 gutter()*1.25;
+  }
+
   &[data-disabled] {
     color: #444;
     background: #eee;

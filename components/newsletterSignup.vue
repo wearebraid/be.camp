@@ -6,7 +6,7 @@
       <form action="https://becamp.us15.list-manage.com/subscribe/post?u=f75f5915da9ca3ce7be9baad3&amp;id=91e20a1da0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="newsletter-form" target="_blank">
         <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required aria-labelledby="newsletter-header">
         <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_f75f5915da9ca3ce7be9baad3_91e20a1da0" tabindex="-1" value=""></div>
-        <div class="clear"><input type="submit" :value="buttonLabel" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+        <div class="clear"><input type="submit" :value="buttonLabel" name="subscribe" id="mc-embedded-subscribe" class="button narrow"></div>
       </form>
     </div>
     <!--End mc_embed_signup-->
@@ -38,6 +38,10 @@ export default {
     padding-top: 5em;
     padding-bottom: 6em;
   }
+
+  h3.light {
+    font-weight: 100;
+  }
 }
 
 .newsletter-form {
@@ -48,7 +52,7 @@ export default {
   display: block;
   width: 100%;
   max-width: 600px;
-  margin: 1em auto 0 auto;
+  margin: 2em auto 0 auto;
   padding: .25em;
   display: flex;
   justify-content: space-between;

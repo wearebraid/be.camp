@@ -67,6 +67,7 @@
         <a
           :href="`https://www.youtube.com/watch?v=${page.homepage_hero_video_youtube_id}`"
           target="_blank" rel="noopener"
+          @click.prevent="showLightbox(youtubeVideo)"
         >
           <button>What is beCamp? (Video)</button>
         </a>

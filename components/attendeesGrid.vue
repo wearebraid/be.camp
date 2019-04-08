@@ -44,7 +44,7 @@ export default {
     padding: 0 gutter() gutter()*6 gutter();
   }
   @include bp($ml) {
-    justify-content: space-evenly;
+    justify-content: center;
   }
 }
 .attendee {

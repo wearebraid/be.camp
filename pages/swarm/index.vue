@@ -139,7 +139,7 @@ export default {
     'page': {
       immediate: true,
       handler () {
-        if (this.page) {
+        if (this.page && this.setEventTime) {
           this.$store.commit('setCurrentPageAccentColor', this.page.page_accent_color)
           this.setEventTime(this.page.event_start_date)
         }
@@ -155,13 +155,16 @@ export default {
       directoryAttendees: 'directoryAttendees'
     }),
     page () {
-      if (this.butterPages) {
+      if (Object.keys(this.butterPages).length > 0) {
         return this.butterPages['swarm-homepage']
       }
       return false
     },
     attendeeCountText () {
-      return this.attendeeCount >= 20 ? `<strong>${this.attendeeCount}</strong>&nbsp;` : ''
+      if (this.attendeeCount) {
+        return this.attendeeCount >= 20 ? `<strong>${this.attendeeCount}</strong>&nbsp;` : ''
+      }
+      return false
     }
   },
   methods: {

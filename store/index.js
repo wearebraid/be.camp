@@ -103,6 +103,13 @@ export const actions = {
     return new Promise((resolve, reject) => {
       let base = this.app.api.airtable
       base('Past & Potential Sponsors').select({
+        fields: [
+          'Sponsor',
+          'Logo',
+          'Url',
+          'Write up',
+          '2019 Swarm Sponsorship Level'
+        ],
         maxRecords: 99,
         view: "Grid view"
       }).eachPage(function page(records, fetchNextPage) {
@@ -126,6 +133,11 @@ export const actions = {
     return new Promise((resolve, reject) => {
       let base = this.app.api.airtable
       base('Guests').select({
+        fields: [
+          'Guest Name',
+          'Directory Permission',
+          'Email'
+        ],
         maxRecords: 999,
         view: "Grid view"
       }).eachPage(function page(records, fetchNextPage) {
@@ -190,7 +202,7 @@ export const mutations = {
     state.viewMode = mode
   },
   setPage(state, {key, data}) {
-    state.butterPages = Object.assign({}, state.butterPages, {[key]: data})
+    state.butterPages = Object.assign({}, state.butterPages ? state.butterPages : {}, {[key]: data})
   },
   setCurrentPageAccentColor(state, payload) {
     state.currentPageAccentColor = payload

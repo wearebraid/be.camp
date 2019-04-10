@@ -24,7 +24,7 @@ $ npm run build
 $ npm start
 
 # generate static copy of project
-$ npm run generate
+$ npm run generate:local
 ```
 
 ## 3rd-Party APIs

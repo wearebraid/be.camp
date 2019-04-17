@@ -102,7 +102,7 @@ export default {
 }
 
 .card-content {
-  width: 100;
+  width: 100%;
   padding: gutter();
   border: 1px solid #efefef;
   background: $light;

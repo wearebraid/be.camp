@@ -12,12 +12,24 @@ export const state = () => ({
   },
   navItems: [
     {
-      name: 'beSwarm FAQs',
-      route: '/swarm/faqs'
+      name: 'Schedule',
+      route: '/schedule'
     },
     {
-      name: 'View beCamp 2018 Site',
-      route: 'https://2018.be.camp'
+      name: 'Sponsors',
+      route: '/sponsors'
+    },
+    {
+      name: 'FAQs',
+      route: '/faqs'
+    },
+    {
+      name: 'History',
+      route: '/history'
+    },
+    {
+      name: 'Attendees',
+      route: '/attendees'
     },
   ]
 })

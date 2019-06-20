@@ -32,7 +32,7 @@ class Api {
     // https://airtable.com/<key>/api/docs
     //
     // Use this <key> as the string argument to Airtable.base('...').
-    this.airtable = Airtable.base('applj3FozCmao4YiE') // beSwarm 2019
+    this.airtable = Airtable.base('appk2799MeZjagKjw') // beCamp 2019
     Vue.prototype.$api = this
   }
 

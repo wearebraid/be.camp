@@ -102,13 +102,13 @@ export const actions = {
   getSponsors({commit}) {
     return new Promise((resolve, reject) => {
       let base = this.app.api.airtable
-      base('Past & Potential Sponsors').select({
+      base('Sponsors').select({
         fields: [
           'Sponsor',
           'Logo',
           'Url',
           'Write up',
-          '2019 Swarm Sponsorship Level',
+          'Level',
           'Commitment confirmed'
         ],
         maxRecords: 99,
@@ -159,7 +159,7 @@ export const actions = {
   getSchedule({commit}) {
     return new Promise((resolve, reject) => {
       let base = this.app.api.airtable
-      base('Dummy Schedule').select({
+      base('Saturday Schedule').select({
         maxRecords: 999,
         view: "Grid view"
       }).eachPage(function page(records, fetchNextPage) {

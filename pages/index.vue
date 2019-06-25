@@ -97,10 +97,6 @@ export default {
       youtubeVideo: `<div class="embed-container"><iframe src="https://www.youtube.com/embed/aVMBvWumoF8?autoplay=1&rel=0" frameborder="0" allowfullscreen autoplay="1"></iframe></div>`
     }
   },
-  created () {
-    this.$store.commit('setCurrentPageAccentColor', this.page.page_accent_color)
-    this.setEventTime(this.page.event_start_date)
-  },
   computed: {
     ...mapState({
       butterPages: state => state.butterPages
@@ -109,11 +105,15 @@ export default {
       attendeeCount: 'attendeeCount'
     }),
     page () {
-      return this.butterPages['homepage']
+      return this.butterPages['swarm-homepage']
     },
     attendeeCountText () {
       return this.attendeeCount >= 20 ? `<strong>${this.attendeeCount}</strong>&nbsp;` : ''
     }
+  },
+  created () {
+    this.$store.commit('setCurrentPageAccentColor', this.page.page_accent_color)
+    this.setEventTime(this.page.event_start_date)
   },
   methods: {
     ...mapActions([

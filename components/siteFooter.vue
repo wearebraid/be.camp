@@ -39,7 +39,7 @@
             Join the conversation in the #becamp channel on Cville Slack!
             <div v-lazy-container="{ selector: 'img' }">
               <a
-                href="http://bit.ly/slack-cville"
+                href="http://slack.cville.co"
                 target="_blank"
                 rel="noopener"
                 name="Cville Slack link"

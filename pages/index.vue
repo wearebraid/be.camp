@@ -16,7 +16,7 @@
           <div v-html="setAttendeeCount(page.homepage_hero_content)"></div>
           <!-- Wondering where this is? Go to "Guests" in the forked Airtable Base and change the "Grid view" to the form's view. -->
           <a
-            href="https://airtable.com/shr9e89GaGsECwTyO"
+            href="https://airtable.com/shr9v2szGC7jobp8S"
             target="_blank" rel="noopener"
           >
             <button>Register Now</button>
@@ -89,7 +89,7 @@
         <h2>Let us know you're attending!</h2>
         <p>It's quick and easy, and guarantees we get your shirt size correct.</p>
         <a
-          href="https://airtable.com/shr9e89GaGsECwTyO"
+          href="https://airtable.com/shr9v2szGC7jobp8S"
           target="_blank" rel="noopener"
         >
           <button>Register Now</button>

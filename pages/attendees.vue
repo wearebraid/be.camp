@@ -15,13 +15,10 @@
       </div>
       <div class="tac register">
         <a
-          href="#"
-          @click.prevent=""
-          target="_blank"
-          rel="noopener"
-          name="beCamp registration link"
+          href="https://airtable.com/shr9e89GaGsECwTyO"
+          target="_blank" rel="noopener"
         >
-          <button data-disabled>Registration Closed</button>
+          <button>Register Now</button>
         </a>
       </div>
     </page-hero>

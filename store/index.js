@@ -75,8 +75,8 @@ export const actions = {
       dispatch('getSponsors'),
       dispatch('getAttendees'),
       dispatch('getSchedule'),
-      dispatch('getPage', 'swarm-homepage'),
-      dispatch('getPage', 'swarm-faqs'),
+      dispatch('getPage', 'homepage'),
+      dispatch('getPage', 'faqs'),
       dispatch('getPage', 'schedule'),
       dispatch('getPage', 'history'),
       dispatch('getPage', 'attendees'),
@@ -100,6 +100,7 @@ export const actions = {
     })
   },
   getSponsors({commit}) {
+
     return new Promise((resolve, reject) => {
       let base = this.app.api.airtable
       base('Sponsors').select({
@@ -108,16 +109,14 @@ export const actions = {
           'Logo',
           'Url',
           'Write up',
-          'Level',
-          'Commitment confirmed'
+          'Level'
         ],
         maxRecords: 99,
         view: "Grid view"
       }).eachPage(function page(records, fetchNextPage) {
+
         records.forEach(function(record) {
-          if (record.fields['Commitment confirmed'] && record.fields['Commitment confirmed'] === true) {
-            commit('setSponsor', record.fields)
-          }
+          commit('setSponsor', record.fields)
         });
         fetchNextPage();
       }, function done(err) {
@@ -214,7 +213,7 @@ export const mutations = {
       logo: payload['Logo'],
       url: payload['Url'],
       write_up: payload['Write up'],
-      level: payload['2019 Swarm Sponsorship Level']
+      level: payload['Level']
     })
   },
   setAttendee(state, payload) {

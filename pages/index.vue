@@ -14,12 +14,38 @@
       <div class="inner">
         <div class="event-headline">
           <div v-html="setAttendeeCount(page.homepage_hero_content)"></div>
-          <nuxt-link
-            to="/schedule"
-            class="action"
+          <!-- Wondering where this is? Go to "Guests" in the forked Airtable Base and change the "Grid view" to the form's view. -->
+          <a
+            href="https://airtable.com/shr9e89GaGsECwTyO"
+            target="_blank" rel="noopener"
           >
-            <button>View the 2018 Schedule</button>
-          </nuxt-link>
+            <button>Register Now</button>
+          </a>
+        </div>
+
+        <div class="event-countdown">
+          <div class="countdown-timer">
+            <div
+              class="countdown-label"
+              v-html="page.event_date_label"
+            />
+            <countdown-clock />
+          </div>
+          <div
+            class="intro-video"
+            v-if="page.homepage_hero_video_youtube_id"
+          >
+            <a
+              :href="`https://www.youtube.com/watch?v=${page.homepage_hero_video_youtube_id}`"
+              target="_blank"
+              rel="noopener"
+              @click.prevent="showLightbox(youtubeVideo)"
+              name="no-decoration"
+            >
+              <img src="/play.svg" aria-hidden="true" alt="play button">
+              <p id="beCamp-video">What is beCamp?</p>
+            </a>
+          </div>
         </div>
       </div>
     </page-hero>
@@ -63,13 +89,10 @@
         <h2>Let us know you're attending!</h2>
         <p>It's quick and easy, and guarantees we get your shirt size correct.</p>
         <a
-          href="#"
-          @click.prevent=""
-          target="_blank"
-          rel="noopener"
-          name="beCamp registration link"
+          href="https://airtable.com/shr9e89GaGsECwTyO"
+          target="_blank" rel="noopener"
         >
-          <button data-disabled>Registration Closed</button>
+          <button>Register Now</button>
         </a>
         <div class="wysiwyg-block">
           <div v-html="page.safe_inclusive_accessible"></div>
@@ -77,12 +100,22 @@
       </div>
     </section>
 
+    <section
+      v-if="Object.keys(directoryAttendees).length > 10"
+      class="page-section full decorative-bg"
+    >
+      <div class="wysiwyg-block">
+        <h1 class="section-title small-margin">Plus, you'll get to meet these other awesome attendees.</h1>
+      </div>
+      <attendees-grid />
+    </section>
+
     <section class="page-section wide tac becamp-sponsors">
       <div class="wysiwyg-block">
         <h1 class="section-title small-margin">beCamp wouldn't be possible without our <span class="accent">awesome</span>&nbsp;sponsors!</h1>
         <div v-html="page.our_awesome_sponsors"></div>
       </div>
-      <becamp-sponsors />
+      <becampSponsors />
     </section>
   </div>
 </template>
@@ -90,8 +123,11 @@
 
 <script>
 import { mapActions, mapGetters, mapState } from 'vuex'
-
+import becampSponsors from '~/components/becampSponsors.vue'
 export default {
+  components: {
+     becampSponsors
+  },
   data () {
     return {
       youtubeVideo: `<div class="embed-container"><iframe src="https://www.youtube.com/embed/aVMBvWumoF8?autoplay=1&rel=0" frameborder="0" allowfullscreen autoplay="1"></iframe></div>`
@@ -102,10 +138,11 @@ export default {
       butterPages: state => state.butterPages
     }),
     ...mapGetters({
-      attendeeCount: 'attendeeCount'
+      attendeeCount: 'attendeeCount',
+      directoryAttendees: 'directoryAttendees'
     }),
     page () {
-      return this.butterPages['swarm-homepage']
+      return this.butterPages['homepage']
     },
     attendeeCountText () {
       return this.attendeeCount >= 20 ? `<strong>${this.attendeeCount}</strong>&nbsp;` : ''
@@ -120,7 +157,7 @@ export default {
       'setEventTime'
     ]),
     setAttendeeCount(html) {
-      return html.replace("[count]&nbsp;", this.attendeeCountText)
+      return html.replace("[count] ", this.attendeeCountText)
     },
     showLightbox (content) {
       this.$store.commit('lightbox/setVisibility', true)
@@ -132,94 +169,98 @@ export default {
 
 
 <style scoped lang="scss">
-  .page-hero {
-    .inner {
-      display: flex;
-      flex-direction: column;
-      width: 85%;
+.page-hero {
+  .inner {
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    margin: auto;
+    max-width: 1200px;
+    @include bp($ml) {
+      flex-direction: row;
+      align-items: center;
       margin: auto;
-      max-width: 800px;
-
-      @include bp($ml) {
-        flex-direction: row;
-        align-items: center;
-        margin: auto;
-      }
-    }
-
-    .event-headline {
-      text-align: center;
-      font-size: 1rem;
-      max-width: 900px;
-      font-weight: normal;nt-weight: normal;nt-weight: normal;rgin: auto auto 2em auto;
-
-      .action {
-        display: block;
-      }
-      .action + .action {
-        margin-top: gutter();
-      }
-    }
-
-    .event-countdown {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .countdown-timer {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-
-      @include bp($ml) {
-        align-items: flex-start;
-      }
-    }
-    .countdown-label {
-      color: $accent;
-      font-size: 4.5vw;
-      margin-bottom: .25em;
-      font-style: italic;
-
-      @include bp($ms) {
-        font-size: 1.1em;
-      }
-    }
-
-    .intro-video {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      margin-top: 1.5em;
-
-      img {
-        max-width: 50px;
-        margin-bottom: .25em;
-        cursor: pointer;
-        transition: transform .25s;
-
-        &:hover {
-          transform: scale(1.05);
-        }
-
-        @include bp($ml) {
-          max-width: 75px;
-        }
-      }
-
-      p {
-        font-size: 1rem;
-      }
     }
   }
-  .cta {
-    font-size: 1rem;
+  .event-headline {
     text-align: center;
-
-    h2 {
-      margin-bottom: .5em;
+    font-size: 1rem;
+    max-width: 900px;
+    font-weight: normal;
+    order: 2;
+    @include bp($l) {
+      margin-top: -3em;
+    }
+    .action {
+      display: block;
+    }
+    .action + .action {
+      margin-top: gutter();
     }
   }
+  .event-countdown {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    order: 1;
+    @include bp($m) {
+      margin-right: 2em;
+    }
+    @include bp($l) {
+      margin-right: 5em;
+    }
+  }
+  .countdown-timer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include bp($ml) {
+      align-items: flex-start;
+    }
+  }
+  .countdown-label {
+    color: $accent;
+    font-size: 4.5vw;
+    margin-bottom: .75em;
+    line-height: 1.2;
+    font-style: italic;
+    @include bp($ms) {
+      font-size: 1.5em;
+    }
+  }
+  .intro-video {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 1.5em;
+    img {
+      max-width: 50px;
+      margin-bottom: .25em;
+      cursor: pointer;
+      transition: transform .25s;
+      &:hover {
+        transform: scale(1.05);
+      }
+      @include bp($ml) {
+        max-width: 75px;
+      }
+    }
+    p {
+      font-size: 1rem;
+    }
+  }
+}
+.what-is-becamp {
+  .section-title {
+    margin-bottom: 1em;
+  }
+}
+.cta {
+  font-size: 1rem;
+  text-align: center;
+  h2 {
+    margin-bottom: .5em;
+  }
+}
 </style>

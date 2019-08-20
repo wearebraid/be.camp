@@ -112,7 +112,7 @@ export const actions = {
           'Level'
         ],
         maxRecords: 99,
-        view: "Grid view"
+        view: "[be.camp] Sponsors Feed"
       }).eachPage(function page(records, fetchNextPage) {
 
         records.forEach(function(record) {
@@ -139,7 +139,7 @@ export const actions = {
           'Email'
         ],
         maxRecords: 999,
-        view: "Grid view"
+        view: "[be.camp] Attendees Feed"
       }).eachPage(function page(records, fetchNextPage) {
         records.forEach(function(record) {
           commit('setAttendee', record.fields)

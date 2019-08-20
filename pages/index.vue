@@ -100,16 +100,6 @@
       </div>
     </section>
 
-    <section
-      v-if="Object.keys(directoryAttendees).length > 10"
-      class="page-section full decorative-bg"
-    >
-      <div class="wysiwyg-block">
-        <h1 class="section-title small-margin">Plus, you'll get to meet these other awesome attendees.</h1>
-      </div>
-      <attendees-grid />
-    </section>
-
     <section class="page-section wide tac becamp-sponsors">
       <div class="wysiwyg-block">
         <h1 class="section-title small-margin">beCamp wouldn't be possible without our <span class="accent">awesome</span>&nbsp;sponsors!</h1>

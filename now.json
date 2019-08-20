@@ -4,7 +4,8 @@
   "alias": "be.camp",
   "scope": "braid",
   "github": {
-    "enabled": false
+    "silent": true,
+    "enabled": true
   },
   "env": {
     "BUTTERKEY": "@becamp-butter-cms-key",

@@ -23,20 +23,20 @@
         <div
           class="supporter"
           v-for="supporter in supporters"
-          :key="supporter['Sponsor']"
+          :key="supporter['sponsor']"
         >
-          <template v-if="supporter['Url']">
+          <template v-if="supporter['url']">
             <a
-              :href="supporter['Url']"
+              :href="supporter['url']"
               target="_blank"
               rel="noopener"
-              :name="`${supporter['Sponsor']} website link`"
+              :name="`${supporter['sponsor']} website link`"
             >
-              {{supporter['Sponsor']}}<span class="sep">,</span>
+              {{supporter['sponsor']}}<span class="sep">,</span>
             </a>
           </template>
           <template v-else>
-            {{supporter['Sponsor']}}<span class="sep">,</span>
+            {{supporter['sponsor']}}<span class="sep">,</span>
           </template>
         </div>
       </div>

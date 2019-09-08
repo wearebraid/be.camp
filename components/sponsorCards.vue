@@ -88,16 +88,13 @@ export default {
   display: flex;
 
   @include bp($ms) {
+    width: 100%;
+  }
+  @include bp($m) {
     width: 50%;
   }
-  @include bp($ml) {
-    width: 33%;
-  }
   @include bp($l) {
-    width: 25%;
-  }
-  @include bp($xxl) {
-    width: 20%;
+    width: 33%;
   }
 }
 

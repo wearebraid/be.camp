@@ -1,6 +1,6 @@
 # be.Camp
 
-Open source website for https://be.camp. 
+Open source website for https://be.camp.
 
 <img src="https://raw.githubusercontent.com/wearebraid/be.camp/master/static/beCampLogo1.png" width="250">
 

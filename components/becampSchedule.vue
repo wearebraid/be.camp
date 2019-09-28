@@ -13,7 +13,7 @@
           class="event"
           v-for="event in events"
           :key="event['Location']"
-          :data-location="getLocationID(event['Location'])"
+          :data-location="getLocationName(event['Location'])"
         >
           <div class="event-data">
             <h4 class="topic">{{ event['Topic'] }}</h4>
@@ -52,11 +52,20 @@ export default {
   },
   methods: {
     getLocationName(location) {
-      return location.substring(0, location.indexOf(' ['))
+      if (location) {
+        let roomColor =  location.substring(0, location.indexOf(' Room ['))
+        return roomColor ? roomColor : location
+      }
+      return false
     },
     getLocationID(location) {
-      let id = location.match(/\[(.*?)\]/)
-      return id[0].substring(1, 2)
+      if (location) {
+        let id = location.match(/\[(.*?)\]/)
+        if (id && id[0]) {
+          return id[0].substring(1, 2)
+        }
+      }
+      return false
     }
   }
 }
@@ -93,34 +102,34 @@ export default {
       margin-bottom: gutter();
     }
 
-    &[data-location="1"] {
+    &[data-location="Red"] {
       .event-location {
         color: #fff;
-        background: linear-gradient(to bottom, $accent2, darken($accent2, 5%)) !important;
+        background: linear-gradient(to bottom, red, darken(red, 5%)) !important;
       }
     }
-    &[data-location="2"] {
+    &[data-location="Black"] {
       .event-location {
         color: #fff;
-        background: linear-gradient(to bottom, $accent4, darken($accent4, 5%)) !important;
+        background: linear-gradient(to bottom, #555, darken(#555, 5%)) !important;
       }
     }
-    &[data-location="3"] {
+    &[data-location="Brown"] {
       .event-location {
         color: #fff;
-        background: linear-gradient(to bottom, $accent, darken($accent, 5%)) !important;
+        background: linear-gradient(to bottom, #885e27, darken(#885e27, 5%)) !important;
       }
     }
-    &[data-location="4"] {
+    &[data-location="Pink"] {
       .event-location {
-        color: #fff;
-        background: linear-gradient(to bottom, $accent5, darken($accent5, 5%)) !important;
+        color: #222;
+        background: linear-gradient(to bottom, pink, darken(pink, 5%)) !important;
       }
     }
-    &[data-location="5"] {
+    &[data-location="Blue"] {
       .event-location {
         color: #fff;
-        background: linear-gradient(to bottom, $accent3, darken($accent3, 5%)) !important;
+        background: linear-gradient(to bottom, #446b97, darken(#446b97, 5%)) !important;
       }
     }
     &[data-location="6"] {
@@ -160,7 +169,7 @@ export default {
       }
 
       .event-location {
-        text-align: left;
+        text-align: center;
         padding: gutter()/2;
         background: #eee;
         border-radius: 5px;

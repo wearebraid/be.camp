@@ -99,6 +99,10 @@ export default {
     width: 19% !important;
     border: 1px solid rgba($dark, .5) !important;
     padding: .5em !important;
+
+    &:first-child:last-child {
+      width: 50% !important;
+    }
   }
   .event-time {
     font-size: 1.33rem;
@@ -106,12 +110,13 @@ export default {
   }
   .event-data {
     .topic {
-      font-size: 1.2rem;
+      font-size: 1.15rem;
     }
   }
   .event-location {
     border: 1px solid rgba($dark, .5);
-    font-size: 1.1rem !important;
+    font-size: 1rem !important;
+    padding: 0.25em !important;
   }
 }
 </style>

@@ -13,7 +13,7 @@
           class="event"
           v-for="event in events"
           :key="event['Location']"
-          :data-location="getLocationName(event['Location'])"
+          :data-location="getLocationID(event['Location'])"
         >
           <div class="event-data">
             <h4 class="topic">{{ event['Topic'] }}</h4>
@@ -32,7 +32,7 @@
               {{ event['Type'] }}
             </span>
             <div class="event-location">
-              <span class="location">{{ getLocationName(event['Location']) }}</span>
+              <span class="location">{{ getLocationID(event['Location']) }}</span>
             </div>
           </div>
         </div>
@@ -53,19 +53,16 @@ export default {
   methods: {
     getLocationName(location) {
       if (location) {
-        let roomColor =  location.substring(0, location.indexOf(' Room ['))
-        return roomColor ? roomColor : location
+        return location
       }
-      return false
+      return ""
     },
     getLocationID(location) {
       if (location) {
-        let id = location.match(/\[(.*?)\]/)
-        if (id && id[0]) {
-          return id[0].substring(1, 2)
-        }
+        let roomColor =  location.substring(0, location.indexOf(' Room'))
+        return roomColor ? roomColor : location
       }
-      return false
+      return ""
     }
   }
 }

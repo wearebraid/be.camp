@@ -16,7 +16,7 @@
           <div v-html="setAttendeeCount(page.homepage_hero_content)"></div>
           <!-- Wondering where this is? Go to "Guests" in the forked Airtable Base and change the "Grid view" to the form's view. -->
           <a
-            href="https://airtable.com/shr9v2szGC7jobp8S"
+            href="https://airtable.com/shr8pscmdKHqKEBBN"
             target="_blank" rel="noopener"
           >
             <button>Register Now</button>

@@ -44,5 +44,8 @@
     "image-downloader": "^3.4.2",
     "vue-lazyload": "^1.2.6",
     "webpack": "^4.29.6"
+  },
+  "volta": {
+    "node": "12.22.12"
   }
 }

@@ -6,7 +6,7 @@ const { getRemoteImgContentType } = require('./libs/build')
 const md5 = require('blueimp-md5')
 
 if (!isProd || process.env.LOCAL_ENV) {
-  require('now-env')
+  require('dotenv').config()
 }
 
 const butterKey = process.env.BUTTERKEY || null

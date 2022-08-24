@@ -17,7 +17,6 @@
   },
   "dependencies": {
     "@nuxtjs/google-analytics": "^2.0.2",
-    "@nuxtjs/now-builder": "^0.13.1",
     "@nuxtjs/pwa": "^3.0.0-beta.14",
     "@nuxtjs/sitemap": "^0.2.2",
     "@nuxtjs/style-resources": "^0.1.2",
@@ -37,12 +36,12 @@
   "devDependencies": {
     "babel-eslint": "^10.0.1",
     "cross-env": "^5.2.0",
+    "dotenv": "^16.0.1",
     "eslint": "^5.6.0",
     "eslint-friendly-formatter": "^4.0.1",
     "eslint-loader": "^2.1.1",
     "eslint-plugin-vue": "^5.2.2",
     "image-downloader": "^3.4.2",
-    "now-env": "^3.1.0",
     "vue-lazyload": "^1.2.6",
     "webpack": "^4.29.6"
   }

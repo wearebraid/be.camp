@@ -25,10 +25,10 @@
     "buttercms": "^1.1.5",
     "clone-deep": "^4.0.0",
     "moment": "^2.24.0",
-    "node-sass": "^4.9.3",
+    "node-sass": "^7.0.1",
     "nuxt": "^2.5.1",
     "reset-css": "^4.0.1",
-    "sass-loader": "^7.1.0",
+    "sass-loader": "^10.3.1",
     "vue-style-loader": "^4.1.2",
     "vuex-persistedstate": "^2.5.4",
     "webfontloader": "^1.6.28"

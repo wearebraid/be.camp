@@ -89,7 +89,7 @@
         <h2>Let us know you're attending!</h2>
         <p>It's quick and easy, and guarantees we get your shirt size correct.</p>
         <a
-          href="https://airtable.com/shr9v2szGC7jobp8S"
+          href="https://airtable.com/shr8pscmdKHqKEBBN"
           target="_blank" rel="noopener"
         >
           <button>Register Now</button>

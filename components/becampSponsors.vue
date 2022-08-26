@@ -46,7 +46,7 @@
         <h2>Want to become a beCamp sponsor?</h2>
         <p>We're always in need of an extra helping hand.</p>
         <a
-          href="mailto:rmcneely23@gmail.com?subject=beCamp/beSwarm Sponsorship&body=Hello! I'd like to learn more about becoming a sponsor for beCamp/beSwarm!"
+          href="mailto:todd.gerdy+becamp@gmail.com?subject=beCamp/beSwarm Sponsorship&body=Hello! I'd like to learn more about becoming a sponsor for beCamp/beSwarm!"
           name="Email beCamp/beSwarm sponsorship organizer"
         >
           <button>Become a Sponsor</button>
